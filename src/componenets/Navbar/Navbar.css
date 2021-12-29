@@ -1,0 +1,29 @@
+.navbar {
+    margin-top:10px;
+    width:100%;
+    height:50px;
+    background: #655f5f;
+    /*background: var(--color-grey);*/
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+    position: absolute;
+    font-family: 'Kreon', serif;
+}
+
+.navbar-item {
+    font-size: calc(1rem + 1vw);
+    color:whitesmoke;
+    text-shadow: #282c34 1px 1px 1px ;
+}
+.navbar-room {
+    color: #c9c930;
+    text-shadow: #282c34 1px 1px 1px ;
+}
+
+
+.navbar-item span {
+    color: #ea3a3a;
+    text-shadow: #282c34 1px 1px 1px ;
+    font-weight: 600;
+}

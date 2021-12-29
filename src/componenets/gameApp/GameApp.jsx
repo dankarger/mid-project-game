@@ -2,7 +2,7 @@ import React  from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SettingsPage from "../../pages/SettingsPage/SettingsPage";
 import HomePage from "../../pages/HomePage";
-
+import Room from "../../pages/Room/Room";
 
 const GameApp=()=>{
 
@@ -12,7 +12,8 @@ const GameApp=()=>{
 
                 <Routes>
                     <Route path='/' exact element={<HomePage />} />
-                    <Route path='/settings' exact element={<SettingsPage />} />
+                    <Route path='/settings'  element={<SettingsPage />} />
+                    <Route path='/room'  element={<Room />} />
                     {/*<Route path='/manage' exact element={<ManageCardsPage />} />*/}
                 </Routes>
             </BrowserRouter>
