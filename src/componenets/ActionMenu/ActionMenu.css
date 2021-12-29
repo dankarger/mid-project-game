@@ -1,0 +1,23 @@
+.action-menu {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.action-buttons-div{
+    width:40%;
+    height: 15%;
+    margin:auto 0;
+    background: #b05a06;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

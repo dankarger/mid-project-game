@@ -2,3 +2,7 @@
     --color-grey:#3E464D;
 
 }
+.GameApp {
+    width: 100vw;
+    height: 100vh;
+}
