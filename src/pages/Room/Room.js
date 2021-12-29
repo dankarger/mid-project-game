@@ -3,7 +3,9 @@ import './Room.css'
 import Navbar from "../../componenets/Navbar/Navbar";
 import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
 import Enemy from "../../componenets/Enemy/Enemy";
+import Player from "../../componenets/Player/Player";
 import {EnemyData} from "../../Data/Data";
+import {Character} from "../../Data/Data";
 
 const Room=()=>{
     
@@ -14,11 +16,12 @@ const Room=()=>{
                 <img className='Room-img' src="/assets/images/backgrounds/forest-regular.jpg" alt="room-img"/>
             </div>
             <div className="player-div">
-                player
+                <Player img={Character["chicken"].images[0]} name='chicken-rider'  />
             </div>
             <div className="enemy-div">
-                <Enemy name='deer' img='/assets/images/enemies/deer1.png' />
+                <Enemy name='deer' img={EnemyData['deer'].images[0]} />
             </div>
+
             <ActionMenu />
         </div>
     )

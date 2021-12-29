@@ -4,6 +4,9 @@ export const ImagesData = {
     }
 }
 
+const SoundsList={
+
+}
 
 export const Character = {
     chicken:{
@@ -11,7 +14,8 @@ export const Character = {
         name:'chicken-rider',
         health:100,
         power:'',
-        images:['/assets/images/characters/chicken2.png']
+        images:['/assets/images/characters/chicken2.png'],
+        sounds:''
     }
 }
 
@@ -22,6 +26,7 @@ export const EnemyData = {
         name:'Deer',
         health:50,
         Power:'none',
-        images:['/assets/images/enemy/deer.png']
+        images:['/assets/images/enemies/deer1.png'],
+        sounds:''
     }
 }

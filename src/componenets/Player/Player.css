@@ -1,0 +1,16 @@
+.player {
+    width: 30%;
+    /*max-width:5rem;*/
+    height: 50%;
+    position: absolute;
+    top:45%;
+    left:20px;
+    /*bottom:5%;*/
+}
+
+.player-img {
+    width: 100%;
+    /*max-width:5rem;*/
+    height:100%;
+    object-fit: cover;
+}

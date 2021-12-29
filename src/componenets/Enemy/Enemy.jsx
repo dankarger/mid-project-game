@@ -8,7 +8,7 @@ const Enemy =({name,img})=> {
 
     return (
         <div className='enemy'>
-            <div className={name}>
+            <div >
                 <img className='enemy-img' src={img} alt="enemy-img"/>
                 {name}
             </div>
