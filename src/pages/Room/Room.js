@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import './Room.css'
 import Navbar from "../../componenets/Navbar/Navbar";
 import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
@@ -8,7 +8,11 @@ import {EnemyData} from "../../Data/Data";
 import {Character} from "../../Data/Data";
 
 const Room=()=>{
-    
+    const [room,setRoom]=useState();
+
+
+
+
     return(
         <div className='Room' style={{background:'/assets/images/backgrounds/forest-regular.jpg'}}>
             <Navbar />
