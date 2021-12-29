@@ -9,6 +9,7 @@ const HomePage = () => {
 
     return(
         <div className='home-page'>
+            <h1>Title</h1>
            <div className='home-menu-divs'>
                <Button className='home-page'  icon='s' name='New Game'/>
                <Button className='home-page'  icon='s' name='Settings'/>

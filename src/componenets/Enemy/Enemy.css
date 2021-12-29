@@ -1,0 +1,13 @@
+.enemy {
+    width: 100%;
+    height: 100%;
+    /*position: absolute;*/
+    right:10px;
+    color:#61dafb;
+}
+.enemy-img {
+    width: 10rem;
+    height: 100%;
+    color:#61dafb;
+
+}

@@ -1,8 +1,22 @@
 .home-page {
-    background: green;
+    background: #282c34;
     width:100%;
-    height:100%;
+    height:100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    font-family: 'Kreon', serif;
+;
+}
+
+.home-menu-divs {
+    width: 80%;
+    height:20%;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+
 }
