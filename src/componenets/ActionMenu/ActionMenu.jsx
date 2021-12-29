@@ -10,10 +10,11 @@ const ActionMenu =() => {
     return (
         <div className='action-menu'>
             <div className='action-buttons-div'>
-                <div className="shader-div">
-                     <Button className='action-item' icon='sword-icon' name='Attack1'/>
-                     <button className='action-item '>Attack2</button>
-                     <button className='action-item'>Power <span>Health</span></button>
+                <div className="shader-div flex">
+                     <Button className='action'  icon='s' name='Attack1'/>
+                     <Button className='action'  icon='s' name='Attack2'/>
+                     <Button className='action' icon='p' name='Power'/>
+                     <Button className='action' icon='i' name='Inventory'/>
                 </div>
             </div>
         </div>

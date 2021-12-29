@@ -1,5 +1,6 @@
 import React    from "react";
-import Navbar from "../componenets/Navbar/Navbar";
+import './HomePage.css'
+import Button from "../componenets/utility/Button/Button";
 
 
 const HomePage = () => {
@@ -7,9 +8,13 @@ const HomePage = () => {
 
 
     return(
-        <div>
-            <Navbar />
-            homePage
+        <div className='home-page'>
+           <div className='home-menu-divs'>
+               <Button className='home-page'  icon='s' name='New Game'/>
+               <Button className='home-page'  icon='s' name='Settings'/>
+               <Button className='home-page'  icon='s' name='Quit'/>
+           </div>
+
         </div>
     )
 }
