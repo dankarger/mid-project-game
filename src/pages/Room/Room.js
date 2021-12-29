@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import './Room.css'
 import Navbar from "../../componenets/Navbar/Navbar";
 import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
@@ -7,15 +7,18 @@ import Player from "../../componenets/Player/Player";
 import {EnemyData} from "../../Data/Data";
 import {Character} from "../../Data/Data";
 
-const Room=()=>{
-    const [room,setRoom]=useState();
+const Room=({room})=>{
+    const [roomNumber,setRoomNumber]=useState();
 
+    useEffect(()=>{
+        setRoomNumber(room)
+    },[])
 
 
 
     return(
         <div className='Room' style={{background:'/assets/images/backgrounds/forest-regular.jpg'}}>
-            <Navbar />
+            <Navbar roomNumber={roomNumber}/>
             <div className="Room-img-div">
                 <img className='Room-img' src="/assets/images/backgrounds/forest-regular.jpg" alt="room-img"/>
             </div>

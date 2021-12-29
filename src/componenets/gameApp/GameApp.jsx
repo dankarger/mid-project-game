@@ -4,6 +4,7 @@ import SettingsPage from "../../pages/SettingsPage/SettingsPage";
 import HomePage from "../../pages/HomePage";
 import Room from "../../pages/Room/Room";
 import './GameApp.css'
+import MapPage from "../../pages/MapPage/MapPage";
 
 const GameApp=()=>{
 
@@ -13,8 +14,10 @@ const GameApp=()=>{
 
                 <Routes>
                     <Route path='/' exact element={<HomePage />} />
+                    <Route path='/map'  element={<MapPage />} />
                     <Route path='/settings'  element={<SettingsPage />} />
                     <Route path='/room'  element={<Room />} />
+
                     {/*<Route path='/manage' exact element={<ManageCardsPage />} />*/}
                 </Routes>
             </BrowserRouter>

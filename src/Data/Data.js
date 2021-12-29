@@ -3,10 +3,10 @@ export const ImagesData = {
         forest:'/assets/images/backgrounds/forest-regular.jpg'
     }
 }
-
-const SoundsList={
-
-}
+//
+// const SoundsList={
+//
+// }
 
 export const Character = {
     chicken:{
@@ -19,15 +19,15 @@ export const Character = {
     }
 }
 
-class EnemyClass  {
-    constructor(name,health,power,images,sounds){
-        this.name=name
-        this.health=health
-        this.power=power
-        this.images = images
-        this.sounds = sounds
-    }
-}
+// class EnemyClass  {
+//     constructor(name,health,power,images,sounds){
+//         this.name=name
+//         this.health=health
+//         this.power=power
+//         this.images = images
+//         this.sounds = sounds
+//     }
+// }
 
 export const EnemyData = {
     deer:{
