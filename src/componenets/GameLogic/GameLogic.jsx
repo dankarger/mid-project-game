@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import MapPage from "../../pages/MapPage/MapPage";
 import Room from "../../pages/Room/Room";
 import './GameLogic.css'
-import {EnemyData, RoomsData} from "../../Data/Data";
+import { RoomsData} from "../../Data/Data";
 
 const GameLogic = ({player})=> {
     const[isMap,setIsMap]=useState(true);
@@ -22,9 +22,10 @@ const GameLogic = ({player})=> {
        console.log('ene22,',currentEnemy)
        console.log('current',currentRoomData)
     }
-    useEffect(()=>{
-        // setCurrentRoomData(RoomsData['room1'])
-    },[])
+    // useEffect(()=>{
+    //     // setCurrentRoomData(RoomsData['room1'])
+    // },[])
+
     console.log('ene,',currentEnemy)
     console.log('current22',currentRoomData)
     useEffect(()=>{
