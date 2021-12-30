@@ -7,7 +7,7 @@ import { RoomsData} from "../../Data/Data";
 const GameLogic = ({player})=> {
     const[isMap,setIsMap]=useState(true);
     const[currentRoomData,setCurrentRoomData]=useState(RoomsData['room1'])
-    const[currentPlayer,setCurrentPlayer] = useState(player)
+    // const[currentPlayer,setCurrentPlayer] = useState(player)
     const[currentEnemy,setCurrentEnemy] = useState( currentRoomData.enemy)
     // const[roomNumber, setRoomNumber] = useState()
     // const[enemy,setEnemy] = useState()
@@ -35,7 +35,7 @@ const GameLogic = ({player})=> {
         setCurrentEnemy(currentRoomData.enemy)
         console.log('ene3,',currentEnemy)
         console.log('current223',currentRoomData)
-    },[currentRoomData,currentPlayer,currentPlayer,player,currentEnemy])
+    },[currentRoomData,player,currentEnemy])
 
     return (
         <div>
@@ -43,7 +43,7 @@ const GameLogic = ({player})=> {
                 <MapPage currentRoom={currentRoomData} callback={handleMapButton} />
             </div>
             <div className={ !isMap ? 'show' : 'hide' }>
-                <Room enemy={currentEnemy} player={currentPlayer} roomData={currentRoomData}/>
+                <Room enemy={currentEnemy} player={player} roomData={currentRoomData}/>
             </div>
 
         </div>

@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React from "react";
 import './Room.css'
 import Navbar from "../../componenets/Navbar/Navbar";
 import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
@@ -7,7 +7,7 @@ import Player from "../../componenets/Player/Player";
 
 
 
-const Room=({roomData,player})=>{
+const Room=({roomData, player})=>{
 
 
 
