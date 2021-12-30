@@ -26,7 +26,7 @@ const GameLogic = ({player})=> {
         return ()=>{
             console.log('p-gamelogic',player)
         }
-    },[roomData])
+    },[roomData,currentPlayer,currentPlayer])
 
     return (
         <div>
