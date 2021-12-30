@@ -7,7 +7,7 @@ import Player from "../../componenets/Player/Player";
 
 
 
-const Room=({roomData,player,enemy})=>{
+const Room=({roomData,player})=>{
     // const [roomNumber,setRoomNumber]=useState(roomData);
     // //
     // useEffect(()=>{
@@ -23,7 +23,7 @@ const Room=({roomData,player,enemy})=>{
             <div className='Room' style={{background:`${roomData.image}`}}>
                 <Navbar roomNumber={roomData.value}/>
                 <div className="Room-img-div">
-                    <img className='Room-img' src="/assets/images/backgrounds/forest-regular.jpg" alt="room-img"/>
+                    <img className='Room-img' src={roomData.image} alt="room-img"/>
                 </div>
                 <div className="player--div">
                     <Player player={player} name='chicken-rider'  />
@@ -31,7 +31,7 @@ const Room=({roomData,player,enemy})=>{
                 <div className="filler-div">
                 </div>
                 <div className="enemy-div">
-                    <Enemy   enemy={enemy} />
+                    <Enemy   enemy={roomData.enemy} />
                 </div>
                 <ActionMenu />
             </div>

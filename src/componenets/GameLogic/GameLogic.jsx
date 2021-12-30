@@ -6,7 +6,7 @@ import {EnemyData, RoomsData} from "../../Data/Data";
 
 const GameLogic = ({player})=> {
     const[isMap,setIsMap]=useState(true);
-    const[currentRoomData,setCurrentRoomData]=useState({})
+    const[currentRoomData,setCurrentRoomData]=useState(RoomsData['room1'])
     const[currentPlayer,setCurrentPlayer] = useState(player)
     const[currentEnemy,setCurrentEnemy] = useState( currentRoomData.enemy)
     // const[roomNumber, setRoomNumber] = useState()
@@ -15,22 +15,26 @@ const GameLogic = ({player})=> {
     // const currentEnemyVariable = currentRoomData.enemy
 
    const handleMapButton=(room)=>{
+        console.log('r',room)
     setCurrentRoomData(RoomsData[room]);
     setCurrentEnemy(RoomsData[room].enemy)
     setIsMap(!setIsMap);
-    console.log('ene,',currentEnemy)
+       console.log('ene22,',currentEnemy)
+       console.log('current',currentRoomData)
     }
     useEffect(()=>{
         // setCurrentRoomData(RoomsData['room1'])
     },[])
-
+    console.log('ene,',currentEnemy)
+    console.log('current22',currentRoomData)
     useEffect(()=>{
 
         // setCurrentRoomData(RoomsData['room1'])
-        setCurrentPlayer(player)
+        // setCurrentPlayer(player)
         setCurrentEnemy(currentRoomData.enemy)
-
-    },[currentRoomData,currentPlayer,currentPlayer,player])
+        console.log('ene3,',currentEnemy)
+        console.log('current223',currentRoomData)
+    },[currentRoomData,currentPlayer,currentPlayer,player,currentEnemy])
 
     return (
         <div>
