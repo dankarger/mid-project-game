@@ -18,7 +18,7 @@ export const Character = {
         playerName:'playerName',
         health:100,
         power:'',
-        images:['/assets/images/characters/chicken2.png'],
+        images:['/assets/images/characters/chicken-rider.png'],
         sounds:''
     }
 }
