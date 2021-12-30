@@ -13,7 +13,7 @@ const Room=({roomData,player,enemy})=>{
     useEffect(()=>{
         console.log('p',player)
         setRoomNumber(roomData.value)
-    },[roomNumber])
+    },[roomNumber,player,roomData.value])
 
 
 
@@ -30,7 +30,7 @@ const Room=({roomData,player,enemy})=>{
                 <div className="filler-div">
                 </div>
                 <div className="enemy-div">
-                    <Enemy name='deer' enemy={enemy} />
+                    <Enemy   enemy={enemy} />
                 </div>
                 <ActionMenu />
             </div>
