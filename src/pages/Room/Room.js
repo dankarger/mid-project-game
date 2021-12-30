@@ -9,11 +9,11 @@ import {Character} from "../../Data/Data";
 
 const Room=({room})=>{
     const [roomNumber,setRoomNumber]=useState();
-
-    useEffect(()=>{
-        setRoomNumber(room)
-    },[])
-
+    //
+    // useEffect(()=>{
+    //     setRoomNumber(room)
+    // },[])
+    //
 
 
     return(
