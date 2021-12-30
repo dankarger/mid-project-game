@@ -3,9 +3,11 @@
     /*max-width:5rem;*/
     height: 50%;
     position: absolute;
-    top:45%;
+    top:40%;
     left:20px;
     /*bottom:5%;*/
+    font-family: Kreon,sans-serif;
+
 }
 
 .player-img {
@@ -13,4 +15,16 @@
     /*max-width:5rem;*/
     height:100%;
     object-fit: cover;
+}
+
+.player-name {
+    color: #c5c561;
+    text-shadow: 1px 1px 1px black;
+    font-size: calc(1.5rem + 1vmin);
+}
+
+.player-health {
+    color: #f13e3e;
+    font-size: calc(1.5rem + 1vmin);
+    text-shadow: 1px 1px 1px rgba(252, 165, 181, 0.92);
 }

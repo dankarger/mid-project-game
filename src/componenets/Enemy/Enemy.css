@@ -1,15 +1,28 @@
 .enemy {
-    width: 50%;
+    /*width: 50%;*/
     height: 50%;
     position: absolute;
-    right:5px;
-    bottom:25%;
+    right:0;
+    bottom:35%;
     color:#61dafb;
+    margin: 0;
+    padding: 0;
 }
 
 .enemy-img {
     width: 34rem;
     height:50%;
     color:#61dafb;
+}
 
+.enemy-name {
+    color: #c5c561;
+    text-shadow: 1px 1px 1px black;
+    font-size: calc(1.5rem + 1vmin);
+}
+
+.enemy-health {
+    color:darkred;
+    font-size: calc(1.5rem + 1vmin);
+    text-shadow: 1px 1px 1px rgba(245, 82, 112, 0.92);
 }

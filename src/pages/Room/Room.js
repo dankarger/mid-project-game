@@ -4,15 +4,16 @@ import Navbar from "../../componenets/Navbar/Navbar";
 import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
 import Enemy from "../../componenets/Enemy/Enemy";
 import Player from "../../componenets/Player/Player";
-import {EnemyData} from "../../Data/Data";
-import {Character} from "../../Data/Data";
+import {EnemyData, Character} from "../../Data/Data";
 
-const Room=({room})=>{
-    const [roomNumber,setRoomNumber]=useState(room);
+
+const Room=({roomData,player,enemy})=>{
+    const [roomNumber,setRoomNumber]=useState(roomData.value);
     //
     useEffect(()=>{
-        setRoomNumber(room)
-    },[room])
+        console.log('p',player)
+        setRoomNumber(roomData.value)
+    },[roomData])
 
 
 
@@ -23,10 +24,10 @@ const Room=({room})=>{
                 <img className='Room-img' src="/assets/images/backgrounds/forest-regular.jpg" alt="room-img"/>
             </div>
             <div className="player-div">
-                <Player img={Character["chicken"].images[0]} name='chicken-rider'  />
+                <Player player={player} name='chicken-rider'  />
             </div>
             <div className="enemy-div">
-                <Enemy name='deer' img={EnemyData['deer'].images[0]} />
+                <Enemy name='deer' enemy={enemy} />
             </div>
 
             <ActionMenu />

@@ -8,10 +8,13 @@ export const ImagesData = {
 //
 // }
 
+
+
 export const Character = {
-    chicken:{
+    chickenRider:{
         id:1,
         name:'chicken-rider',
+        playerName:'playerName',
         health:100,
         power:'',
         images:['/assets/images/characters/chicken2.png'],
@@ -26,15 +29,27 @@ export const Character = {
 //         this.power=power
 //         this.images = images
 //         this.sounds = sounds
-//     }
+//     },
 // }
 
 export const EnemyData = {
     deer:{
-        name:'Deer',
+        name:'deer',
         health:50,
         Power:'none',
         images:['/assets/images/enemies/deer1.png'],
         sounds:''
-    }
+    },
+}
+
+export const RoomsData = {
+    room1:{
+        id:1,
+        name: 'Room 1',
+        value:1,
+        image: '/assets/images/backgrounds/forest-regular.jpg',
+        enemy: EnemyData['chicken'],
+        music: ''
+    },
+
 }

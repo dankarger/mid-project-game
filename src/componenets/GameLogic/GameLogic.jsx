@@ -2,28 +2,38 @@ import React, {useEffect, useState} from "react";
 import MapPage from "../../pages/MapPage/MapPage";
 import Room from "../../pages/Room/Room";
 import './GameLogic.css'
+import {EnemyData, RoomsData} from "../../Data/Data";
 
-const GameLogic = ()=> {
+const GameLogic = ({player})=> {
    const[isMap,setIsMap]=useState(true);
-    const[roomNumber,setRoomNumber]=useState(1)
+    const[roomData,setRoomData]=useState(RoomsData['room1'])
+    const[playerData,setPlayerData] = useState(player)
+    const[enemy,setEnemy] = useState()
 
+    const currentEnemy = EnemyData['deer']
 
    const handleMapButton=(room)=>{
         console.log(room)
-        setRoomNumber(room);
+       setRoomData(room);
         setIsMap(!setIsMap);
     }
     useEffect(()=>{
         console.log('efx')
-    },[roomNumber])
+        setRoomData(RoomsData['room1'])
+        setPlayerData(player)
+        setEnemy(enemy)
+        return ()=>{
+            console.log('pgamelogic',player)
+        }
+    },[roomData])
 
     return (
         <div>
             <div className={ isMap ? 'show' : 'hide' }>
-                <MapPage currentRoom={roomNumber} callback={handleMapButton} />
+                <MapPage currentRoom={roomData} callback={handleMapButton} />
             </div>
             <div className={ !isMap ? 'show' : 'hide' }>
-                <Room room={roomNumber}/>
+                <Room enemy={currentEnemy} player={playerData} roomData={roomData}/>
             </div>
 
         </div>
