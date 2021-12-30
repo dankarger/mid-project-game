@@ -56,6 +56,12 @@
 }
 
 
+.settings {
+    /*position: absolute;*/
+    /*right: 0;*/
+    background: rgba(197, 197, 97, 0.56);
+}
+
 @keyframes fade-in {
     to{
         opacity: 1;
