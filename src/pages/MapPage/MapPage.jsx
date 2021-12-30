@@ -12,7 +12,7 @@ const MapPage =({callback})=> {
         <h2>Current room:{currentRoomData.name}</h2>
             <div className="rooms-div">
                 <div className="row">
-                    <Button className='map-button' callback={()=>{callback('room5')}} value='room5' name='Boss' />
+                    <Button className='map-button' callback={()=>{callback('boss')}} value='boss' name='Boss' />
                 </div>
                 <div className="row">
                     <Button className='map-button' callback={()=>{callback('room4')}} value='room4' name='Room-4' />

@@ -61,6 +61,20 @@ export const EnemyData = {
         images:['/assets/images/enemies/merchant.jpg'],
         sounds:''
     },
+    girafe:{
+        name:'girafe',
+        health:100,
+        Power:'none',
+        images:['/assets/images/enemies/girafe.png'],
+        sounds:''
+    },
+    boss:{
+        name:'boss',
+        health:200,
+        Power:'none',
+        images:['/assets/images/enemies/virus.png'],
+        sounds:''
+    },
 }
 
 export const RoomsData = {
@@ -86,20 +100,29 @@ export const RoomsData = {
         image: '/assets/images/backgrounds/forest-flip.png',
         enemy: EnemyData['cow'],
         music: ''
-    },room3:{
+    },
+    room3:{
         id:2,
         name: 'Room 3',
         value:3,
         image: '/assets/images/backgrounds/mountain8.jpg',
         enemy: EnemyData['merchant'],
         music: ''
-    },room4:{
+    },
+    room4:{
         id:4,
-        name: 'Room 1',
+        name: 'Room 4',
         value:4,
         image: '/assets/images/backgrounds/forest-red.png',
-        enemy: EnemyData['deer2'],
+        enemy: EnemyData['girafe'],
         music: ''
     },
+    boss:{
+        id:5,
+        name: 'Boss level',
+        value:4,
+        image: '/assets/images/backgrounds/forest-red.png',
+        enemy: EnemyData['boss'],
+        music: ''
 
-}
+}}
