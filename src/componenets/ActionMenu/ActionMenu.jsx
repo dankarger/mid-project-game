@@ -10,7 +10,7 @@ const ActionMenu =() => {
     return (
         <div className='action-menu'>
             <div className='action-buttons-div'>
-                <div className="shader-div flex">
+                <div className="shader-div ">
                      <Button className='action'  icon='s' name='Attack1'/>
                      <Button className='action'  icon='s' name='Attack2'/>
                      <Button className='action' icon='p' name='Power'/>

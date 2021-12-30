@@ -1,17 +1,17 @@
 .enemy {
-    /*width: 50%;*/
-    height: 50%;
+    width: 50%;
+    /*height: 80%;*/
     position: absolute;
     right:0;
-    bottom:35%;
+    bottom:2%;
     color:#61dafb;
     margin: 0;
     padding: 0;
 }
 
 .enemy-img {
-    width: 34rem;
-    height:50%;
+    width: 60%;
+    height:80%;
     color:#61dafb;
 }
 

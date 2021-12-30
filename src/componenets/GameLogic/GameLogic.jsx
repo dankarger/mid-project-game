@@ -8,9 +8,10 @@ const GameLogic = ({player})=> {
    const[isMap,setIsMap]=useState(true);
     const[roomData,setRoomData]=useState(RoomsData['room1'])
     const[currentPlayer,setCurrentPlayer] = useState(player)
+    const[currentEnemy,setCurrentEnemy] = useState(player)
     const[enemy,setEnemy] = useState()
 
-    const currentEnemy = EnemyData['deer']
+    const currentEnemyvariable = EnemyData['deer']
 
    const handleMapButton=(room)=>{
         console.log(room)
@@ -21,7 +22,7 @@ const GameLogic = ({player})=> {
         console.log('efx')
         setRoomData(RoomsData['room1'])
         setCurrentPlayer(player)
-        setEnemy(enemy)
+        setCurrentEnemy(currentEnemyvariable)
         return ()=>{
             console.log('p-gamelogic',player)
         }
