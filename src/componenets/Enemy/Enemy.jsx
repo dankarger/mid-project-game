@@ -1,15 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import './Enemy.css'
 
 
 
 const Enemy =({enemy})=> {
-// const[currentEnemy,setCurrentEnemy]=useState(enemy)
-
-    // useState(()=>{
-    //    setCurrentEnemy(enemy)
-    // },[])
-
     return (
         <div className='enemy'>
             <div className='player-name'>{enemy.name}</div>
