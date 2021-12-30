@@ -12,7 +12,7 @@ const Room=({room})=>{
     //
     useEffect(()=>{
         setRoomNumber(room)
-    },[])
+    },[room])
 
 
 
