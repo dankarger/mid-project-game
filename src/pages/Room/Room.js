@@ -8,13 +8,6 @@ import Player from "../../componenets/Player/Player";
 
 
 const Room=({roomData,player})=>{
-    // const [roomNumber,setRoomNumber]=useState(roomData);
-    // //
-    // useEffect(()=>{
-    //     console.log('p',player)
-    //     setRoomNumber(roomData)
-    //     console.log('enemy,',roomData.enemy)
-    // },[roomNumber,player,roomData,roomData])
 
 
 
