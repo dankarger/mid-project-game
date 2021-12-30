@@ -8,12 +8,12 @@ import {EnemyData} from "../../Data/Data";
 import {Character} from "../../Data/Data";
 
 const Room=({room})=>{
-    const [roomNumber,setRoomNumber]=useState();
+    const [roomNumber,setRoomNumber]=useState(room);
     //
-    // useEffect(()=>{
-    //     setRoomNumber(room)
-    // },[])
-    //
+    useEffect(()=>{
+        setRoomNumber(room)
+    },[])
+
 
 
     return(
