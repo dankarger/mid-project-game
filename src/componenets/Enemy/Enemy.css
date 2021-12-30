@@ -26,3 +26,7 @@
     font-size: calc(1.5rem + 1vmin);
     text-shadow: 1px 1px 1px rgba(245, 82, 112, 0.92);
 }
+
+i{
+    margin-right: 7px;
+}

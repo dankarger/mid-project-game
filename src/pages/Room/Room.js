@@ -25,7 +25,7 @@ const Room=({roomData,player,enemy})=>{
                 <div className="Room-img-div">
                     <img className='Room-img' src="/assets/images/backgrounds/forest-regular.jpg" alt="room-img"/>
                 </div>
-                <div className="player-div">
+                <div className="player--div">
                     <Player player={player} name='chicken-rider'  />
                 </div>
                 <div className="filler-div">

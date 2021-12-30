@@ -16,7 +16,7 @@ const[currentEnemy,setCurrentEnemy]=useState(enemy)
             <div >
                 <img className='enemy-img' src={currentEnemy.images[0]} alt="enemy-img"/>
             </div>
-            <div className='player-health'>health: {currentEnemy.health}</div>
+            <div className='player-health'><i className="fas fa-heart"> </i> {currentEnemy.health}</div>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 .player {
-    width: 50%;
+    width: 80%;
     /*max-width:5rem;*/
-    height: 70%;
+    height:70%;
 
     /*bottom:5%;*/
     font-family: Kreon,sans-serif;
@@ -12,7 +12,7 @@
     width: 100%;
     /*max-width:5rem;*/
     height:100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .player-name {
@@ -25,4 +25,9 @@
     color: #f13e3e;
     font-size: calc(1.5rem + 1vmin);
     text-shadow: 1px 1px 1px rgba(252, 165, 181, 0.92);
+}
+ i{
+    margin-right:7px;
+    /*box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset,*/
+    /*            rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;*/
 }
