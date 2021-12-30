@@ -18,23 +18,23 @@ const Room=({roomData,player,enemy})=>{
 
 
     return(
-        <div className='Room' style={{background:`${roomData.image}`}}>
-            <Navbar roomNumber={roomNumber}/>
-            <div className="Room-img-div">
-                <img className='Room-img' src="/assets/images/backgrounds/forest-regular.jpg" alt="room-img"/>
+        <>
+            <div className='Room' style={{background:`${roomData.image}`}}>
+                <Navbar roomNumber={roomNumber}/>
+                <div className="Room-img-div">
+                    <img className='Room-img' src="/assets/images/backgrounds/forest-regular.jpg" alt="room-img"/>
+                </div>
+                <div className="player-div">
+                    <Player player={player} name='chicken-rider'  />
+                </div>
+                <div className="filler-div">
+                </div>
+                <div className="enemy-div">
+                    <Enemy name='deer' enemy={enemy} />
+                </div>
+                <ActionMenu />
             </div>
-            <div className="player-div">
-                <Player player={player} name='chicken-rider'  />
-            </div>
-            <div className="filler-div">
-
-            </div>
-            <div className="enemy-div">
-                <Enemy name='deer' enemy={enemy} />
-            </div>
-
-            <ActionMenu />
-        </div>
+        </>
     )
 }
 export default Room

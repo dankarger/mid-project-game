@@ -1,5 +1,8 @@
-.home-page {
-    background: #282c34;
+.home-content {
+    /*background: #282c34;*/
+    background: url('../../../public/assets/images/backgrounds/homepage1.jpg');
+
+    background-size: cover;
     width:100%;
     height:100%;
     display: flex;
@@ -7,6 +10,7 @@
     justify-content: center;
     flex-direction: column;
     font-family: 'Kreon', serif;
+
 ;
 }
 

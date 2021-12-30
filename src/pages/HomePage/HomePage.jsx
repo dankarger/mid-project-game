@@ -8,7 +8,7 @@ const HomePage = () => {
 
 
     return(
-        <div className='home-page'>
+        <div className='home-content'>
             <h1>Title</h1>
            <div className='home-menu-divs'>
              <Link to='/game' > <Button className='home-page'  icon='s' name='New Game'/> </Link>

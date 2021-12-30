@@ -1,6 +1,6 @@
 export const ImagesData = {
     background:{
-        forest:'/assets/images/backgrounds/forest-regular.jpg'
+        image:'/assets/images/backgrounds/trees-green.jpg'
     }
 }
 //
@@ -43,8 +43,16 @@ export const EnemyData = {
 }
 
 export const RoomsData = {
-    room1:{
+    homePage:{
         id:1,
+        name: 'home-page',
+        value:1,
+        image: '/assets/images/backgrounds/trees-green.jpg',
+
+        music: ''
+    },
+    room1:{
+        id:2,
         name: 'Room 1',
         value:1,
         image: '/assets/images/backgrounds/forest-regular.jpg',
