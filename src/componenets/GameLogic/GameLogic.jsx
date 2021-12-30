@@ -12,35 +12,16 @@ export const GameDataContex = React.createContext();
 const GameLogic = ({player})=> {
     const[isMap,setIsMap]=useState(true);
     const[currentRoomData,setCurrentRoomData]=useState(RoomsData['room1'])
-    // const[currentPlayer,setCurrentPlayer] = useState(player)
-    // const[currentEnemy,setCurrentEnemy] = useState( currentRoomData.enemy)
-    // const[roomNumber, setRoomNumber] = useState()
-    // const[enemy,setEnemy] = useState()
-
-    // const currentEnemyVariable = currentRoomData.enemy
-
-   const handleMapButton=(room)=>{
+    const[currentPlayer,setCurrentPlayer]=useState(player)
+    const handleMapButton=(room)=>{
         console.log('r',room)
-    setCurrentRoomData(RoomsData[room]);
-    // setCurrentEnemy(RoomsData[room].enemy)
-    setIsMap(!setIsMap);
-       // console.log('ene22,',currentEnemy)
-       console.log('current',currentRoomData)
+        setCurrentRoomData(RoomsData[room]);
+        setIsMap(!setIsMap);
+
     }
-    // useEffect(()=>{
-    //     // setCurrentRoomData(RoomsData['room1'])
-    //     setCurrentPlayer(player)
-    // },[])
 
-    // console.log('ene,',currentEnemy)
-    console.log('current22',currentRoomData)
     useEffect(()=>{
-
-        // setCurrentRoomData(RoomsData['room1'])
-        // setCurrentPlayer(player)
-        // setCurrentEnemy(currentRoomData.enemy)
-        // console.log('ene3,',currentEnemy)
-        console.log('current223',currentRoomData)
+        setCurrentPlayer(player)
     },[currentRoomData,player])
 
     return (
@@ -50,10 +31,9 @@ const GameLogic = ({player})=> {
                 <MapPage currentRoom={currentRoomData} callback={handleMapButton} />
             </div>
             <div className={ !isMap ? 'show' : 'hide' }>
-                <Room  player={player} roomData={currentRoomData}/>
+                <Room  player={currentPlayer} roomData={currentRoomData}/>
             </div>
         </GameDataContex.Provider>
-
         </div>
     )
 }
