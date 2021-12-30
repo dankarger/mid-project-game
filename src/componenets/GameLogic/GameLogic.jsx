@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, {useEffect, useState} from "react";
 import MapPage from "../../pages/MapPage/MapPage";
 import Room from "../../pages/Room/Room";
 import './GameLogic.css'
@@ -9,17 +9,20 @@ const GameLogic = ()=> {
 
 
    const handleMapButton=(room)=>{
+        console.log(room)
         setRoomNumber(room);
         setIsMap(!setIsMap);
     }
-
+    useEffect(()=>{
+        console.log('efx')
+    },[roomNumber])
 
     return (
         <div>
             <div className={ isMap ? 'show' : 'hide' }>
-                <MapPage  callback={handleMapButton} />
+                <MapPage currentRoom={roomNumber} callback={handleMapButton} />
             </div>
-            <div>
+            <div className={ !isMap ? 'show' : 'hide' }>
                 <Room room={roomNumber}/>
             </div>
 

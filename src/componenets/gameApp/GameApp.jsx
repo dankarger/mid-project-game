@@ -15,7 +15,7 @@ const GameApp=()=>{
 
                 <Routes>
                     <Route path='/' exact element={<HomePage />} />
-                    <Route path='/map'  element={<GameLogic />} />
+                    <Route path='/game'  element={<GameLogic />} />
                     <Route path='/settings'  element={<SettingsPage />} />
                     <Route path='/room'  element={<Room />} />
 
