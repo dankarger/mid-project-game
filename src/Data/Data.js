@@ -1,6 +1,7 @@
 export const ImagesData = {
     background:{
-        image:'/assets/images/backgrounds/trees-green.jpg'
+        tree1:'/assets/images/backgrounds/trees-green.jpg',
+        map:'map10.jpg',
     }
 }
 //
@@ -51,15 +52,15 @@ export const EnemyData = {
 
 export const RoomsData = {
     homePage:{
-        id:1,
+        id:11,
         name: 'home-page',
         value:1,
         image: '/assets/images/backgrounds/trees-green.jpg',
         music: ''
     },
     room1:{
-        id:2,
-        name: 'Room 2',
+        id:1,
+        name: 'Room 1',
         value:1,
         image: '/assets/images/backgrounds/forest-regular.jpg',
         enemy: EnemyData['deer'],
@@ -67,8 +68,22 @@ export const RoomsData = {
     },
     room2:{
         id:2,
+        name: 'Room 2',
+        value:2,
+        image: '/assets/images/backgrounds/trees-green.jpg',
+        enemy: EnemyData['deer2'],
+        music: ''
+    },room3:{
+        id:2,
+        name: 'Room 3',
+        value:3,
+        image: '/assets/images/backgrounds/trees-green.jpg',
+        enemy: EnemyData['deer2'],
+        music: ''
+    },room4:{
+        id:4,
         name: 'Room 1',
-        value:1,
+        value:4,
         image: '/assets/images/backgrounds/trees-green.jpg',
         enemy: EnemyData['deer2'],
         music: ''

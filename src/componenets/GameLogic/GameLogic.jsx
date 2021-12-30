@@ -5,28 +5,32 @@ import './GameLogic.css'
 import {EnemyData, RoomsData} from "../../Data/Data";
 
 const GameLogic = ({player})=> {
-   const[isMap,setIsMap]=useState(true);
-    const[currentRoomData,setCurrentRoomData]=useState(RoomsData['room1'])
+    const[isMap,setIsMap]=useState(true);
+    const[currentRoomData,setCurrentRoomData]=useState({})
     const[currentPlayer,setCurrentPlayer] = useState(player)
-    const[currentEnemy,setCurrentEnemy] = useState( EnemyData['deer'])
+    const[currentEnemy,setCurrentEnemy] = useState( currentRoomData.enemy)
+    // const[roomNumber, setRoomNumber] = useState()
     // const[enemy,setEnemy] = useState()
 
-    const currentEnemyVariable = currentRoomData.enemy
+    // const currentEnemyVariable = currentRoomData.enemy
 
    const handleMapButton=(room)=>{
-        console.log(room)
-       setCurrentRoomData(room);
-        setIsMap(!setIsMap);
+    setCurrentRoomData(RoomsData[room]);
+    setCurrentEnemy(RoomsData[room].enemy)
+    setIsMap(!setIsMap);
+    console.log('ene,',currentEnemy)
     }
     useEffect(()=>{
-        console.log('efx')
-        setCurrentRoomData(RoomsData['room1'])
+        // setCurrentRoomData(RoomsData['room1'])
+    },[])
+
+    useEffect(()=>{
+
+        // setCurrentRoomData(RoomsData['room1'])
         setCurrentPlayer(player)
-        setCurrentEnemy(currentEnemyVariable)
-        return ()=>{
-            console.log('p-gamelogic',player)
-        }
-    },[currentRoomData,currentPlayer,currentPlayer,currentEnemyVariable,player])
+        setCurrentEnemy(currentRoomData.enemy)
+
+    },[currentRoomData,currentPlayer,currentPlayer,player])
 
     return (
         <div>

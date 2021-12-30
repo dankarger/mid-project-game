@@ -1,7 +1,7 @@
 .player {
     width: 80%;
     /*max-width:5rem;*/
-    height:70%;
+    max-height:70vmax;
 
     /*bottom:5%;*/
     font-family: Kreon,sans-serif;
