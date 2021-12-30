@@ -21,6 +21,8 @@
 
     border-radius: 5px;
     margin-bottom:1rem;
+    opacity: 0;
+    animation: fade-in 1s forwards ease-in-out;
 
 }
 
@@ -51,4 +53,11 @@
     filter:brightness(120%) ;
     background: rgb(98, 98, 69);
     color:#c5c561;
+}
+
+
+@keyframes fade-in {
+    to{
+        opacity: 1;
+    }
 }

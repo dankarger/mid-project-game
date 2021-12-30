@@ -6,6 +6,8 @@
     justify-content: space-around;
     align-items: flex-end;
     position: relative;
+    opacity: 0.3;
+    animation: fade-in 1s ease-in forwards;
 
 
 }
@@ -31,4 +33,12 @@
 .player--div {
     /*height: 70%;*/
 
+}
+
+
+
+@keyframes fade-in {
+    to{
+        opacity: 1;
+    }
 }
