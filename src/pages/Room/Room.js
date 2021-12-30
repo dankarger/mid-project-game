@@ -4,13 +4,13 @@ import Navbar from "../../componenets/Navbar/Navbar";
 import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
 import Enemy from "../../componenets/Enemy/Enemy";
 import Player from "../../componenets/Player/Player";
-import {GameDataContext,PlayerContext} from "../../componenets/GameLogic/GameLogic";
+import {GameDataContext} from "../../componenets/GameLogic/GameLogic";
+import {PlayerContext} from "../../componenets/gameApp/GameApp";
 
 
 const Room=({player})=>{
          const currentRoomData = useContext(GameDataContext)
          const currentPlayer = useContext(PlayerContext)
-    console.log('d',currentRoomData)
     return(
         <>
             <div className='Room' style={{background:`${currentRoomData.image}`}}>
