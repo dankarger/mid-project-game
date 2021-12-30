@@ -9,7 +9,7 @@ const GameLogic = ({player})=> {
     const[roomData,setRoomData]=useState(RoomsData['room1'])
     const[currentPlayer,setCurrentPlayer] = useState(player)
     const[currentEnemy,setCurrentEnemy] = useState(player)
-    const[enemy,setEnemy] = useState()
+    // const[enemy,setEnemy] = useState()
 
     const currentEnemyVariable = EnemyData['deer']
 
