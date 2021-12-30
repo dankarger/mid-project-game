@@ -1,14 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import './MapPage.css'
 import Button from "../../componenets/utility/Button/Button";
+import {GameDataContex} from "../../componenets/GameLogic/GameLogic";
 
 
-const MapPage =({callback,currentRoom})=> {
-
+const MapPage =({callback})=> {
+    const currentRoomData = useContext(GameDataContex)
 
     return (
         <div className='map'>
-        <h2>Current room:{currentRoom.name}</h2>
+        <h2>Current room:{currentRoomData.name}</h2>
             <div className="rooms-div">
                 <div className="row">
                     <Button className='map-button' callback={()=>{callback('room5')}} value='room5' name='Boss' />
