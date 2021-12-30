@@ -14,7 +14,7 @@ const Room=({roomData,player,enemy})=>{
         console.log('p',player)
         setRoomNumber(roomData.value)
         console.log('enemy,',roomData.enemy)
-    },[roomNumber,player,roomData.value])
+    },[roomNumber,player,roomData.value,roomData.enemy])
 
 
 
