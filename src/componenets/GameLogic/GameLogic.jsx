@@ -6,35 +6,35 @@ import {EnemyData, RoomsData} from "../../Data/Data";
 
 const GameLogic = ({player})=> {
    const[isMap,setIsMap]=useState(true);
-    const[roomData,setRoomData]=useState(RoomsData['room1'])
+    const[currentRoomData,setCurrentRoomData]=useState(RoomsData['room1'])
     const[currentPlayer,setCurrentPlayer] = useState(player)
     const[currentEnemy,setCurrentEnemy] = useState( EnemyData['deer'])
     // const[enemy,setEnemy] = useState()
 
-    const currentEnemyVariable = EnemyData['deer']
+    const currentEnemyVariable = currentRoomData.enemy
 
    const handleMapButton=(room)=>{
         console.log(room)
-       setRoomData(room);
+       setCurrentRoomData(room);
         setIsMap(!setIsMap);
     }
     useEffect(()=>{
         console.log('efx')
-        setRoomData(RoomsData['room1'])
+        setCurrentRoomData(RoomsData['room1'])
         setCurrentPlayer(player)
         setCurrentEnemy(currentEnemyVariable)
         return ()=>{
             console.log('p-gamelogic',player)
         }
-    },[roomData,currentPlayer,currentPlayer,currentEnemyVariable,player])
+    },[currentRoomData,currentPlayer,currentPlayer,currentEnemyVariable,player])
 
     return (
         <div>
             <div className={ isMap ? 'show' : 'hide' }>
-                <MapPage currentRoom={roomData} callback={handleMapButton} />
+                <MapPage currentRoom={currentRoomData} callback={handleMapButton} />
             </div>
             <div className={ !isMap ? 'show' : 'hide' }>
-                <Room enemy={currentEnemy} player={currentPlayer} roomData={roomData}/>
+                <Room enemy={currentEnemy} player={currentPlayer} roomData={currentRoomData}/>
             </div>
 
         </div>

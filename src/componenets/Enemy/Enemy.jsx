@@ -1,18 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import './Enemy.css'
 
 
 
 const Enemy =({enemy})=> {
+const[currentEnemy,setCurrentEnemy]=useState(enemy)
 
+    useState(()=>{
+       setCurrentEnemy(enemy)
+    },[])
 
     return (
         <div className='enemy'>
-            <div className='player-name'>{enemy.name}</div>
+            <div className='player-name'>{currentEnemy.name}</div>
             <div >
-                <img className='enemy-img' src={enemy.images[0]} alt="enemy-img"/>
+                <img className='enemy-img' src={currentEnemy.images[0]} alt="enemy-img"/>
             </div>
-            <div className='player-health'>health: {enemy.health}</div>
+            <div className='player-health'>health: {currentEnemy.health}</div>
         </div>
     )
 }

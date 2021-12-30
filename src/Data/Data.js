@@ -40,6 +40,13 @@ export const EnemyData = {
         images:['/assets/images/enemies/deer1.png'],
         sounds:''
     },
+    deer2:{
+        name:'deer2',
+        health:70,
+        Power:'none',
+        images:['/assets/images/enemies/deer1.png'],
+        sounds:''
+    },
 }
 
 export const RoomsData = {
@@ -48,15 +55,22 @@ export const RoomsData = {
         name: 'home-page',
         value:1,
         image: '/assets/images/backgrounds/trees-green.jpg',
-
         music: ''
     },
     room1:{
         id:2,
-        name: 'Room 1',
+        name: 'Room 2',
         value:1,
         image: '/assets/images/backgrounds/forest-regular.jpg',
-        enemy: EnemyData['chicken'],
+        enemy: EnemyData['deer'],
+        music: ''
+    },
+    room2:{
+        id:2,
+        name: 'Room 1',
+        value:1,
+        image: '/assets/images/backgrounds/trees-green.jpg',
+        enemy: EnemyData['deer2'],
         music: ''
     },
 
