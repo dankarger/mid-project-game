@@ -1,17 +1,16 @@
 import React from "react";
 import './MapPage.css'
-import {Link} from "react-router-dom";
 
 
-const MapPage =()=> {
+
+const MapPage =({callback})=> {
 
 
     return (
         <div className='map'>
 
-            {/*<img className='map-im' src={img} alt="map-img"/>*/}
-            map
-            <Link to='/room'> Choose</Link>
+            <button onClick={()=>{callback(1)}} value='1' > </button>
+
         </div>
     )
 }

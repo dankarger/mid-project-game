@@ -5,6 +5,7 @@ import HomePage from "../../pages/HomePage";
 import Room from "../../pages/Room/Room";
 import './GameApp.css'
 import MapPage from "../../pages/MapPage/MapPage";
+import GameLogic from "../GameLogic/GameLogic";
 
 const GameApp=()=>{
 
@@ -14,7 +15,7 @@ const GameApp=()=>{
 
                 <Routes>
                     <Route path='/' exact element={<HomePage />} />
-                    <Route path='/map'  element={<MapPage />} />
+                    <Route path='/map'  element={<GameLogic />} />
                     <Route path='/settings'  element={<SettingsPage />} />
                     <Route path='/room'  element={<Room />} />
 
