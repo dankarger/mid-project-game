@@ -7,7 +7,7 @@ import {EnemyData, RoomsData} from "../../Data/Data";
 const GameLogic = ({player})=> {
    const[isMap,setIsMap]=useState(true);
     const[roomData,setRoomData]=useState(RoomsData['room1'])
-    const[playerData,setPlayerData] = useState(player)
+    const[currentPlayer,setCurrentPlayer] = useState(player)
     const[enemy,setEnemy] = useState()
 
     const currentEnemy = EnemyData['deer']
@@ -20,10 +20,10 @@ const GameLogic = ({player})=> {
     useEffect(()=>{
         console.log('efx')
         setRoomData(RoomsData['room1'])
-        setPlayerData(player)
+        setCurrentPlayer(player)
         setEnemy(enemy)
         return ()=>{
-            console.log('pgamelogic',player)
+            console.log('p-gamelogic',player)
         }
     },[roomData])
 
@@ -33,7 +33,7 @@ const GameLogic = ({player})=> {
                 <MapPage currentRoom={roomData} callback={handleMapButton} />
             </div>
             <div className={ !isMap ? 'show' : 'hide' }>
-                <Room enemy={currentEnemy} player={playerData} roomData={roomData}/>
+                <Room enemy={currentEnemy} player={currentPlayer} roomData={roomData}/>
             </div>
 
         </div>

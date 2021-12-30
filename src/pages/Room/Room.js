@@ -26,6 +26,9 @@ const Room=({roomData,player,enemy})=>{
             <div className="player-div">
                 <Player player={player} name='chicken-rider'  />
             </div>
+            <div className="filler-div">
+
+            </div>
             <div className="enemy-div">
                 <Enemy name='deer' enemy={enemy} />
             </div>
