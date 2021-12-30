@@ -47,6 +47,12 @@ export const EnemyData = {
         Power:'none',
         images:['/assets/images/enemies/deer1.png'],
         sounds:''
+    },cow:{
+        name:'Cow',
+        health:90,
+        Power:'none',
+        images:['/assets/images/enemies/cow1.png'],
+        sounds:''
     },
     merchant:{
         name:'merchant',
@@ -78,7 +84,7 @@ export const RoomsData = {
         name: 'Room 2',
         value:2,
         image: '/assets/images/backgrounds/forest-flip.png',
-        enemy: EnemyData['deer2'],
+        enemy: EnemyData['cow'],
         music: ''
     },room3:{
         id:2,
