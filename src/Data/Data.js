@@ -48,6 +48,13 @@ export const EnemyData = {
         images:['/assets/images/enemies/deer1.png'],
         sounds:''
     },
+    merchant:{
+        name:'merchant',
+        health:70,
+        Power:'none',
+        images:['/assets/images/enemies/merchant.jpg'],
+        sounds:''
+    },
 }
 
 export const RoomsData = {
@@ -70,21 +77,21 @@ export const RoomsData = {
         id:2,
         name: 'Room 2',
         value:2,
-        image: '/assets/images/backgrounds/trees-green.jpg',
+        image: '/assets/images/backgrounds/forest-flip.png',
         enemy: EnemyData['deer2'],
         music: ''
     },room3:{
         id:2,
         name: 'Room 3',
         value:3,
-        image: '/assets/images/backgrounds/trees-green.jpg',
-        enemy: EnemyData['deer2'],
+        image: '/assets/images/backgrounds/mountain8.jpg',
+        enemy: EnemyData['merchant'],
         music: ''
     },room4:{
         id:4,
         name: 'Room 1',
         value:4,
-        image: '/assets/images/backgrounds/trees-green.jpg',
+        image: '/assets/images/backgrounds/forest-red.png',
         enemy: EnemyData['deer2'],
         music: ''
     },
