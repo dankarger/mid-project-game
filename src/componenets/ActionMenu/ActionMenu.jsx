@@ -14,7 +14,7 @@ const ActionMenu =() => {
                      <Button className='action'  icon='s' name='Attack1'/>
                      <Button className='action'  icon='s' name='Attack2'/>
                      <Button className='action' icon='p' name='Power'/>
-                     <Button className='action' icon='i' name='Inventory'/>
+                     <Button className='action' icon='i' name='Item' />
                 </div>
             </div>
         </div>

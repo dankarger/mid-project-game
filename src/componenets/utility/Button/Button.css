@@ -1,10 +1,11 @@
 .action {
     box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
-    height:80%;
+    height:50%;
+    width:calc(2.5rem + 4vw);
     background: rgba(227, 174, 128, 0.29);
     color: #c5c561;
     text-shadow: 1px 1px 1px black;
-    font-size: calc(12pt + 0.7vw);
+    font-size: calc(10pt + 0.8vw);
 }
 
 .home-page {
