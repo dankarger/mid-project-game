@@ -96,7 +96,7 @@ const Room=({player,callbackGoBack})=>{
         <>
             {/*<isMessageOnContext.Provider value={isMessageOn}>*/}
                 <div className='Room' style={{background:`${currentRoomData.image}`}}>
-                    <Navbar currentPlayer={player} roomNumber={currentRoomData.value}/>
+                    <Navbar currentPlayer={player} currentEnemy={currentEnemy} roomNumber={currentRoomData.value}/>
                     <div className="Room-img-div">
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
                     </div>
