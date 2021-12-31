@@ -87,9 +87,8 @@ const Room=({player,callbackGoBack})=>{
         }
     }
         const randomEnemyAttack=()=>{
-            const damage = attackRandomValue();
-
-            return damage
+           let randomize = Math.random()
+            return randomize>0.5? handleAttack2(currentEnemy,player):''
         }
 
     return(

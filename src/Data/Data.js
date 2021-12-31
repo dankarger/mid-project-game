@@ -52,7 +52,7 @@ export class EnemyClass  {
 
 export const EnemyData = {
     deer:{
-        name:'deer',
+        name:'DEER',
         health:50,
         Power:'none',
         images:{
@@ -63,7 +63,7 @@ export const EnemyData = {
         sounds:''
     },
     deer2:{
-        name:'deer2',
+        name:'Deer2',
         health:70,
         Power:'none',
         images: {default:'/assets/images/enemies/deer1.png',
@@ -72,7 +72,7 @@ export const EnemyData = {
                     },
         sounds:''
     },cow:{
-        name:'Cow',
+        name:'COW',
         health:90,
         Power:'none',
         images: {default:'/assets/images/enemies/cow1.png',
@@ -82,7 +82,7 @@ export const EnemyData = {
         sounds:''
     },
     merchant:{
-        name:'merchant',
+        name:'MERCHANT',
         health:70,
         Power:'none',
         images:{default:'/assets/images/enemies/merchant.jpg',
@@ -92,7 +92,7 @@ export const EnemyData = {
         sounds:''
     },
     girafe:{
-        name:'girafe',
+        name:'GIRAFE',
         health:100,
         Power:'none',
         images:{default:'/assets/images/enemies/girafe.png',
@@ -102,7 +102,7 @@ export const EnemyData = {
         sounds:''
     },
     boss:{
-        name:'boss',
+        name:'BOSS',
         health:200,
         Power:'none',
         images:{
