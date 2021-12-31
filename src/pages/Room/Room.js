@@ -54,22 +54,22 @@ const Room=({player,callbackGoBack})=>{
         const attackRandomValue =()=>{
              return Math.floor(Math.random()*20)
         }
-        const handleAttack1 =() => {
-             // showMessage('atttack',800)
-            const damage = attackRandomValue()
-            if(currentEnemy.health > damage) {
-                currentEnemy.currentImage=currentEnemy.images.hit
-                setTimeout(()=>{currentEnemy.currentImage=currentEnemy.images.default},200)
-                setisAction(!isAction)
-                showMessage(`${currentEnemy.name} take  ${damage} damage`, 1500)
-                randomEnemyAttack()
-                return currentEnemy.health -=damage
-            }else{
-                currentEnemy.health = 0;
-                showMessage('You win!!', 5500)
-                return enemyDeath()
-            }
-        }
+        // const handleAttack1 =() => {
+        //      // showMessage('atttack',800)
+        //     const damage = attackRandomValue()
+        //     if(currentEnemy.health > damage) {
+        //         currentEnemy.currentImage=currentEnemy.images.hit
+        //         setTimeout(()=>{currentEnemy.currentImage=currentEnemy.images.default},200)
+        //         setisAction(!isAction)
+        //         showMessage(`${currentEnemy.name} take  ${damage} damage`, 1500)
+        //         randomEnemyAttack()
+        //         return currentEnemy.health -=damage
+        //     }else{
+        //         currentEnemy.health = 0;
+        //         showMessage('You win!!', 5500)
+        //         return enemyDeath()
+        //     }
+        // }
       const handleAttack2 =(attacker,deffender) => {
         // showMessage('atttack',800)
         const damage = attackRandomValue()
