@@ -24,7 +24,7 @@ export const Character = {
 }
 
 export class EnemyClass  {
-    constructor(name,health,power,images,sounds){
+    constructor({name,health,power,images,sounds}){
         this.name=name
         this.health=health
         this.power=power

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useReducer, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import './Room.css'
 import Navbar from "../../componenets/Navbar/Navbar";
 import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
@@ -23,6 +23,8 @@ import {EnemyClass} from "../../Data/Data";
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
          const currentPlayer = useContext(PlayerContext)
+        const[makeEnemy,setMakeEnemy]=useState({})
+        const [currentEnemy,setCurrentEnemy] = useState({})
          const[isMessageOn,setIsMessageOn]=useState(false)
          const[messageContent,setIsMessageContent]=useState('')
           // const [isMessageOn, dispatch] = useReducer(reducer, {isOn:true,messgae:'testtext'})
@@ -38,7 +40,13 @@ const Room=({player,callbackGoBack})=>{
 
         useEffect(()=>{
             showMessage('Your Turn',3700)
-        },[])
+            const createNewEnemy=()=>{
+                const newEnemy = new EnemyClass(currentRoomData.enemy)
+                setCurrentEnemy(newEnemy)
+                console.log('enemy',newEnemy)
+            }
+            createNewEnemy()
+        },[currentRoomData.enemy])
 
 
         const handleAttack1 =() => {
