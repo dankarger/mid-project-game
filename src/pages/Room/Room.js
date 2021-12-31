@@ -47,12 +47,14 @@ const Room=({player,callbackGoBack})=>{
         },[currentRoomData.enemy])
 
         const enemyDeath=()=>{
-                 currentEnemy.images=''
+                 currentEnemy.currentImage=currentEnemy.images.death
                 showMessage('You win', 1500)
         }
         const handleAttack1 =() => {
              showMessage('atttack',800)
             if(currentEnemy.health > 20) {
+                currentEnemy.currentImage=currentEnemy.images.hit
+                setTimeout(()=>{currentEnemy.currentImage=currentEnemy.images.default},200)
                 return currentEnemy.health -=20
             }else{
                 currentEnemy.health = 0;

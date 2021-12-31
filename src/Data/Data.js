@@ -29,6 +29,7 @@ export class EnemyClass  {
         this.health=health
         this.power=power
         this.images = images
+        this.currentImage = images.default
         this.sounds = sounds
     }
 }
@@ -38,7 +39,11 @@ export const EnemyData = {
         name:'deer',
         health:50,
         Power:'none',
-        images:['/assets/images/enemies/deer1.png'],
+        images:{
+            default:'/assets/images/enemies/deer1.png',
+            hit:'/assets/images/enemies/deer3-hit3.png',
+            death:'/assets/images/enemies/deer3-dead.png'
+        },
         sounds:''
     },
     deer2:{
