@@ -1,26 +1,27 @@
-import React, {useContext, useReducer, useState} from "react";
+import React from "react";
 import './Message.css'
-import {isMessageOnContext,MessageContentContext} from "../../pages/Room/Room";
+// import {isMessageOnContext,MessageContentContext} from "../../pages/Room/Room";
 
 
-const Message = ({message,time})=> {
-   const isMessageOn = useContext(isMessageOnContext);
+const Message = ({message,className})=> {
+   // const isMessageOn = useContext(isMessageOnContext);
+   // const  messageContent  = useContext(MessageContentContext)
 
-   const  messageContent  = useContext(MessageContentContext)
-
-    const showMessage=()=>{
-       setTimeout(()=>{
-            console.log('messgae21212')
-       },time)
-    }
-    useState(()=>{
-       if(isMessageOn)showMessage()
-    },[isMessageOn])
+    // const showMessage=()=>{
+    //    setTimeout(()=>{
+    //         console.log('messgae21212')
+    //    },time)
+    // }
+    // useState(()=>{
+    //    if(isMessageOn)showMessage()
+    // },[isMessageOn])
 
 
     return(
-        <div  className={isMessageOn? 'message-div show': 'hide'}>
-                <div className='messageText'>{message}</div>
+        <div  >
+
+                <div className='messageText'><div><span>❖ </span></div>{message}<div><span>❖</span></div></div>
+
         </div>
 
     )

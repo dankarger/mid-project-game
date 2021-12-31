@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useReducer, useState} from "react";
+import React, { useContext, useReducer, useState} from "react";
 import './Room.css'
 import Navbar from "../../componenets/Navbar/Navbar";
 import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
@@ -8,37 +8,43 @@ import {GameDataContext} from "../../componenets/GameLogic/GameLogic";
 import {PlayerContext} from "../../componenets/gameApp/GameApp";
 import Message from "../../componenets/Message/Message";
 
-export const isMessageOnContext = React.createContext(null);
-export const MessageContentContext = React.createContext(null);
-export const IsMessageDispatch = React.createContext(null)
+// export const isMessageOnContext = React.createContext(null);
+// export const MessageContentContext = React.createContext(null);
+// export const IsMessageDispatch = React.createContext(null)
 
 
-const showMessageReducer=(state, action)=>{
+const reducer=(state, action)=>{
     console.log('hhhhh')
-    return {isOn:!state.isOn }
+    return {isOn:false}
 }
 
 
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
          const currentPlayer = useContext(PlayerContext)
-         // const[isMessageOn,setIsMessageOn]=useState(true)
-         const[MessageContent,setIsMessageContent]=useState([])
-          const [isMessageOn, dispatch] = useReducer(showMessageReducer, {isOn:true,messgae:'testtext'})
+         const[isMessageOn,setIsMessageOn]=useState(true)
+         const[messageContent,setIsMessageContent]=useState('')
+          // const [isMessageOn, dispatch] = useReducer(reducer, {isOn:true,messgae:'testtext'})
 
-
+        const showMessage=(message,time)=> {
+             setIsMessageContent(message)
+             setIsMessageOn(true);
+             setTimeout(()=>{
+                 setIsMessageContent('')
+                 setIsMessageOn(false);
+             },time)
+        }
 
 
     return(
         <>
-            <isMessageOnContext.Provider value={isMessageOn}>
+            {/*<isMessageOnContext.Provider value={isMessageOn}>*/}
                 <div className='Room' style={{background:`${currentRoomData.image}`}}>
                     <Navbar currentPlayer={currentPlayer} roomNumber={currentRoomData.value}/>
-                    <button onClick={showMessageReducer}>test</button>
                     <div className="Room-img-div">
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
                     </div>
-                    <button onClick={callbackGoBack}>go back </button>
+                    <button onClick={()=> showMessage('teeeest',1000)}>go back </button>
                     <div className="player--div">
                         <Player player={player} name='chicken-rider'  />
                     </div>
@@ -48,11 +54,15 @@ const Room=({player,callbackGoBack})=>{
                         <Enemy   enemy={currentRoomData.enemy} />
                     </div>
                     <ActionMenu />
-                    <IsMessageDispatch.Provider value={isMessageOn}>
-                      <Message message={['test',1000]} />
-                    </IsMessageDispatch.Provider>
+                    {/*<IsMessageContext.Provider value={isMessageOn}>*/}
+                    <div className={isMessageOn?'show':'hide'}>
+
+
+                      <Message  message={messageContent} />
+                    </div>
+                    {/*</IsMessageContext.Provider>*/}
                 </div>
-            </isMessageOnContext.Provider>
+            {/*</isMessageOnContext.Provider>*/}
         </>
     )
 }

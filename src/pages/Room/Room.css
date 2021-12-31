@@ -47,3 +47,24 @@
         opacity: 1;
     }
 }
+
+
+.show {
+    display: block;
+    animation: message-animation 100ms forwards ease-in-out;
+}
+
+.hide {
+    animation: message-animation 500ms reverse ease-in-out;
+    display: none;
+}
+
+@keyframes message-animation {
+    from{
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
