@@ -17,7 +17,7 @@ const CreatePlayerPage=({createNewPlayer})=>{
         // TODO:change id to unique id
          newPlayer.id=new Date()
 
-         newPlayer.playerName=nameInputValue.substr(0,18).toUpperCase()
+         newPlayer.name=nameInputValue.substr(0,18).toUpperCase()
         console.log('newplayer',newPlayer)
        return  newPlayer
     }

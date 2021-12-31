@@ -21,6 +21,7 @@ export const Character = {
         images:{default:'/assets/images/characters/chicken-rider.png',
                 hit:'',
                 death:'',
+                 attack:''
                 },
 
         sounds:''
@@ -30,7 +31,7 @@ export class PlayerClass  {
     constructor({id,name,playerName,health,power,images,sounds}){
         this.id=id
         this.playerName=playerName
-        this.name=name
+        this.name=playerName
         this.health=health
         this.power=power
         this.images = images
@@ -58,7 +59,8 @@ export const EnemyData = {
         images:{
             default:'/assets/images/enemies/deer1.png',
             hit:'/assets/images/enemies/deer3-hit3.png',
-            death:'/assets/images/enemies/deer3-dead.png'
+            death:'/assets/images/enemies/deer3-dead.png',
+            attack:''
         },
         sounds:''
     },

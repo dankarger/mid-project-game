@@ -41,7 +41,7 @@ const Room=({player,callbackGoBack})=>{
             const createNewEnemy=()=>{
                 const newEnemy = new EnemyClass(currentRoomData.enemy)
                 setCurrentEnemy(newEnemy)
-                console.log('enemy',newEnemy)
+
             }
             createNewEnemy()
         },[currentRoomData.enemy])
