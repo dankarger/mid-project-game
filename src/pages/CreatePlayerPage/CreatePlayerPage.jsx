@@ -1,10 +1,23 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import './CreatePlayerPage.css'
 import Button from "../../componenets/utility/Button/Button";
 import {Link} from "react-router-dom";
+import {PlayerClass,Character} from "../../Data/Data";
 
-const CreatePlayerPage=()=>{
+const CreatePlayerPage=({createNewPlayer})=>{
+    const[nameInputValue,setNameInputValue] = useState('Random Randy')
 
+    const handleOnChange =(e)=>{
+         setNameInputValue(e.target.value);
+    }
+
+    const handleCreateNewPlayer =()=> {
+        let newPlayer = new PlayerClass(Character['chickenRider']);
+         newPlayer.id=new Date()
+         newPlayer.playerName=nameInputValue
+        console.log('newplayer',newPlayer)
+       return  newPlayer
+    }
     return (
         <div className='create-page'>
             <form action="">
@@ -13,10 +26,14 @@ const CreatePlayerPage=()=>{
 
              </div>
                 <label htmlFor="nameInput">Enter Name</label>
-                <input name='nameInput' type="text" placeholder='Randy Rando'/>
+                <input onChange={handleOnChange} name='nameInput' type="text" placeholder='Randy Rando' value={nameInputValue}/>
 
             </form>
-            <Link to='/game'><Button className='create'  name='Create Character' /></Link>
+            <Link to='/game'>
+                {/*<Button callback={()=>createNewPlayer(handleCreateNewPlayer())} className='create'  name='Create Character' />*/}
+                <Button callback={()=>handleCreateNewPlayer()} className='create'  name='Create Character' />
+
+            </Link>
 
         </div>
     )

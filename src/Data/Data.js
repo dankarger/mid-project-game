@@ -13,7 +13,7 @@ export const ImagesData = {
 
 export const Character = {
     chickenRider:{
-        id:1,
+        // id:1,
         name:'chicken-rider',
         playerName:'playerName',
         health:100,

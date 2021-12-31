@@ -70,6 +70,13 @@ const Room=({player,callbackGoBack})=>{
             }
 
         }
+
+        const randomEnemyAttack=()=>{
+            const damage = attackRandomValue();
+
+
+
+        }
         // useState(()=>{
         //     console.log('ff')
         // },[ handleAttack1 ])

@@ -14,15 +14,20 @@ const GameApp=()=>{
        const[currentPlayer,setCurrentPlayer]=useState( new PlayerClass(Character['chickenRider']))
 
 
-     useEffect(()=>{
-         const createNewPlayer=()=>{
-             const newPlayer = new PlayerClass(Character['chickenRider'])
-             setCurrentPlayer(newPlayer)
-             console.log('player',newPlayer)
-         }
-         createNewPlayer()
+     // useEffect(()=>{
+         // const createNewPlayer=()=>{
+         //     const newPlayer = new PlayerClass(Character['chickenRider'])
+         //     setCurrentPlayer(newPlayer)
+         //     console.log('player',newPlayer)
+         // }
+         // createNewPlayer()
 
-     },[Character.chickenRider])
+     // },[Character.chickenRider])
+    const createNewPlayer=(newPlayer)=>{
+        // const newPlayer = new PlayerClass(Character['chickenRider'])
+        setCurrentPlayer(newPlayer)
+        console.log('player',newPlayer)
+    }
 
     return (
         <div className='GameApp'>
@@ -30,7 +35,7 @@ const GameApp=()=>{
                 <BrowserRouter >
                     <Routes>
                         <Route path='/' exact element={<HomePage />} />
-                        <Route path='/create' element={CreatePlayerPage} />
+                        <Route path='/create' element={<CreatePlayerPage createNewPlayer={createNewPlayer} />} />
                         <Route path='/game'  element={<GameLogic player={currentPlayer}/>} />
                         <Route path='/settings'  element={<SettingsPage />} />
                         {/*<Route path='/room'  element={<Room />} />*/}
