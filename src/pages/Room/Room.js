@@ -23,13 +23,11 @@ import {EnemyClass} from "../../Data/Data";
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
          const currentPlayer = useContext(PlayerContext)
-        // const[makeEnemy,setMakeEnemy]=useState({})
          const [currentEnemy,setCurrentEnemy] = useState({})
          const[isMessageOn,setIsMessageOn]=useState(false)
          const[messageContent,setIsMessageContent]=useState('')
-          // const [isMessageOn, dispatch] = useReducer(reducer, {isOn:true,messgae:'testtext'})
 
-        const showMessage=(message,time)=> {
+         const showMessage=(message,time)=> {
              setIsMessageContent(message)
              setIsMessageOn(true);
              setTimeout(()=>{
@@ -48,10 +46,19 @@ const Room=({player,callbackGoBack})=>{
             createNewEnemy()
         },[currentRoomData.enemy])
 
-
+        const enemyDeath=()=>{
+                 currentEnemy.images=''
+                showMessage('You win', 1500)
+        }
         const handleAttack1 =() => {
-             showMessage('atttack1',800)
-
+             showMessage('atttack',800)
+            if(currentEnemy.health > 20) {
+                return currentEnemy.health -=20
+            }else{
+                currentEnemy.health = 0;
+                showMessage('You win222', 1500)
+                return enemyDeath()
+            }
 
         }
 
