@@ -23,8 +23,8 @@ import {EnemyClass} from "../../Data/Data";
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
          const currentPlayer = useContext(PlayerContext)
-        const[makeEnemy,setMakeEnemy]=useState({})
-        const [currentEnemy,setCurrentEnemy] = useState({})
+        // const[makeEnemy,setMakeEnemy]=useState({})
+         const [currentEnemy,setCurrentEnemy] = useState({})
          const[isMessageOn,setIsMessageOn]=useState(false)
          const[messageContent,setIsMessageContent]=useState('')
           // const [isMessageOn, dispatch] = useReducer(reducer, {isOn:true,messgae:'testtext'})
@@ -65,14 +65,14 @@ const Room=({player,callbackGoBack})=>{
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
                     </div>
                     {/*<button onClick={()=> showMessage('teeeest',1000)}>go back </button>*/}
-                    {/*<button onClick={callbackGoBack}>go back </button>*/}
+                    <button onClick={callbackGoBack}>go back </button>
                     <div className="player--div">
                         <Player player={player} name='chicken-rider'  />
                     </div>
                     <div className="filler-div">
                     </div>
                     <div className="enemy-div">
-                        <Enemy   enemy={currentRoomData.enemy} />
+                        <Enemy   enemy={currentEnemy} />
                     </div>
                     <ActionMenu handleAttack1={handleAttack1}/>
                     {/*<IsMessageContext.Provider value={isMessageOn}>*/}
