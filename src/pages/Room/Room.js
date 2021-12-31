@@ -70,6 +70,22 @@ const Room=({player,callbackGoBack})=>{
                 return enemyDeath()
             }
         }
+      const handleAttack2 =(attacker,deffender) => {
+        // showMessage('atttack',800)
+        const damage = attackRandomValue()
+        if(deffender.health > damage) {
+            deffender.currentImage=deffender.images.hit
+            setTimeout(()=>{deffender.currentImage=deffender.images.default},200)
+            setisAction(!isAction)
+            showMessage(`${deffender.name} take  ${damage} damage`, 1500)
+            randomEnemyAttack()
+            return deffender.health -=damage
+        }else{
+            currentEnemy.health = 0;
+            showMessage('You win!!', 5500)
+            return enemyDeath()
+        }
+    }
         const randomEnemyAttack=()=>{
             const damage = attackRandomValue();
 
@@ -80,7 +96,7 @@ const Room=({player,callbackGoBack})=>{
         <>
             {/*<isMessageOnContext.Provider value={isMessageOn}>*/}
                 <div className='Room' style={{background:`${currentRoomData.image}`}}>
-                    <Navbar currentPlayer={currentPlayer} roomNumber={currentRoomData.value}/>
+                    <Navbar currentPlayer={player} roomNumber={currentRoomData.value}/>
                     <div className="Room-img-div">
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
                     </div>
@@ -94,7 +110,7 @@ const Room=({player,callbackGoBack})=>{
                     <div className="enemy-div">
                         <Enemy   enemy={currentEnemy} />
                     </div>
-                    <ActionMenu handleAttack1={handleAttack1}/>
+                    <ActionMenu handleAttack1={()=>handleAttack2(currentPlayer,currentEnemy)} />
                     {/*<IsMessageContext.Provider value={isMessageOn}>*/}
                     <div className={isMessageOn?'message-div showMessage':' message-div hideMessage'}>
                       <Message  message={messageContent} />

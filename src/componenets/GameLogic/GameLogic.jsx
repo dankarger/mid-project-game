@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import MapPage from "../../pages/MapPage/MapPage";
 import Room from "../../pages/Room/Room";
 import './GameLogic.css'
-import { RoomsData} from "../../Data/Data";
+import {Character, PlayerClass, RoomsData} from "../../Data/Data";
 import {PlayerContext} from "../gameApp/GameApp";
 
 //use Contex states
@@ -27,14 +27,25 @@ const GameLogic = ()=> {
     }
 
     useEffect(()=>{
-        setCurrentPlayer(player)
-
+        setCurrentPlayer(()=>getPlayerFromLocalStorage())
+        console.log('1',currentPlayer)
     },[currentRoomData,player,currentEnemy])
 
     const handleGoBackButton = ()=>{
         setIsMap(true)
 
     }
+
+    const getPlayerFromLocalStorage =  ()=>{
+        const localPlayer =  localStorage.getItem('chicken') ;
+        if(localPlayer){
+            console.log('fsdfsdf')
+            return JSON.parse(localPlayer)
+        }
+        return new PlayerClass(Character['chickenRider'])
+    }
+
+
     return (
         <div>
             <GameDataContext.Provider value={currentRoomData}>

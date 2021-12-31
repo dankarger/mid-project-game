@@ -7,20 +7,31 @@ import {PlayerClass,Character} from "../../Data/Data";
 const CreatePlayerPage=({createNewPlayer})=>{
     const[nameInputValue,setNameInputValue] = useState('Random Randy')
 
+
     const handleOnChange =(e)=>{
          setNameInputValue(e.target.value);
     }
 
     const handleCreateNewPlayer =()=> {
         let newPlayer = new PlayerClass(Character['chickenRider']);
+        // TODO:change id to unique id
          newPlayer.id=new Date()
+
          newPlayer.playerName=nameInputValue
         console.log('newplayer',newPlayer)
        return  newPlayer
     }
+
+   const updateLocalStorage=()=>{
+
+        const player = handleCreateNewPlayer()
+        localStorage.setItem('chicken', JSON.stringify(player));
+        console.log(localStorage)
+    }
+
     return (
         <div className='create-page'>
-            <form action="">
+            {/*<form action="">*/}
              <div className='avatars-div'>
                  <h3>Choose an Avatars</h3>
 
@@ -28,9 +39,9 @@ const CreatePlayerPage=({createNewPlayer})=>{
                 <label htmlFor="nameInput">Enter Name</label>
                 <input onChange={handleOnChange} name='nameInput' type="text" placeholder='Randy Rando' value={nameInputValue}/>
 
-            </form>
+            {/*</form>*/}
             <Link to='/game'>
-                {/*<Button callback={()=>createNewPlayer(handleCreateNewPlayer())} className='create'  name='Create Character' />*/}
+                <Button callback={()=>updateLocalStorage()} className='create'  name='Create Characterddd' />
                 <Button callback={()=>handleCreateNewPlayer()} className='create'  name='Create Character' />
 
             </Link>
