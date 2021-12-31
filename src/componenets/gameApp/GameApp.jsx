@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SettingsPage from "../../pages/SettingsPage/SettingsPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import CreatePlayerPage from "../../pages/CreatePlayerPage/CreatePlayerPage";
 import './GameApp.css'
 import GameLogic from "../GameLogic/GameLogic";
-import {Character, EnemyClass, PlayerClass} from "../../Data/Data";
+import {Character, PlayerClass} from "../../Data/Data";
 
 export const PlayerContext = React.createContext();
 

@@ -62,6 +62,7 @@ const Room=({player,callbackGoBack})=>{
                 setTimeout(()=>{currentEnemy.currentImage=currentEnemy.images.default},200)
                 setisAction(!isAction)
                 showMessage(`${currentEnemy.name} take  ${damage} damage`, 1500)
+                randomEnemyAttack()
                 return currentEnemy.health -=damage
             }else{
                 currentEnemy.health = 0;
@@ -74,13 +75,9 @@ const Room=({player,callbackGoBack})=>{
         const randomEnemyAttack=()=>{
             const damage = attackRandomValue();
 
-
+            return damage
 
         }
-        // useState(()=>{
-        //     console.log('ff')
-        // },[ handleAttack1 ])
-
 
     return(
         <>
