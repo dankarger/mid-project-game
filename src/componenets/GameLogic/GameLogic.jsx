@@ -28,8 +28,7 @@ const GameLogic = ()=> {
 
     useEffect(()=>{
         setCurrentPlayer(()=>getPlayerFromLocalStorage())
-        console.log('1',currentPlayer)
-    },[currentRoomData,player,currentPlayer,currentEnemy])
+    },[currentRoomData,player,currentEnemy])
 
     const handleGoBackButton = ()=>{
         setIsMap(true)
