@@ -26,7 +26,7 @@ const Room=({player,callbackGoBack})=>{
          const [currentEnemy,setCurrentEnemy] = useState({})
          const[isMessageOn,setIsMessageOn]=useState(false)
          const[messageContent,setIsMessageContent]=useState('')
-
+         const[isAction,setisAction]=useState(false)
          const showMessage=(message,time)=> {
              setIsMessageContent(message)
              setIsMessageOn(true);
@@ -55,6 +55,7 @@ const Room=({player,callbackGoBack})=>{
             if(currentEnemy.health > 20) {
                 currentEnemy.currentImage=currentEnemy.images.hit
                 setTimeout(()=>{currentEnemy.currentImage=currentEnemy.images.default},200)
+                setisAction(!isAction)
                 return currentEnemy.health -=20
             }else{
                 currentEnemy.health = 0;
@@ -63,6 +64,9 @@ const Room=({player,callbackGoBack})=>{
             }
 
         }
+        useState(()=>{
+            console.log('ff')
+        },[handleAttack1])
 
 
     return(

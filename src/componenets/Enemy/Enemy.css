@@ -7,6 +7,8 @@
     color:#61dafb;
     margin: 0;
     padding: 0;
+    transition: 4s ease-in-out;
+    animation: action 1s forwards ease-in-out;
 }
 
 .enemy-img {
@@ -31,3 +33,12 @@ i{
     margin-right: 7px;
 }
 
+@keyframes action {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+
+}
