@@ -18,12 +18,11 @@ const Message = ({message,className})=> {
 
 
     return(
-        <div  >
-
-                <div className='messageText'><div><span>❖ </span></div>{message}<div><span>❖</span></div></div>
-
-        </div>
-
+                <div className='messageText'>
+                    {/*<div><span>❖ </span></div>*/}
+                    {message}
+                    {/*<div><span>❖</span></div>*/}
+                </div>
     )
 }
 export default Message

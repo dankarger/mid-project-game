@@ -26,7 +26,7 @@
 
 .show {
     display: block;
-    animation: message-animation 500ms forwards ease-in-out;
+    animation: message-animation 100ms forwards ease-in-out;
 }
 
 .hide {

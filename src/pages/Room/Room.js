@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useState} from "react";
+import React, {useContext, useEffect, useReducer, useState} from "react";
 import './Room.css'
 import Navbar from "../../componenets/Navbar/Navbar";
 import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
@@ -23,7 +23,7 @@ import {EnemyClass} from "../../Data/Data";
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
          const currentPlayer = useContext(PlayerContext)
-         const[isMessageOn,setIsMessageOn]=useState(true)
+         const[isMessageOn,setIsMessageOn]=useState(false)
          const[messageContent,setIsMessageContent]=useState('')
           // const [isMessageOn, dispatch] = useReducer(reducer, {isOn:true,messgae:'testtext'})
 
@@ -36,6 +36,17 @@ const Room=({player,callbackGoBack})=>{
              },time)
         }
 
+        useEffect(()=>{
+            showMessage('Your Turn',3700)
+        },[])
+
+
+        const handleAttack1 =() => {
+             showMessage('atttack1',800)
+
+
+        }
+
 
     return(
         <>
@@ -45,8 +56,8 @@ const Room=({player,callbackGoBack})=>{
                     <div className="Room-img-div">
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
                     </div>
-                    <button onClick={()=> showMessage('teeeest',1000)}>go back </button>
-                    <button onClick={callbackGoBack}>go back </button>
+                    {/*<button onClick={()=> showMessage('teeeest',1000)}>go back </button>*/}
+                    {/*<button onClick={callbackGoBack}>go back </button>*/}
                     <div className="player--div">
                         <Player player={player} name='chicken-rider'  />
                     </div>
@@ -55,9 +66,9 @@ const Room=({player,callbackGoBack})=>{
                     <div className="enemy-div">
                         <Enemy   enemy={currentRoomData.enemy} />
                     </div>
-                    <ActionMenu />
+                    <ActionMenu handleAttack1={handleAttack1}/>
                     {/*<IsMessageContext.Provider value={isMessageOn}>*/}
-                    <div className={isMessageOn?'show':'hide'}>
+                    <div className={isMessageOn?'message-div showMessage':' message-div hideMessage'}>
                       <Message  message={messageContent} />
                     </div>
                     {/*</IsMessageContext.Provider>*/}

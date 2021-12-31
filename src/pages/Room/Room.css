@@ -25,6 +25,8 @@
     object-fit: cover;
     /*position: absolute;*/
     /*z-index: -200;*/
+    /*position: fixed;*/
+    /*z-index: -10;*/
 }
 .filler-div {
     width:30%;
@@ -48,14 +50,18 @@
     }
 }
 
+.message-div{
+  position: fixed;
 
-.show {
-    display: block;
-    animation: message-animation 100ms forwards ease-in-out;
 }
 
-.hide {
-    animation: message-animation 500ms reverse ease-in-out;
+.showMessage {
+    /*display: block;*/
+    animation: message-animation 150ms forwards ease-in-out;
+}
+
+.hideMessage {
+    animation: message-animation 1500ms reverse ease-in-out;
     display: none;
 }
 
