@@ -23,15 +23,15 @@ export const Character = {
     }
 }
 
-// class EnemyClass  {
-//     constructor(name,health,power,images,sounds){
-//         this.name=name
-//         this.health=health
-//         this.power=power
-//         this.images = images
-//         this.sounds = sounds
-//     },
-// }
+export class EnemyClass  {
+    constructor(name,health,power,images,sounds){
+        this.name=name
+        this.health=health
+        this.power=power
+        this.images = images
+        this.sounds = sounds
+    }
+}
 
 export const EnemyData = {
     deer:{

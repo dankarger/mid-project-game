@@ -7,16 +7,17 @@ import Player from "../../componenets/Player/Player";
 import {GameDataContext} from "../../componenets/GameLogic/GameLogic";
 import {PlayerContext} from "../../componenets/gameApp/GameApp";
 import Message from "../../componenets/Message/Message";
+import {EnemyClass} from "../../Data/Data";
 
 // export const isMessageOnContext = React.createContext(null);
 // export const MessageContentContext = React.createContext(null);
 // export const IsMessageDispatch = React.createContext(null)
 
-
-const reducer=(state, action)=>{
-    console.log('hhhhh')
-    return {isOn:false}
-}
+//
+// const reducer=(state, action)=>{
+//     console.log('hhhhh')
+//     return {isOn:false}
+// }
 
 
 const Room=({player,callbackGoBack})=>{
@@ -45,6 +46,7 @@ const Room=({player,callbackGoBack})=>{
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
                     </div>
                     <button onClick={()=> showMessage('teeeest',1000)}>go back </button>
+                    <button onClick={callbackGoBack}>go back </button>
                     <div className="player--div">
                         <Player player={player} name='chicken-rider'  />
                     </div>
@@ -56,8 +58,6 @@ const Room=({player,callbackGoBack})=>{
                     <ActionMenu />
                     {/*<IsMessageContext.Provider value={isMessageOn}>*/}
                     <div className={isMessageOn?'show':'hide'}>
-
-
                       <Message  message={messageContent} />
                     </div>
                     {/*</IsMessageContext.Provider>*/}
