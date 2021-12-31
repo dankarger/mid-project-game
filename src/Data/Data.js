@@ -50,34 +50,50 @@ export const EnemyData = {
         name:'deer2',
         health:70,
         Power:'none',
-        images:['/assets/images/enemies/deer1.png'],
+        images: {default:'/assets/images/enemies/deer1.png',
+                  hit:'/assets/images/enemies/deer3-hit3.png',
+                  death:'/assets/images/enemies/deer3-dead.png'
+                    },
         sounds:''
     },cow:{
         name:'Cow',
         health:90,
         Power:'none',
-        images:['/assets/images/enemies/cow1.png'],
+        images: {default:'/assets/images/enemies/cow1.png',
+                 hit:'/assets/images/enemies/deer3-hit3.png',
+                 death:'/assets/images/enemies/deer3-dead.png'
+        },
         sounds:''
     },
     merchant:{
         name:'merchant',
         health:70,
         Power:'none',
-        images:['/assets/images/enemies/merchant.jpg'],
+        images:{default:'/assets/images/enemies/merchant.jpg',
+                   hit:'/assets/images/enemies/deer3-hit3.png',
+                   death:'/assets/images/enemies/deer3-dead.png'
+                },
         sounds:''
     },
     girafe:{
         name:'girafe',
         health:100,
         Power:'none',
-        images:['/assets/images/enemies/girafe.png'],
+        images:{default:'/assets/images/enemies/girafe.png',
+                hit:'/assets/images/enemies/deer3-hit3.png',
+                death:'/assets/images/enemies/deer3-dead.png'
+                },
         sounds:''
     },
     boss:{
         name:'boss',
         health:200,
         Power:'none',
-        images:['/assets/images/enemies/virus.png'],
+        images:{
+            default:'/assets/images/enemies/virus.png',
+            hit:'/assets/images/enemies/deer3-hit3.png',
+            death:'/assets/images/enemies/deer3-dead.png'
+        },
         sounds:''
     },
 }
