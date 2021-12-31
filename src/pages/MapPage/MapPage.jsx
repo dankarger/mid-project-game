@@ -9,22 +9,22 @@ const MapPage =({callback})=> {
 
     return (
         <div className='map'>
-        <h2>Current room:{currentRoomData.name}</h2>
+        <h1>Current room:{currentRoomData.name}</h1>
             <div className="rooms-div">
                 <div className="row">
                     <Button className='map-button' callback={()=>{callback('boss')}} value='boss' name='Boss' />
                 </div>
                 <div className="row">
                     <Button className='map-button' callback={()=>{callback('room4')}} value='room4' name='Room-4' />
-                    <Button className='map-button' callback={()=>{callback('room4')}} value='room4' name='Room-4 '/>
+                    <Button className='map-button hidden'  value='room4' name='Room-4 '/>
                 </div>
                 <div className="row">
+                    <Button className='map-button hidden'  value='room3' name='Room-3' />
                     <Button className='map-button' callback={()=>{callback('room3')}} value='room3' name='Room-3' />
-                    <Button className='map-button' callback={()=>{callback('room3')}} value='room3' name='Room-3' />
-                    <Button className='map-button' callback={()=>{callback('room3')}} value='room3' name='Room-3' />
+                    <Button className='map-button hidden'  value='room3' name='Room-3' />
                 </div>
                 <div className="row">
-                    <Button className='map-button' callback={()=>{callback('room2')}} value='room2' name='Room-2' />
+                    <Button className='map-button hidden'   value='room2' name='Room-2' />
                     <Button className='map-button' callback={()=>{callback('room2')}} value='room2' name='Room-2' />
                 </div>
                 <div className="row">

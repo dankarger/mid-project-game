@@ -1,7 +1,7 @@
 import React from "react";
 import './CreatePlayerPage.css'
 import Button from "../../componenets/utility/Button/Button";
-
+import {Link} from "react-router-dom";
 
 const CreatePlayerPage=()=>{
 
@@ -14,8 +14,9 @@ const CreatePlayerPage=()=>{
              </div>
                 <label htmlFor="nameInput">Enter Name</label>
                 <input name='nameInput' type="text" placeholder='Randy Rando'/>
-                <Button className='create'  name='Create Character' />
+
             </form>
+            <Link to='/game'><Button className='create'  name='Create Character' /></Link>
 
         </div>
     )

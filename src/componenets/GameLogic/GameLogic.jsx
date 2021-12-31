@@ -5,6 +5,7 @@ import './GameLogic.css'
 import { RoomsData} from "../../Data/Data";
 import {PlayerContext} from "../gameApp/GameApp";
 
+//use Contex states
 export const GameDataContext = React.createContext();
 // export const PlayerContext = React.createContext();
 export const EnemyContext = React.createContext();
@@ -17,6 +18,7 @@ const GameLogic = ()=> {
     const[currentRoomData,setCurrentRoomData]=useState(RoomsData['room1']);
     const[currentPlayer,setCurrentPlayer]=useState(player);
     const[currentEnemy,setCurrentEnemy]=useState({});
+
     const handleMapButton=(room)=>{
         setCurrentRoomData(RoomsData[room]);
         setCurrentEnemy(currentRoomData.enemy);
@@ -29,6 +31,10 @@ const GameLogic = ()=> {
 
     },[currentRoomData,player,currentEnemy])
 
+    const handleGoBackButton = ()=>{
+        setIsMap(true)
+
+    }
     return (
         <div>
             <GameDataContext.Provider value={currentRoomData}>
@@ -38,7 +44,7 @@ const GameLogic = ()=> {
                         <MapPage currentRoom={currentRoomData} callback={handleMapButton} />
                     </div>
                     <div className={ !isMap ? 'show' : 'hide' }>
-                        <Room  player={currentPlayer} roomData={currentRoomData}/>
+                        <Room callbackGoBack={handleGoBackButton} player={currentPlayer} roomData={currentRoomData}/>
                     </div>
                    </EnemyContext.Provider>
                 {/*</PlayerContext.Provider>*/}

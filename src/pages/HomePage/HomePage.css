@@ -10,8 +10,6 @@
     justify-content: center;
     flex-direction: column;
     font-family: 'Kreon', serif;
-
-;
 }
 
 .home-menu-divs {
@@ -21,6 +19,11 @@
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
-    /*text-align: center;*/
+}
 
+.show {
+    display:flex;
+}
+.hide {
+    display: none;
 }
