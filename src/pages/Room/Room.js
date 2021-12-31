@@ -69,14 +69,11 @@ const Room=({player,callbackGoBack})=>{
                 showMessage('You win!!', 5500)
                 return enemyDeath()
             }
-
         }
-
         const randomEnemyAttack=()=>{
             const damage = attackRandomValue();
 
             return damage
-
         }
 
     return(
