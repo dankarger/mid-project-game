@@ -18,8 +18,24 @@ export const Character = {
         playerName:'playerName',
         health:100,
         power:'',
-        images:['/assets/images/characters/chicken-rider.png'],
+        images:{default:'/assets/images/characters/chicken-rider.png',
+                hit:'',
+                death:'',
+                },
+
         sounds:''
+    }
+}
+export class PlayerClass  {
+    constructor({id,name,playerName,health,power,images,sounds}){
+        this.id=id
+        this.playerName=playerName
+        this.name=name
+        this.health=health
+        this.power=power
+        this.images = images
+        this.currentImage = images.default
+        this.sounds = sounds
     }
 }
 
