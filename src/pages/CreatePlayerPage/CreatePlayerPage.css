@@ -16,7 +16,9 @@
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
     background: rgba(248, 248, 248, 0.81);
-    background: rgba(66, 93, 98, 0.83);
+    /*background: rgba(66, 93, 98, 0.83);*/
+    background: rgba(40, 55, 56, 0.87);
+    border-radius: 20px;
     color: #fffdfd;
     text-shadow: 1px 2px 3px black;
     font-size: calc(10px + 2vw);

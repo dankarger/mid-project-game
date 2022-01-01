@@ -10,7 +10,6 @@ const HomePage = () => {
     const handleNewGameButton = ()=> {
         setIsCreatePlayer(true);
 
-
     }
 
 
@@ -23,7 +22,7 @@ const HomePage = () => {
                <Link to='/game' > <Button className='home-page'  icon='s' name='Quit'/> </Link>
            </div>
             <div className={isCreatePlayer?'show':'hide'}>
-                <CreatePlayerPage />
+                <CreatePlayerPage callback={()=>setIsCreatePlayer(!setIsCreatePlayer)}/>
             </div>
 
         </div>

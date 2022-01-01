@@ -89,12 +89,13 @@ export const EnemyData = {
         sounds:''
     },
     merchant:{
-        name:'MERCHANT',
+        name:'SKATES',
         health:70,
         Power:'none',
-        images:{default:'/assets/images/enemies/merchant.jpg',
-                   hit:'/assets/images/enemies/deer3-hit3.png',
-                   death:'/assets/images/enemies/deer3-dead.png'
+        images:{default:'/assets/images/enemies/skates.png',
+                   hit:'/assets/images/enemies/skates-hit.png',
+                   death:'/assets/images/enemies/skates-dead.png',
+                    attack:'/assets/images/enemies/skates-att.png'
                 },
         sounds:''
     },

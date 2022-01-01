@@ -4,7 +4,7 @@ import Button from "../../componenets/utility/Button/Button";
 import {Link} from "react-router-dom";
 import {PlayerClass,Character} from "../../Data/Data";
 
-const CreatePlayerPage=({createNewPlayer})=>{
+const CreatePlayerPage=({callback})=>{
     const[nameInputValue,setNameInputValue] = useState('Random Randy')
 
 
@@ -42,9 +42,11 @@ const CreatePlayerPage=({createNewPlayer})=>{
             </div>
             {/*</form>*/}
             <Link to='/game'>
-                <Button callback={()=>updateLocalStorage()} className='create'  name='Create Characterddd' />
+                <Button callback={()=>updateLocalStorage()} className='create'  name='Create Character' />
                 <Button callback={()=>handleCreateNewPlayer()} className='create'  name='Create Character' />
-
+            </Link>
+            <Link to='/'>
+            <Button callback={callback} className='create'  name='Cancel' />
             </Link>
 
         </div>

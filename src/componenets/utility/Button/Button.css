@@ -68,6 +68,8 @@
 }
 
 .create {
+    width: fit-content;
+    height: fit-content;
     font-family: Kreon,sans-serif;
     padding:1rem;
     background: rgba(197, 197, 97, 0.65);
@@ -75,8 +77,8 @@
     background: rgb(109,172,177);
     /*background: linear-gradient(95deg, rgba(109,172,177,1) 16%, transparent 89%, transparent  95%);*/
     background: linear-gradient(95deg, rgb(77, 133, 133) 16%, rgba(42, 82, 75, 0.73) 89%, rgb(77, 133, 133)  95%);
-
-    border: 2px solid grey;
+    background: url('../../../../public/assets/images/ui/button1.png') no-repeat center center/cover;
+    /*border: 2px solid grey;*/
     transition: 400ms ease-in-out;
     color: whitesmoke;
     text-shadow: 1px 1px 3px #090909;
