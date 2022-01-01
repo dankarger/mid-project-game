@@ -32,8 +32,11 @@ a{
     justify-content: space-between;
     align-items: center;
     transition: 200ms ease-in-out;
+    padding-left:10px
 }
-
+.drop-down-item img {
+    border: #adadad 1px solid;
+}
 .drop-down-item:hover{
     cursor: pointer;
     background: rgba(197, 197, 97, 0.37);
