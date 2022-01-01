@@ -49,6 +49,27 @@
     justify-content: center;
     align-items: center;
 }
+
+.avatar-img-div {
+    filter: grayscale(90%);
+    transition: 200ms ease-in-out;
+    opacity: 0.8;
+}
+.avatar-img-div:hover,.avatar-img-div:checked {
+    filter: none;
+    opacity: 1;
+}
+
+. input:checked {
+    border:2px yellow solid;
+    color:red;
+}
+
 .avatars-div img{
+    transition: 1s ease-in-out;
     width:200px;
+    border:transparent 1px solid;
+}
+.avatars-div img:hover{
+
 }

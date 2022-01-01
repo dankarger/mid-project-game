@@ -67,20 +67,17 @@ const CreatePlayerPage=({callback})=>{
             <h3>Choose an Avatars</h3>
              <div className='avatars-div'>
 
-                 <div>
-                     <input type="radio" id="avatar1" name="drone" value="ALONZO" onChange={handleRadioInputOnChange}/>
-
+                 <div className='avatar-img-div'>
+                     <input type="radio" id="avatar1" name="drone" value="ALONZO" onChange={handleRadioInputOnChange} checked={true}/>
                          <label htmlFor="huey">ALONZO</label>
                          <img src={AVATARS['ALONZO']} alt="avatar1"/>
                  </div>
-
-                 <div>
+                 <div className='avatar-img-div'>
                      <input type="radio" id="avatar2" name="drone" value="The_KING" onChange={handleRadioInputOnChange}/>
                          <label htmlFor="The KING">The KING</label>
                      <img src={AVATARS['The_KING']} alt="avatar2"/>
                  </div>
-
-                 <div>
+                 <div className='avatar-img-div'>
                      <input type="radio" id="avatar3" name="drone" value="LOUIE" onChange={handleRadioInputOnChange}/>
                          <label htmlFor="LOUIE">LOUIE</label>
                      <img src={AVATARS['LOUIE']} alt="avatar3"/>
