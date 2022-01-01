@@ -15,7 +15,7 @@ export const EnemyContext = React.createContext();
 const GameLogic = ()=> {
     const player = useContext(PlayerContext);
     const[isMap,setIsMap]=useState(true);
-    const[currentRoomData,setCurrentRoomData]=useState(RoomsData['room0']);
+    const[currentRoomData,setCurrentRoomData]=useState(RoomsData['room1']);
     const[currentPlayer,setCurrentPlayer]=useState(player);
     const[currentEnemy,setCurrentEnemy]=useState({});
 
