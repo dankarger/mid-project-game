@@ -1,5 +1,5 @@
 import React    from "react";
-
+import './SettingsPage.css'
 
 
 const SettingsPage = () => {
@@ -8,7 +8,9 @@ const SettingsPage = () => {
 
     return(
         <div>
-            homePage
+            <h1>
+                settings
+            </h1>
         </div>
     )
 }

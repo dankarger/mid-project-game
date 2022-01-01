@@ -61,7 +61,7 @@
     flex-direction: column;
     margin:1rem;
 }
-.avatar-img-div:hover,.avatar-img-div::selection {
+.avatar-img-div:hover,.avatar-img-div::selection, .active {
     filter: none;
     opacity: 1;
 }
@@ -75,6 +75,13 @@
 . input:checked {
     border:2px yellow solid;
     color:red;
+}
+
+.name-input {
+    margin:20rem
+}
+.name-input-div{
+    width:700px;
 }
 
 .avatars-div img{
