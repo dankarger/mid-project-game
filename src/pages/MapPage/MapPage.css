@@ -60,7 +60,7 @@
 .finished {
 
     background: #2d2d2d;
-    background: url('../../../public/assets/images/backgrounds/map10.jpg')no-repeat center center/cover;
+    background: url('../../../public/assets/images/ui/cracks1.jpeg')no-repeat center center/cover;
 
 }
 @keyframes fade-in {
