@@ -3,16 +3,18 @@ import './CreatePlayerPage.css'
 import Button from "../../componenets/utility/Button/Button";
 import {Link} from "react-router-dom";
 import {PlayerClass,Character} from "../../Data/Data";
+import {AVATARS} from "../../Data/Data";
 
 const CreatePlayerPage=({callback})=>{
     const[nameInputValue,setNameInputValue] = useState('Random Randy')
-    const[avatarInputValue,setAvatarInputValue] = useState('Avatar1')
+    const[avatarInputValue,setAvatarInputValue] = useState('avatar1')
 
 
     const handleOnChange =(e)=>{
          setNameInputValue(e.target.value);
     }
     const handleRadioInputOnChange =(e)=>{
+        console.log('dd',e.target.value)
         setNameInputValue(e.target.value);
         setAvatarInputValue(e.target.value)
     }
@@ -23,6 +25,8 @@ const CreatePlayerPage=({callback})=>{
          newPlayer.id=new Date()
 
          newPlayer.name=nameInputValue.substr(0,18).toUpperCase()
+        newPlayer.avatar = AVATARS[avatarInputValue]
+        console.log(AVATARS[avatarInputValue])
         console.log('newplayer',newPlayer)
        return  newPlayer
     }
@@ -44,19 +48,19 @@ const CreatePlayerPage=({callback})=>{
                      <input type="radio" id="avatar1" name="drone" value="ALONZO" onChange={handleRadioInputOnChange}/>
 
                          <label htmlFor="huey">ALONZO</label>
-                         <img src="/assets/images/characters/avatar1.png" alt="avatar1"/>
+                         <img src={AVATARS['ALONZO']} alt="avatar1"/>
                  </div>
 
                  <div>
-                     <input type="radio" id="avatar2" name="drone" value="The KING" onChange={handleRadioInputOnChange}/>
+                     <input type="radio" id="avatar2" name="drone" value="The_KING" onChange={handleRadioInputOnChange}/>
                          <label htmlFor="The KING">The KING</label>
-                     <img src="/assets/images/characters/avatar2.png" alt="avatar2"/>
+                     <img src={AVATARS['The_KING']} alt="avatar2"/>
                  </div>
 
                  <div>
                      <input type="radio" id="avatar3" name="drone" value="LOUIE" onChange={handleRadioInputOnChange}/>
                          <label htmlFor="LOUIE">LOUIE</label>
-                     <img src="/assets/images/characters/avatar3.png" alt="avatar3"/>
+                     <img src={AVATARS['LOUIE']} alt="avatar3"/>
                  </div>
 
 

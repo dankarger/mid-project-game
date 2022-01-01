@@ -41,6 +41,7 @@ export const Character = {
         // id:1,
         name:'chicken-rider',
         // playerName:'playerName',
+        avatar:'avatar1',
         health:100,
         power:'',
         images:{default:'/assets/images/characters/chicken-rider.png',
@@ -53,7 +54,11 @@ export const Character = {
     }
 }
 
-
+export const AVATARS={
+    ALONZO:"/assets/images/characters/avatar1.png",
+    The_KING:"/assets/images/characters/avatar2.png",
+    LOUIE:"/assets/images/characters/avatar3.png"
+}
 export const EnemyData = {
     deer:{
         name:'DEER',
