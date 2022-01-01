@@ -17,3 +17,8 @@ a{
     /*background: orangered;*/
 
 }
+
+.bolder {
+    color:#ea3a3a;
+    border:red 1px solid
+}
