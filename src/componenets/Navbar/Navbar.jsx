@@ -1,7 +1,6 @@
 import React from "react";
 import './Navbar.css'
 import Button from "../utility/Button/Button";
-import {AVATARS} from "../../Data/Data";
 
 const Navbar =({roomNumber,currentPlayer,currentEnemy})=>{
 
