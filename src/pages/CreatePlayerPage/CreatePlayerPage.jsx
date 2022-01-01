@@ -106,10 +106,11 @@ const CreatePlayerPage=({callback})=>{
                 <Button callback={()=>handleDropDownLoad()} className='create'  name='Load Character' />
                 <div className={isDropDownMenu?"dropDownMenu-div show":"dropDownMenu-div hide"}>
                     <DropDownMenu callback={handleChoosePlayer} list={playersList} />
+                    <Button callback={()=>setIsDropDownMenu(!isDropDownMenu)} className='create'  name='Cancel Load' />
                 </div>
             </div>
             <Link to='/'>
-            <Button callback={callback} className='create'  name='Cancel' />
+            <Button callback={callback} className='create'  name='Exit to Menu' />
             </Link>
 
         </div>
