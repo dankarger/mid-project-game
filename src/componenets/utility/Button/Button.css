@@ -50,10 +50,12 @@
     transition: 400ms ease-in-out;
     text-shadow:1px 1px 1px #282c34;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    font-size: calc(10px + 1vw);
+    white-space: nowrap;
 }
 
 .map-button:hover {
-    box-shadow: rgba(158, 159, 128, 0.34) 0 -23px 25px 0 inset, rgba(203, 159, 159, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
+    box-shadow: rgba(158, 159, 128, 0.34) 0 -23px 25px 0 inset, rgba(203, 159, 159, 0.15) 0 -36px 30px 0 inset, rgba(243, 219, 29, 0.56) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
     cursor: pointer;
     filter:brightness(120%) ;
     background: rgb(98, 98, 69);

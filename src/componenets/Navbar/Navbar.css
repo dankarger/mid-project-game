@@ -15,6 +15,7 @@
 }
 
 .navbar-item {
+    width: fit-content;
     font-size: calc(1rem + 1vw);
     color:whitesmoke;
     text-shadow: #282c34 1px 1px 1px ;
@@ -35,9 +36,18 @@
     margin-left: 10px;
 }
 
+.player-info {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+
+}
 .avatar-nav {
-    width:10%;
-    height:10%;
+    width:50%;
+    height:100%;
     object-fit: cover;
     border: 3px #c5c561 solid;
     margin-right:1rem;
