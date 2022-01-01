@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import './CreatePlayerPage.css'
 import Button from "../../componenets/utility/Button/Button";
 import {Link} from "react-router-dom";
 import {PlayerClass,Character} from "../../Data/Data";
 import {AVATARS} from "../../Data/Data";
+import getPlayersDataFromApi,{AddPlayer} from "../../Api/Api";
 
 const CreatePlayerPage=({callback})=>{
     const[nameInputValue,setNameInputValue] = useState('Random Randy')
     const[avatarInputValue,setAvatarInputValue] = useState('avatar1')
+
+
+
+    useEffect(()=>{
+        const getData = async ()=>{
+            const data= await getPlayersDataFromApi();
+            return data.data
+        }
+        const playersList = getData().then(res=>{
+            console.log('playerlist',res)
+        })
+        console.log('playerlist',playersList)
+
+    })
 
 
     const handleOnChange =(e)=>{
@@ -28,6 +43,7 @@ const CreatePlayerPage=({callback})=>{
         newPlayer.avatar = AVATARS[avatarInputValue]
         console.log(AVATARS[avatarInputValue])
         console.log('newplayer',newPlayer)
+        AddPlayer(newPlayer)
        return  newPlayer
     }
 

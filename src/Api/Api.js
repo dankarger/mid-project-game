@@ -10,16 +10,12 @@ const getPlayersDataFromApi = async() => {
         const data =   axiosApi.get('')
         const playersList= await data
         return playersList
-
-
     }catch (err){
         console.log(err)
     }
-
-
 }
 
-export default getPlayersDataFromApi()
+export default getPlayersDataFromApi
 
 
 
@@ -48,7 +44,7 @@ export const UpdatePlayer= async (id,player)=>{
 }
 
 
-export const AddePlayer= async (player)=>{
+export const AddPlayer= async (player)=>{
     console.log('addplayer',player)
     await axiosApi.post(`/`, player )
 
