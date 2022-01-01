@@ -104,8 +104,9 @@ export const EnemyData = {
         health:100,
         Power:'none',
         images:{default:'/assets/images/enemies/girafe.png',
-                hit:'/assets/images/enemies/deer3-hit3.png',
-                death:'/assets/images/enemies/deer3-dead.png'
+                hit:'/assets/images/enemies/girafe-hit.png',
+                death:'/assets/images/enemies/girafe-dead.png',
+                attack:'/assets/images/enemies/girafe-att.png'
                 },
         sounds:''
     },
@@ -115,8 +116,9 @@ export const EnemyData = {
         Power:'none',
         images:{
             default:'/assets/images/enemies/virus.png',
-            hit:'/assets/images/enemies/deer3-hit3.png',
-            death:'/assets/images/enemies/deer3-dead.png'
+            hit:'/assets/images/enemies/virus-hit.png',
+            death:'/assets/images/enemies/virus-dead.png',
+            attack:'/assets/images/enemies/virus-att.png'
         },
         sounds:''
     },
