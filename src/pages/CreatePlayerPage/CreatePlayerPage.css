@@ -43,3 +43,12 @@
     font-size: calc(10px + 1vw);
     color:#655f5f;
 }
+
+.avatars-div {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatars-div img{
+    width:200px;
+}

@@ -6,10 +6,15 @@ import {PlayerClass,Character} from "../../Data/Data";
 
 const CreatePlayerPage=({callback})=>{
     const[nameInputValue,setNameInputValue] = useState('Random Randy')
+    const[avatarInputValue,setAvatarInputValue] = useState('Avatar1')
 
 
     const handleOnChange =(e)=>{
          setNameInputValue(e.target.value);
+    }
+    const handleRadioInputOnChange =(e)=>{
+        setNameInputValue(e.target.value);
+        setAvatarInputValue(e.target.value)
     }
 
     const handleCreateNewPlayer =()=> {
@@ -32,8 +37,28 @@ const CreatePlayerPage=({callback})=>{
     return (
         <div className='create-page'>
             {/*<form action="">*/}
+            <h3>Choose an Avatars</h3>
              <div className='avatars-div'>
-                 <h3>Choose an Avatars</h3>
+
+                 <div>
+                     <input type="radio" id="avatar1" name="drone" value="ALONZO" onChange={handleRadioInputOnChange}/>
+
+                         <label htmlFor="huey">ALONZO</label>
+                         <img src="/assets/images/characters/avatar1.png" alt="avatar1"/>
+                 </div>
+
+                 <div>
+                     <input type="radio" id="avatar2" name="drone" value="The KING" onChange={handleRadioInputOnChange}/>
+                         <label htmlFor="The KING">The KING</label>
+                     <img src="/assets/images/characters/avatar2.png" alt="avatar2"/>
+                 </div>
+
+                 <div>
+                     <input type="radio" id="avatar3" name="drone" value="LOUIE" onChange={handleRadioInputOnChange}/>
+                         <label htmlFor="LOUIE">LOUIE</label>
+                     <img src="/assets/images/characters/avatar3.png" alt="avatar3"/>
+                 </div>
+
 
              </div>
             <div>
@@ -43,7 +68,7 @@ const CreatePlayerPage=({callback})=>{
             {/*</form>*/}
             <Link to='/game'>
                 <Button callback={()=>updateLocalStorage()} className='create'  name='Create Character' />
-                <Button callback={()=>handleCreateNewPlayer()} className='create'  name='Create Character' />
+                <Button callback={()=>handleCreateNewPlayer()} className='create'  name='Load Character' />
             </Link>
             <Link to='/'>
             <Button callback={callback} className='create'  name='Cancel' />
