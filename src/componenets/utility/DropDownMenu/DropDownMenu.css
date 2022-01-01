@@ -1,0 +1,28 @@
+a{
+    color:#c5c561;
+    text-shadow: 1px 1px 1px black;
+}
+
+.drop-down-menu {
+    overflow-y: scroll;
+    height:50vh;
+    width: fit-content;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*transform: translateY(-900px);*/
+}
+
+.drop-down-menu p {
+    font-size: 10px;
+}
+
+.drop-down-player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.drop-down-player:hover {
+    cursor: pointer;
+}

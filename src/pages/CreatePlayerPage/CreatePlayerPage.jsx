@@ -5,11 +5,14 @@ import {Link} from "react-router-dom";
 import {PlayerClass,Character} from "../../Data/Data";
 import {AVATARS} from "../../Data/Data";
 import getPlayersDataFromApi,{AddPlayer} from "../../Api/Api";
+import DropDownMenu from "../../componenets/utility/DropDownMenu/DropDownMenu";
+
 
 const CreatePlayerPage=({callback})=>{
     const[nameInputValue,setNameInputValue] = useState('Random Randy');
     const[avatarInputValue,setAvatarInputValue] = useState('ALONZO');
-    const[playersList,setPlayersList] = useState([])
+    const[playersList,setPlayersList] = useState([]);
+    const[isDropDownMenu,setIsDropDownMenu] = useState(false)
 
 
 
@@ -40,9 +43,8 @@ const CreatePlayerPage=({callback})=>{
         let newPlayer = new PlayerClass(Character['chickenRider']);
         // TODO:change id to unique id
          newPlayer.id=new Date()
-
          newPlayer.name=nameInputValue.substr(0,18).toUpperCase()
-        newPlayer.avatar = AVATARS[avatarInputValue]
+         newPlayer.avatar = AVATARS[avatarInputValue]
         console.log(AVATARS[avatarInputValue])
         console.log('newplayer',newPlayer)
         AddPlayer(newPlayer)
@@ -55,10 +57,19 @@ const CreatePlayerPage=({callback})=>{
         localStorage.setItem('chicken', JSON.stringify(player));
         console.log(localStorage)
     }
-    const handleLoadPlayer=()=>{
+    const handleDropDownLoad=()=>{
+        setIsDropDownMenu(!isDropDownMenu)
         const list=playersList
         console.log('list',list)
+        return list
 
+    }
+    const handleChoosePlayer=(player)=>{
+        console.log('ddd',player)
+        setNameInputValue(player.name)
+        setAvatarInputValue(player.avatar)
+        setIsDropDownMenu(false)
+        return callback(player)
     }
 
     return (
@@ -91,7 +102,12 @@ const CreatePlayerPage=({callback})=>{
             <Link to='/game'>
                 <Button callback={()=>updateLocalStorage()} className='create'  name='Create Character' />
             </Link>
-            <Button callback={()=>handleLoadPlayer()} className='create'  name='Load Character' />
+            <div className='loading-div'>
+                <Button callback={()=>handleDropDownLoad()} className='create'  name='Load Character' />
+                <div className={isDropDownMenu?"dropDownMenu-div show":"dropDownMenu-div hide"}>
+                    <DropDownMenu callback={handleChoosePlayer} list={playersList} />
+                </div>
+            </div>
             <Link to='/'>
             <Button callback={callback} className='create'  name='Cancel' />
             </Link>

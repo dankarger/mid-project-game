@@ -66,6 +66,12 @@
     opacity: 1;
 }
 
+.loading-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 . input:checked {
     border:2px yellow solid;
     color:red;
@@ -78,4 +84,8 @@
 }
 .avatars-div img:hover{
 
+}
+.dropDownMenu {
+    width:fit-content;
+    height: fit-content;
 }
