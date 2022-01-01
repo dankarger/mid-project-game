@@ -41,7 +41,7 @@ export const Character = {
         // id:1,
         name:'chicken-rider',
         // playerName:'playerName',
-        avatar:'avatar1',
+        avatar:'ALONZO',
         health:100,
         power:'',
         images:{default:'/assets/images/characters/chicken-rider.png',

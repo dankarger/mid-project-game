@@ -8,7 +8,7 @@ import getPlayersDataFromApi,{AddPlayer} from "../../Api/Api";
 
 const CreatePlayerPage=({callback})=>{
     const[nameInputValue,setNameInputValue] = useState('Random Randy');
-    const[avatarInputValue,setAvatarInputValue] = useState('avatar1');
+    const[avatarInputValue,setAvatarInputValue] = useState('ALONZO');
     const[playersList,setPlayersList] = useState([])
 
 
