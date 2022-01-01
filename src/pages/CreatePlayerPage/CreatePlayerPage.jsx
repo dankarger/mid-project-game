@@ -7,8 +7,9 @@ import {AVATARS} from "../../Data/Data";
 import getPlayersDataFromApi,{AddPlayer} from "../../Api/Api";
 
 const CreatePlayerPage=({callback})=>{
-    const[nameInputValue,setNameInputValue] = useState('Random Randy')
-    const[avatarInputValue,setAvatarInputValue] = useState('avatar1')
+    const[nameInputValue,setNameInputValue] = useState('Random Randy');
+    const[avatarInputValue,setAvatarInputValue] = useState('avatar1');
+    const[playersList,setPlayersList] = useState([])
 
 
 
@@ -19,10 +20,11 @@ const CreatePlayerPage=({callback})=>{
         }
         const playersList = getData().then(res=>{
             console.log('playerlist',res)
+            setPlayersList(res)
         })
         console.log('playerlist',playersList)
 
-    })
+    },[])
 
 
     const handleOnChange =(e)=>{
@@ -52,6 +54,11 @@ const CreatePlayerPage=({callback})=>{
         const player = handleCreateNewPlayer()
         localStorage.setItem('chicken', JSON.stringify(player));
         console.log(localStorage)
+    }
+    const handleLoadPlayer=()=>{
+        const list=playersList
+        console.log('list',list)
+
     }
 
     return (
@@ -88,8 +95,8 @@ const CreatePlayerPage=({callback})=>{
             {/*</form>*/}
             <Link to='/game'>
                 <Button callback={()=>updateLocalStorage()} className='create'  name='Create Character' />
-                <Button callback={()=>handleCreateNewPlayer()} className='create'  name='Load Character' />
             </Link>
+            <Button callback={()=>handleLoadPlayer()} className='create'  name='Load Character' />
             <Link to='/'>
             <Button callback={callback} className='create'  name='Cancel' />
             </Link>
