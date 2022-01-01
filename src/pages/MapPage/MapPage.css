@@ -36,16 +36,20 @@
 }
 
 .button2 {
-    transform: translateX(80px);
+    /*transform: translateX(80px);*/
+    margin-left:80px
 }
 .button3 {
-    transform: translateX(-80px);
+    /*transform: translateX(-80px);*/
+    margin-right:80px
 }
 .button4 {
-    transform: translateX(80px);
+    /*transform: translateX(80px);*/
+    margin-left:80px
 }
 .button5 {
-    transform: translateX(-60px);
+    /*transform: translateX(-60px);*/
+    margin-right:-60px
 }
 @keyframes fade-in {
     to{

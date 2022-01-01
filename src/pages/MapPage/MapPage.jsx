@@ -9,8 +9,8 @@ const MapPage =({callback})=> {
     const[activeRoom,setActiveRoom] = useState()
 
     useEffect(()=>{
-        setActiveRoom(currentRoomData.value)
-    },[currentRoomData])
+        setActiveRoom(currentRoomData.value+1)
+    },[currentRoomData.value])
 
 
     console.log(activeRoom)
