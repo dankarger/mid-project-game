@@ -67,6 +67,31 @@
     background: rgba(197, 197, 97, 0.56);
 }
 
+.create {
+    font-family: Kreon,sans-serif;
+    padding:1rem;
+    background: rgba(197, 197, 97, 0.65);
+    border-radius: 15px;
+    background: rgb(109,172,177);
+    /*background: linear-gradient(95deg, rgba(109,172,177,1) 16%, transparent 89%, transparent  95%);*/
+    background: linear-gradient(95deg, rgb(77, 133, 133) 16%, rgba(42, 82, 75, 0.73) 89%, rgb(77, 133, 133)  95%);
+
+    border: 2px solid grey;
+    transition: 400ms ease-in-out;
+    color: whitesmoke;
+    text-shadow: 1px 1px 3px #090909;
+    font-size: calc(10px + 1vw);
+    margin:1rem;
+    font-weight: 500;
+    box-shadow: rgba(35, 35, 37, 0.25) 0px 30px 60px -12px inset, rgba(16, 15, 15, 0.3) 0px 18px 36px -18px inset;
+}
+.create:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
 .hidden {
     /*background: transparent;*/
     /*color:transparent;*/

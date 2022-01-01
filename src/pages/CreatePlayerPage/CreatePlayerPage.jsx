@@ -36,9 +36,10 @@ const CreatePlayerPage=({createNewPlayer})=>{
                  <h3>Choose an Avatars</h3>
 
              </div>
+            <div>
                 <label htmlFor="nameInput">Enter Name</label>
                 <input onChange={handleOnChange} name='nameInput' type="text" placeholder='Randy Rando' value={nameInputValue}/>
-
+            </div>
             {/*</form>*/}
             <Link to='/game'>
                 <Button callback={()=>updateLocalStorage()} className='create'  name='Create Characterddd' />

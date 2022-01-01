@@ -9,16 +9,6 @@ import {PlayerContext} from "../../componenets/gameApp/GameApp";
 import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
 
-// export const isMessageOnContext = React.createContext(null);
-// export const MessageContentContext = React.createContext(null);
-// export const IsMessageDispatch = React.createContext(null)
-
-//
-// const reducer=(state, action)=>{
-//     console.log('hhhhh')
-//     return {isOn:false}
-// }
-
 
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
@@ -54,32 +44,17 @@ const Room=({player,callbackGoBack})=>{
         const attackRandomValue =()=>{
              return Math.floor(Math.random()*20)
         }
-        // const handleAttack1 =() => {
-        //      // showMessage('atttack',800)
-        //     const damage = attackRandomValue()
-        //     if(currentEnemy.health > damage) {
-        //         currentEnemy.currentImage=currentEnemy.images.hit
-        //         setTimeout(()=>{currentEnemy.currentImage=currentEnemy.images.default},200)
-        //         setisAction(!isAction)
-        //         showMessage(`${currentEnemy.name} take  ${damage} damage`, 1500)
-        //         randomEnemyAttack()
-        //         return currentEnemy.health -=damage
-        //     }else{
-        //         currentEnemy.health = 0;
-        //         showMessage('You win!!', 5500)
-        //         return enemyDeath()
-        //     }
-        // }
-      const handleAttack2 =(attacker,deffender) => {
+
+      const handleAttack2 =(attacker,defender) => {
         // showMessage('atttack',800)
         const damage = attackRandomValue()
-        if(deffender.health > damage) {
-            deffender.currentImage=deffender.images.hit
-            setTimeout(()=>{deffender.currentImage=deffender.images.default},200)
+        if(defender.health > damage) {
+            defender.currentImage=defender.images.hit
+            setTimeout(()=>{defender.currentImage=defender.images.default},200)
             setisAction(!isAction)
-            showMessage(`${deffender.name} take  ${damage} damage`, 1500)
+            showMessage(`${defender.name} take  ${damage} damage`, 1500)
             randomEnemyAttack()
-            return deffender.health -=damage
+            return defender.health -=damage
         }else{
             currentEnemy.health = 0;
             showMessage('You win!!', 5500)
@@ -93,13 +68,11 @@ const Room=({player,callbackGoBack})=>{
 
     return(
         <>
-            {/*<isMessageOnContext.Provider value={isMessageOn}>*/}
                 <div className='Room' style={{background:`${currentRoomData.image}`}}>
                     <Navbar currentPlayer={player} currentEnemy={currentEnemy} roomNumber={currentRoomData.value}/>
                     <div className="Room-img-div">
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
                     </div>
-                    {/*<button onClick={()=> showMessage('teeeest',1000)}>go back </button>*/}
                     <button onClick={callbackGoBack}>go back </button>
                     <div className="player--div">
                         <Player player={player} name='chicken-rider'  />
@@ -110,13 +83,10 @@ const Room=({player,callbackGoBack})=>{
                         <Enemy   enemy={currentEnemy} />
                     </div>
                     <ActionMenu handleAttack1={()=>handleAttack2(currentPlayer,currentEnemy)} />
-                    {/*<IsMessageContext.Provider value={isMessageOn}>*/}
                     <div className={isMessageOn?'message-div showMessage':' message-div hideMessage'}>
                       <Message  message={messageContent} />
                     </div>
-                    {/*</IsMessageContext.Provider>*/}
                 </div>
-            {/*</isMessageOnContext.Provider>*/}
         </>
     )
 }

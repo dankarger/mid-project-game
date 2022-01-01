@@ -11,27 +11,11 @@ export const ImagesData = {
 
 
 
-export const Character = {
-    chickenRider:{
-        // id:1,
-        name:'chicken-rider',
-        playerName:'playerName',
-        health:100,
-        power:'',
-        images:{default:'/assets/images/characters/chicken-rider.png',
-                hit:'',
-                death:'',
-                 attack:''
-                },
-
-        sounds:''
-    }
-}
 export class PlayerClass  {
-    constructor({id,name,playerName,health,power,images,sounds}){
+    constructor({id,playerName,health,power,images,sounds}){
         this.id=id
-        this.playerName=playerName
         this.name=playerName
+        this.score=0
         this.health=health
         this.power=power
         this.images = images
@@ -50,6 +34,25 @@ export class EnemyClass  {
         this.sounds = sounds
     }
 }
+
+
+export const Character = {
+    chickenRider:{
+        // id:1,
+        name:'chicken-rider',
+        // playerName:'playerName',
+        health:100,
+        power:'',
+        images:{default:'/assets/images/characters/chicken-rider.png',
+            hit:'/assets/images/characters/chicken-rider-attack.png',
+            death:'/assets/images/characters/chicken-rider-dead.png',
+            attack:'/assets/images/characters/chicken-rider-attack.png'
+        },
+
+        sounds:''
+    }
+}
+
 
 export const EnemyData = {
     deer:{
@@ -78,8 +81,10 @@ export const EnemyData = {
         health:90,
         Power:'none',
         images: {default:'/assets/images/enemies/cow1.png',
-                 hit:'/assets/images/enemies/deer3-hit3.png',
-                 death:'/assets/images/enemies/deer3-dead.png'
+                 hit:'/assets/images/enemies/cow-hit.png',
+                 death:'/assets/images/enemies/cow-dead.png',
+                    attack:'/assets/images/enemies/cow-att.png',
+
         },
         sounds:''
     },
