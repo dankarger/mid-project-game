@@ -1,15 +1,15 @@
 import React, {useContext} from "react";
 import './MapPage.css'
 import Button from "../../componenets/utility/Button/Button";
-// import {GameDataContext} from "../../componenets/GameLogic/GameLogic";
+import {GameDataContext} from "../../componenets/GameLogic/GameLogic";
 
 
 const MapPage =({callback})=> {
-    // const currentRoomData = useContext(GameDataContext)
+    const currentRoomData = useContext(GameDataContext)
 
     return (
         <div className='map'>
-        {/*<h1>Current:{currentRoomData.name}</h1>*/}
+        <h1>Current:{currentRoomData.name}</h1>
             <div className="rooms-div">
                 <div className="row">
                     <Button className='map-button' callback={()=>{callback('boss')}} value='boss' name='Boss' />
