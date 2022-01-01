@@ -10,7 +10,14 @@ export const GameDataContext = React.createContext();
 // export const PlayerContext = React.createContext();
 export const EnemyContext = React.createContext();
 
-
+export const getPlayerFromLocalStorage =  ()=>{
+    const localPlayer =  localStorage.getItem('chicken') ;
+    if(localPlayer){
+        console.log('fsdfsdf')
+        return JSON.parse(localPlayer)
+    }
+    return new PlayerClass(Character['chickenRider'])
+}
 
 const GameLogic = ()=> {
     const player = useContext(PlayerContext);
@@ -35,14 +42,7 @@ const GameLogic = ()=> {
 
     }
 
-    const getPlayerFromLocalStorage =  ()=>{
-        const localPlayer =  localStorage.getItem('chicken') ;
-        if(localPlayer){
-            console.log('fsdfsdf')
-            return JSON.parse(localPlayer)
-        }
-        return new PlayerClass(Character['chickenRider'])
-    }
+
 
 
     return (

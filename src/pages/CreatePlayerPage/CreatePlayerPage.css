@@ -48,15 +48,20 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+
 }
 
 .avatar-img-div {
     filter: grayscale(90%);
     transition: 200ms ease-in-out;
     opacity: 0.8;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin:1rem;
 }
-.avatar-img-div:hover,.avatar-img-div:checked {
+.avatar-img-div:hover,.avatar-img-div::selection {
     filter: none;
     opacity: 1;
 }

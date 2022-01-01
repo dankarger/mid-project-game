@@ -68,7 +68,7 @@ const CreatePlayerPage=({callback})=>{
              <div className='avatars-div'>
 
                  <div className='avatar-img-div'>
-                     <input type="radio" id="avatar1" name="drone" value="ALONZO" onChange={handleRadioInputOnChange} checked={true}/>
+                     <input type="radio" id="avatar1" name="drone" value="ALONZO" onChange={handleRadioInputOnChange} defaultChecked={true}/>
                          <label htmlFor="huey">ALONZO</label>
                          <img src={AVATARS['ALONZO']} alt="avatar1"/>
                  </div>

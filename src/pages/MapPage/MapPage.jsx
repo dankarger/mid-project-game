@@ -23,20 +23,17 @@ const MapPage =({callback})=> {
                     <Button disabled={activeRoom!==5} className='map-button button5' callback={()=>{callback('boss')}} value='boss' name='Boss' />
                 </div>
                 <div className="row">
-                    <Button disabled={activeRoom!==4} className='map-button button4' callback={()=>{callback('room4')}} value='4' name='Level 4' />
-                    {/*<Button className='map-button hidden'  value='room4' name='Room-4 '/>*/}
+                    <Button disabled={activeRoom!==4} className={activeRoom>4?'map-button button4 finished':'map-button button4'} callback={()=>{callback('room4')}} value='4' name='Level 4' />
                 </div>
                 <div className="row">
-                    {/*<Button className='map-button hidden'  value='room3' name='Room-3' />*/}
-                    <Button disabled={activeRoom!==3} className='map-button button3' callback={()=>{callback('room3')}} value='3' name='Level 3' />
-                    {/*<Button className='map-button hidden'  value='room3' name='Room-3' />*/}
+                    <Button disabled={activeRoom!==3} className={activeRoom>3?'map-button button3 finished':'map-button button3'} callback={()=>{callback('room3')}} value='3' name='Level 3' />
                 </div>
                 <div className="row">
 
-                    <Button disabled={activeRoom!==2} className='map-button button2' callback={()=>{callback('room2')}} value='2' name='Level 2' />
+                    <Button disabled={activeRoom!==2} className={activeRoom>2?'map-button button2 finished':'map-button button2'} callback={()=>{callback('room2')}} value='2' name='Level 2' />
                 </div>
                 <div className="row">
-                    <Button disabled={activeRoom!==1} className='map-button button1' callback={()=>{callback('room1')}} value='1' name='Level 1'  />
+                    <Button disabled={activeRoom!==1} className={activeRoom>1?'map-button button1 finished':'map-button button1'} callback={()=>{callback('room1')}} value='1' name='Level 1'  />
                 </div>
             </div>
         </div>

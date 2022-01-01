@@ -8,6 +8,7 @@
     position: relative;
     opacity: 0.3;
     animation: fade-in 1s ease-in forwards;
+    overflow: hidden;
 
 
 }

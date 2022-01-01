@@ -58,6 +58,9 @@ button, h1, h2 {
     white-space: nowrap;
     animation: map-button  800ms infinite alternate ease-in-out;
     /*transition: 1s ease-in-out;*/
+    /*background: url('../../../../public/assets/images/backgrounds/map10.jpg')no-repeat center center/cover;*/
+    /*background: url('../../../../public/assets/images/ui/button1.png')no-repeat center center/cover;*/
+
 }
 
 .map-button:hover {
