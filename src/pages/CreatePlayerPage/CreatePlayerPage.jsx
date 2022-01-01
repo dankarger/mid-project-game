@@ -66,7 +66,7 @@ const CreatePlayerPage=({callback})=>{
             {/*<form action="">*/}
             <h3>Choose an Avatars</h3>
              <div className='avatars-div'>
-
+                 {/*TODO:make a avatar-img-div component*/}
                  <div className='avatar-img-div'>
                      <input type="radio" id="avatar1" name="drone" value="ALONZO" onChange={handleRadioInputOnChange} defaultChecked={true}/>
                          <label htmlFor="huey">ALONZO</label>
@@ -82,8 +82,6 @@ const CreatePlayerPage=({callback})=>{
                          <label htmlFor="LOUIE">LOUIE</label>
                      <img src={AVATARS['LOUIE']} alt="avatar3"/>
                  </div>
-
-
              </div>
             <div>
                 <label htmlFor="nameInput">Enter Name</label>
