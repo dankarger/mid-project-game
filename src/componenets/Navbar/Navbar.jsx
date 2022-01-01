@@ -4,9 +4,6 @@ import Button from "../utility/Button/Button";
 
 const Navbar =({roomNumber,currentPlayer,currentEnemy})=>{
 
-
-
-
     return (
         <div className='navbar'>
             <div className='navbar-item player-info'> <img className='avatar-nav' src={currentPlayer.avatar} alt="avatar-img"/>

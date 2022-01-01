@@ -137,6 +137,14 @@ export const RoomsData = {
         image: '/assets/images/backgrounds/trees-green.jpg',
         music: ''
     },
+    room0:{
+        id:0,
+        name: 'Room 0',
+        value:0,
+        image: '/assets/images/backgrounds/forest-regular.jpg',
+        enemy: EnemyData['deer'],
+        music: ''
+    },
     room1:{
         id:1,
         name: 'Room 1',
