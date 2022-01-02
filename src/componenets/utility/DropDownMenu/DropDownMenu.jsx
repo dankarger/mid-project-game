@@ -27,7 +27,7 @@ const DropDownMenu = ({ list, callback })=>{
 
 
     return(
-        <div className='drop-down-menu'>
+        <div className='drop-down-menu' draggable={true}>
             {showList()}
         </div>
     )

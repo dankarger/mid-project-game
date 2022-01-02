@@ -114,7 +114,7 @@ const CreatePlayerPage=({callback})=>{
                 </div>
             </div>
             <Link to='/'>
-            <Button callback={callback} className='create'  name='Exit to Menu' />
+            <Button callback={callback} className='create'  name='Back to Menu' />
             </Link>
 
         </div>
