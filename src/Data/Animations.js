@@ -21,7 +21,7 @@ export const EntranceAnimation=({element,stateProps})=> {
         return ()=>{
             toggle(!state)
         }
-    },[stateProps])
+    },[stateProps,state])
 
 
 
@@ -54,7 +54,7 @@ export default function Boing({character,stateProps,health}) {
         return ()=>{
             toggle(!state)
         }
-    },[stateProps])
+    },[stateProps,state])
 
     return (
         <div >
@@ -81,7 +81,7 @@ export default function Boing({character,stateProps,health}) {
 export const Almost = ({element})=>{
 
     const[isToggle,setIsToggle]=useState(false);
-    const baseColor = isToggle?'red':'blue'
+    // const baseColor = isToggle?'red':'blue'
     const fade = useSpring({
         opacity:isToggle?1:0,
         x:isToggle?300: 0,
