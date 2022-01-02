@@ -9,7 +9,7 @@ import {PlayerContext} from "../../componenets/gameApp/GameApp";
 import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
 import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
-import {Redirect} from "react-router-dom";
+
 
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
