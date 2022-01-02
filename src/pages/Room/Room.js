@@ -42,7 +42,7 @@ const Room=({player,callbackGoBack})=>{
             return ()=>{
                 setIsBattleOver(false)
             }
-        },[currentRoomData.enemy])
+        },[currentRoomData.enemy,currentRoomData.value])
 
         const enemyDeath=()=>{
                  currentEnemy.currentImage=currentEnemy.images.death
