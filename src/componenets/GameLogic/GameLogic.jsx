@@ -27,6 +27,7 @@ const GameLogic = ()=> {
     const[currentEnemy,setCurrentEnemy]=useState({});
 
     const handleMapButton=(room)=>{
+        if(currentRoomData[room]==='boss')console.log('boss')
         setCurrentRoomData(RoomsData[room]);
         setCurrentEnemy(currentRoomData.enemy);
         setIsMap(!setIsMap);

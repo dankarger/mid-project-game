@@ -46,15 +46,22 @@ const Room=({player,callbackGoBack})=>{
 
         const enemyDeath=()=>{
                  currentEnemy.currentImage=currentEnemy.images.death
-
                  setIsWinBattle(true);
                  setIsBattleOver(true);
-                 if(currentRoomData.value===4){
+                 if(currentEnemy.name==="BOSS"){
                      console.log('wwwinnn')
                      setIsGameOver(true)
 
                  }
         }
+
+        const playerDeath=() =>{
+            currentPlayer.currentImage=currentPlayer.images.death
+            setIsWinBattle(false);
+            setIsBattleOver(true);
+
+        }
+
 
         const attackRandomValue =()=>{
              return Math.floor(Math.random()*20)
@@ -74,14 +81,21 @@ const Room=({player,callbackGoBack})=>{
             if(attacker===currentPlayer){randomEnemyAttack()}
             return defender.health -=damage
         }else{
-            currentEnemy.health = 0;
-            // showMessage('You win!!', 5500)
-            return enemyDeath()
+            if(defender===currentEnemy){
+                currentEnemy.health = 0;
+                return enemyDeath()
+            }
+            if(defender===currentPlayer){
+                currentPlayer.health = 0;
+                return playerDeath()
+            }
+
         }
     }
         const randomEnemyAttack=()=>{
            let randomize = Math.random()
-            return randomize>0.5? handleAttack2(currentEnemy,player):''
+            handleAttack2(currentEnemy,player)
+            return randomize>0.2? handleAttack2(currentEnemy,player):''
         }
 
     return(

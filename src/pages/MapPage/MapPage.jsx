@@ -9,7 +9,7 @@ const MapPage =({callback})=> {
     const[activeRoom,setActiveRoom] = useState()
 
     useEffect(()=>{
-        setActiveRoom(currentRoomData.value+1)
+        setActiveRoom(currentRoomData.value===0 ? 1 : currentRoomData.value + 1 )
     },[currentRoomData.value])
 
 
@@ -20,7 +20,7 @@ const MapPage =({callback})=> {
         <h1>Current Level:{currentRoomData.value}</h1>
             <div className="rooms-div">
                 <div className="row">
-                    <Button disabled={activeRoom!==5} className='map-button button5' callback={()=>{callback('boss')}} value='boss' name='Boss' />
+                    <Button disabled={activeRoom!==5} className={activeRoom>5?'map-button button5 finished':'map-button button5'} callback={()=>{callback('boss')}} value='5' name='Boss' />
                 </div>
                 <div className="row">
                     <Button disabled={activeRoom!==4} className={activeRoom>4?'map-button button4 finished':'map-button button4'} callback={()=>{callback('room4')}} value='4' name='Level 4' />

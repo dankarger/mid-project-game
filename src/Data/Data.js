@@ -180,7 +180,7 @@ export const RoomsData = {
     boss:{
         id:5,
         name: 'Boss level',
-        value:4,
+        value:5,
         image: '/assets/images/backgrounds/forest-red.png',
         enemy: EnemyData['boss'],
         music: ''
