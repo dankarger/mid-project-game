@@ -15,7 +15,8 @@ const MapPage =({callback})=> {
 
     const styles = useSpring({
         loop:true,
-        config:{config:config.slow},
+
+        config:{config:config.molasses,duration:1000},
         to:{scale:0.8},
         from:{scale:1.1}
     })
