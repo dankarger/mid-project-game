@@ -9,6 +9,7 @@ import {PlayerContext} from "../../componenets/gameApp/GameApp";
 import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
 import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
+import {Redirect} from "react-router-dom";
 
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
@@ -20,7 +21,7 @@ const Room=({player,callbackGoBack})=>{
          const[isBattleOver,setIsBattleOver]= useState(false);
          const[isWinBattle,setIsWinBattle]=useState(true);
          const[isWin,setIsWin]=useState(true);
-
+         const[isGameOver,setIsGameOver]=useState(false)
          const showMessage=(message, time)=> {
              setIsMessageContent(message)
              setIsMessageOn(true);
@@ -46,10 +47,14 @@ const Room=({player,callbackGoBack})=>{
 
         const enemyDeath=()=>{
                  currentEnemy.currentImage=currentEnemy.images.death
-                 showMessage('You win', 1500);
+
                  setIsWinBattle(true);
                  setIsBattleOver(true);
-                 if(currentRoomData.value===4)console.log('wwwinnn')
+                 if(currentRoomData.value===4){
+                     console.log('wwwinnn')
+                     setIsGameOver(true)
+
+                 }
         }
 
         const attackRandomValue =()=>{
@@ -57,7 +62,7 @@ const Room=({player,callbackGoBack})=>{
         }
 
       const handleAttack2 =(attacker,defender) => {
-             showMessage(`${attacker.name} Attack!!`,1500)
+             // showMessage(`${attacker.name} Attack!!`,1500)
         const damage = attackRandomValue()
         if(defender.health > damage) {
             defender.currentImage=defender.images.hit
@@ -71,7 +76,7 @@ const Room=({player,callbackGoBack})=>{
             return defender.health -=damage
         }else{
             currentEnemy.health = 0;
-            showMessage('You win!!', 5500)
+            // showMessage('You win!!', 5500)
             return enemyDeath()
         }
     }
@@ -101,8 +106,9 @@ const Room=({player,callbackGoBack})=>{
                       <Message  message={messageContent} />
                     </div>
                     <div className={isBattleOver?'show':'hide'}>
-                        <EndBattleWindow isWin={isWinBattle} continueCallback={callbackGoBack}/>
+                        <EndBattleWindow isWin={isWinBattle} continueCallback={callbackGoBack} isGameOver={isGameOver}/>
                     </div>
+
                 </div>
         </>
     )
