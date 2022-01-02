@@ -15,7 +15,7 @@ const HomePage = () => {
 
     return(
         <div className='home-content'>
-            <h1>Title</h1>
+            <h1 className='title'>The Chicken Rider</h1>
            <div className='home-menu-divs'>
               <Button callback={handleNewGameButton} className='home-page'   name='New Game'/>
                <Link to='/settings' > <Button className='home-page'   name='Settings'/> </Link>
