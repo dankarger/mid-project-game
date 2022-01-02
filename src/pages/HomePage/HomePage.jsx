@@ -19,7 +19,7 @@ const HomePage = () => {
            <div className='home-menu-divs'>
               <Button callback={handleNewGameButton} className='home-page'   name='New Game'/>
                <Link to='/settings' > <Button className='home-page'   name='Settings'/> </Link>
-               <Link to='/game' > <Button className='home-page'   name='Quit'/> </Link>
+               <Link to='/' > <Button className='home-page'   name='Quit'/> </Link>
            </div>
             <div className={isCreatePlayer?'show':'hide'}>
                 <CreatePlayerPage callback={()=>setIsCreatePlayer(!setIsCreatePlayer)}/>
