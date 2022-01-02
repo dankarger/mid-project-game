@@ -8,6 +8,7 @@ import {GameDataContext} from "../../componenets/GameLogic/GameLogic";
 import {PlayerContext} from "../../componenets/gameApp/GameApp";
 import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
+import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
 
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
@@ -16,7 +17,8 @@ const Room=({player,callbackGoBack})=>{
          const[isMessageOn,setIsMessageOn]=useState(false)
          const[messageContent,setIsMessageContent]=useState('')
          const[isAction,setisAction]=useState(false)
-
+         const[isBattleOver,setIsBattleOver]= useState(false)
+         const[isWin,setIsWin]=useState(true)
 
          const showMessage=(message, time)=> {
              setIsMessageContent(message)
@@ -36,11 +38,16 @@ const Room=({player,callbackGoBack})=>{
 
             }
             createNewEnemy()
+            return ()=>{
+                setIsBattleOver(false)
+            }
         },[currentRoomData.enemy])
 
         const enemyDeath=()=>{
                  currentEnemy.currentImage=currentEnemy.images.death
-                 showMessage('You win', 1500)
+                 showMessage('You win', 1500);
+                 setIsWin(true);
+                 setIsBattleOver(true);
         }
 
         const attackRandomValue =()=>{
@@ -90,6 +97,9 @@ const Room=({player,callbackGoBack})=>{
                     <ActionMenu handleAttack1={()=>handleAttack2(currentPlayer,currentEnemy)} />
                     <div className={isMessageOn?'message-div showMessage':' message-div hideMessage'}>
                       <Message  message={messageContent} />
+                    </div>
+                    <div className={isBattleOver?'show':'hide'}>
+                        <EndBattleWindow isWin={isWin} continueCallback={callbackGoBack}/>
                     </div>
                 </div>
         </>

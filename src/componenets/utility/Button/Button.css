@@ -127,6 +127,23 @@ button, h1, h2 {
 }
 
 
+.endBattle-window {
+    padding:1rem;
+    font-size: calc(12px + 1vw);
+    color: #f3f3db;
+    border:#c5c561 1px solid;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.55);
+    transition: 200ms ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+
+}
+.endBattle-window:hover {
+    background: rgba(197, 197, 97, 0.49);
+    cursor: pointer;
+    color:#c5c561;
+}
+
 .hidden {
     /*background: transparent;*/
     /*color:transparent;*/

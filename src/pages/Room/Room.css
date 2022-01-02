@@ -66,6 +66,16 @@
     display: none;
 }
 
+.show {
+    display:none;
+}
+
+.hide{
+    display: none;
+}
+
+
+
 @keyframes message-animation {
     from{
         opacity: 0;
