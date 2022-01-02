@@ -9,7 +9,6 @@ import {PlayerContext} from "../../componenets/gameApp/GameApp";
 import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
 
-
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
          const currentPlayer = useContext(PlayerContext)
@@ -17,7 +16,9 @@ const Room=({player,callbackGoBack})=>{
          const[isMessageOn,setIsMessageOn]=useState(false)
          const[messageContent,setIsMessageContent]=useState('')
          const[isAction,setisAction]=useState(false)
-         const showMessage=(message,time)=> {
+
+
+         const showMessage=(message, time)=> {
              setIsMessageContent(message)
              setIsMessageOn(true);
              setTimeout(()=>{
@@ -27,7 +28,8 @@ const Room=({player,callbackGoBack})=>{
         }
 
         useEffect(()=>{
-            showMessage('Your Turn',3700)
+            showMessage(`Level ${currentRoomData.value===0?1:currentRoomData.value}`,6000)
+            // showMessage('Your Turn',3700)
             const createNewEnemy=()=>{
                 const newEnemy = new EnemyClass(currentRoomData.enemy)
                 setCurrentEnemy(newEnemy)
@@ -46,14 +48,17 @@ const Room=({player,callbackGoBack})=>{
         }
 
       const handleAttack2 =(attacker,defender) => {
-        // showMessage('atttack',800)
+             showMessage(`${attacker.name} Attack!!`,1500)
         const damage = attackRandomValue()
         if(defender.health > damage) {
             defender.currentImage=defender.images.hit
-            setTimeout(()=>{defender.currentImage=defender.images.default},200)
+            setTimeout(()=>{
+                defender.currentImage=defender.images.default
+                showMessage(`${defender.name} take  ${damage} damage`, 1500)
+            },200)
             setisAction(!isAction)
             showMessage(`${defender.name} take  ${damage} damage`, 1500)
-            randomEnemyAttack()
+            if(attacker===currentPlayer){randomEnemyAttack()}
             return defender.health -=damage
         }else{
             currentEnemy.health = 0;

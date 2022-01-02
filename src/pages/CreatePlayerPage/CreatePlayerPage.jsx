@@ -52,7 +52,6 @@ const CreatePlayerPage=({callback})=>{
     }
 
    const updateLocalStorage=()=>{
-
         const player = handleCreateNewPlayer()
         localStorage.setItem('chicken', JSON.stringify(player));
         console.log(localStorage)
