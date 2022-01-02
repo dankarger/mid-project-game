@@ -13,7 +13,7 @@ const CreatePlayerPage=({callback})=>{
     const[avatarInputValue,setAvatarInputValue] = useState('ALONZO');
     const[playersList,setPlayersList] = useState([]);
     const[isDropDownMenu,setIsDropDownMenu] = useState(false)
-    const[selectedAvatar,setSelectedAvatar]=useState('div1')
+    const[selectedAvatar,setSelectedAvatar]=useState('ALONZO')
 
 
 
@@ -47,7 +47,6 @@ const CreatePlayerPage=({callback})=>{
          newPlayer.name=nameInputValue.substr(0,18).toUpperCase()
          newPlayer.avatar = AVATARS[avatarInputValue]
         console.log(AVATARS[avatarInputValue])
-        console.log('newplayer',newPlayer)
         AddPlayer(newPlayer)
        return  newPlayer
     }
@@ -80,7 +79,7 @@ const CreatePlayerPage=({callback})=>{
     return (
         <div className='create-page'>
             {/*<form action="">*/}
-            <h3>Choose an Avatars</h3>
+            <h3>Choose an Avatar</h3>
              <div className='avatars-div'>
                  {/*TODO:make a avatar-img-div component*/}
                  <div className={selectedAvatar==='ALONZO'?'avatar-img-div active':'avatar-img-div '} onClick={()=>handleSelectedAvatarDiv('ALONZO')} id='div1'>
