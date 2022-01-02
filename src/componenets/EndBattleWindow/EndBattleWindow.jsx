@@ -11,6 +11,7 @@ const EndBattleWindow= ({isWin,continueCallback})=> {
         <div className='end-battle'>
             end battle
             <h1>{isWin?'You Win':'You Lose'}</h1>
+
             <Button className='endBattle-window' callback={continueCallback} name={"Continue"}/>
         </div>
     )

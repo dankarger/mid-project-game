@@ -16,9 +16,10 @@ const Room=({player,callbackGoBack})=>{
          const [currentEnemy,setCurrentEnemy] = useState({})
          const[isMessageOn,setIsMessageOn]=useState(false)
          const[messageContent,setIsMessageContent]=useState('')
-         const[isAction,setisAction]=useState(false)
-         const[isBattleOver,setIsBattleOver]= useState(false)
-         const[isWin,setIsWin]=useState(true)
+         const[isAction,setisAction]=useState(false);
+         const[isBattleOver,setIsBattleOver]= useState(false);
+         const[isWinBattle,setIsWinBattle]=useState(true);
+         const[isWin,setIsWin]=useState(true);
 
          const showMessage=(message, time)=> {
              setIsMessageContent(message)
@@ -46,8 +47,9 @@ const Room=({player,callbackGoBack})=>{
         const enemyDeath=()=>{
                  currentEnemy.currentImage=currentEnemy.images.death
                  showMessage('You win', 1500);
-                 setIsWin(true);
+                 setIsWinBattle(true);
                  setIsBattleOver(true);
+                 if(currentRoomData.value===4)console.log('wwwinnn')
         }
 
         const attackRandomValue =()=>{
@@ -99,7 +101,7 @@ const Room=({player,callbackGoBack})=>{
                       <Message  message={messageContent} />
                     </div>
                     <div className={isBattleOver?'show':'hide'}>
-                        <EndBattleWindow isWin={isWin} continueCallback={callbackGoBack}/>
+                        <EndBattleWindow isWin={isWinBattle} continueCallback={callbackGoBack}/>
                     </div>
                 </div>
         </>
