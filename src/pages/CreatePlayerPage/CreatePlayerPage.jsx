@@ -34,11 +34,11 @@ const CreatePlayerPage=({callback})=>{
     const handleOnChange =(e)=>{
          setNameInputValue(e.target.value);
     }
-    const handleRadioInputOnChange =(e)=>{
-        console.log('dd',e.target.value)
-        setNameInputValue(e.target.value);
-        setAvatarInputValue(e.target.value)
-    }
+    // const handleRadioInputOnChange =(e)=>{
+    //     console.log('dd',e.target.value)
+    //     setNameInputValue(e.target.value);
+    //     setAvatarInputValue(e.target.value)
+    // }
 
     const handleCreateNewPlayer =()=> {
         let newPlayer = new PlayerClass(Character['chickenRider']);
