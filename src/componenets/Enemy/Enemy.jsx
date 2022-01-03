@@ -10,7 +10,7 @@ const Enemy =({enemy})=> {
             <div >
                 <img className='enemy-img' src={enemy.currentImage} alt="enemy-img"/>
             </div>
-            <div className='player-health'><i className="fas fa-heart"> </i> {enemy.health}</div>
+            {/*<div className='player-health'><i className="fas fa-heart"> </i> {enemy.health}</div>*/}
         </div>
     )
 }

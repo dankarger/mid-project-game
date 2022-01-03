@@ -12,7 +12,7 @@ export const EntranceAnimation=({element,stateProps})=> {
     const styles = useSpring({
         // loop: { reverse: true },
         from: { x: -1110 },
-        to: { x: 100 },
+        to: { x: -50 },
         config:config.molasses
     })
 

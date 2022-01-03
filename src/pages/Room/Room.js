@@ -111,25 +111,24 @@ const Room=({player,callbackGoBack})=>{
     return(
         <>
                 <div className='Room' style={{background:`${currentRoomData.image}`}}>
-
                     <Navbar currentPlayer={player} currentEnemy={currentEnemy} roomNumber={currentRoomData.value}/>
                     <div className="Room-img-div">
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
                     </div>
                     <button onClick={callbackGoBack}>go back </button>
-
-                    <div className="player--div">
-                        {/*<Player player={player} name='chicken-rider'  />*/}
-                        <EntranceAnimation stateProps={isEntranceAnimation} element={ <Player player={player} name='chicken-rider'  />} />
-                        {/*<LoopObject stateProps={isEntranceAnimation} element={<Player player={player} name='chicken-rider'  />} />*/}
+                    <div className="characters-div">
+                        <div className="player--div">
+                            {/*<Player player={player} name='chicken-rider'  />*/}
+                            <EntranceAnimation stateProps={isEntranceAnimation} element={ <Player player={player} name='chicken-rider'  />} />
+                            {/*<LoopObject stateProps={isEntranceAnimation} element={<Player player={player} name='chicken-rider'  />} />*/}
+                        </div>
+                        <div className="filler-div">
+                        </div>
+                        <div className="enemy-div">
+                            <Boing  stateProps={isHit} character={ <Enemy enemy={currentEnemy} /> }/>
+                            {/*<Enemy   enemy={currentEnemy} />*/}
+                        </div>
                     </div>
-                    <div className="filler-div">
-                    </div>
-                    <div className="enemy-div">
-                        <Boing  stateProps={isHit} character={ <Enemy enemy={currentEnemy} /> }/>
-                        {/*<Enemy   enemy={currentEnemy} />*/}
-                    </div>
-
                     <ActionMenu handleAttack1={()=>handleAttack2(currentPlayer,currentEnemy)} />
                     <div className={isMessageOn?'message-div showMessage':' message-div hideMessage'}>
                       <Message  message={messageContent} />
