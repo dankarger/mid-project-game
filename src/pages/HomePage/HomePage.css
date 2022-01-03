@@ -26,12 +26,16 @@
 }
 
 .title {
-    text-align: left;
-    width:fit-content;
-    margin-left:30%;
+    /*text-align: left;*/
+    /*width:fit-content;*/
+    margin-right:80%;
+    margin-bottom:12rem;
     transform: translateY(1rem);
     font-size: calc(16px + 2vw);
     text-shadow: 3px 1px 1px #333;
+}
+.title p {
+    margin: 0;
 }
 .show {
     display:flex;
