@@ -3,8 +3,6 @@ import './MapPage.css'
 import Button from "../../componenets/utility/Button/Button";
 import {GameDataContext} from "../../componenets/GameLogic/GameLogic";
 import {useSpring, animated, config} from "react-spring";
-// import PlaySound from "../../componenets/SoundPlayer/PlaySound";
-// import {SoundsList} from "../../Data/Data";
 
 const MapPage =({callback})=> {
     const currentRoomData = useContext(GameDataContext);
