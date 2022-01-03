@@ -24,11 +24,11 @@ const Message = ({message,className})=> {
            opacity:1,
            scale:1.1
        },
-       delay:400,
+       delay:200,
 
        reset:true,
        config:config.molasses,
-       cancel:false
+       // cancel:false
    })
     // useEffect(()=>{
     //     if(messages.length>1){

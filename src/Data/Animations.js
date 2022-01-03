@@ -1,4 +1,4 @@
-import { useSpring, animated ,config} from 'react-spring'
+import { useSpring, animated ,config,useTransition} from 'react-spring'
 import {useState,useEffect} from "react";
 export function FadeAnimation({object}) {
     const props = useSpring({ to: { opacity: 1,x:20 }, from: { opacity: 0 ,x:-300} })
@@ -130,5 +130,30 @@ export function LoopObject({element}) {
             {element}
         </animated.div>
 
+    )
+}
+
+
+export const Mount =()=>{
+    // const [isVisible,setIsVisible] = useState(false);
+    const[items, setItems]=useState([])
+    const transition= useTransition(items,{
+        from:{ x:-100,y:800,opacity:0},
+        enter:{x:0,y:0,opacity:1},
+        leave:{x:-300},
+    });
+    return(
+        <div>
+            <div className="app">
+                <button onClick={()=>{
+                    setItems(v => v.length? []: [{},{},{}] );
+                }}> {items.length ? 'un-mount':'mount'}</button>
+                <div className="container">
+                    {transition((style,item)=>
+                        item ? <animated.div style={style} className={'item'}/>:''
+                    )}
+                </div>
+            </div>
+        </div>
     )
 }

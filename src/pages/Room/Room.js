@@ -80,7 +80,7 @@ const Room=({player,callbackGoBack})=>{
             setIsStartBattle(false)
         const damage = attackRandomValue()
         if(defender.health > damage) {
-            defender.currentImage=defender.images.hit
+            // defender.currentImage=defender.images.hit
             setTimeout(()=>{
                 defender.currentImage=defender.images.default
                 showMessage(`${defender.name} take  ${damage} damage`, 1500)
