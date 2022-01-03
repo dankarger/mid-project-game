@@ -29,8 +29,8 @@
 }
 
 .hide {
-    animation: message-animation 500ms reverse ease-in-out;
-    display: none;
+    /*animation: message-animation 500ms reverse ease-in-out;*/
+    /*display: none;*/
 }
 
 

@@ -10,7 +10,7 @@ import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
 import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
 import Boing, {EntranceAnimation} from "../../Data/Animations";
-// import {animated, useSpring,config} from "react-spring";
+import Message2 from "../../componenets/Message/Messgae2";
 
 
 const Room=({player,callbackGoBack})=>{
@@ -132,10 +132,13 @@ const Room=({player,callbackGoBack})=>{
                             {/*<Enemy   enemy={currentEnemy} />*/}
                         </div>
                     </div>
+                    {/*<Message  message={messageContent} />*/}
+                    {/*<Message2 it={messageContent}/>*/}
                     <ActionMenu handleAttack1={()=>handleAttack2(currentPlayer,currentEnemy)} />
                     <div className={isMessageOn?'message-div showMessage':' message-div hideMessage'}>
                       <Message  message={messageContent} />
                     </div>
+
                     <div className={isBattleOver?'show':'hide'}>
                         <EndBattleWindow isWin={isWinBattle} continueCallback={callbackGoBack} isGameOver={isGameOver}/>
                     </div>
