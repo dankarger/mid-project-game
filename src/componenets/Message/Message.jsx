@@ -14,21 +14,19 @@ const Message = ({message,className})=> {
 //     api.stop()
    const animateMessage= useSpring({
    //  const animateMessage= useTransition(message,{
-       from: {y:400,
-           opacity:0,
+       from: {y:100,
+           opacity:1,
            scale:0.8},
-
        to: {
            y:-150,
            x:-150,
-           opacity:1,
+           opacity:0,
            scale:1.1
        },
        delay:200,
-
        reset:true,
-       config:config.molasses,
-       // cancel:false
+       config:{config:config.slow,friction:10,duration:2000},
+       cancel:false
    })
     // useEffect(()=>{
     //     if(messages.length>1){
@@ -41,9 +39,7 @@ const Message = ({message,className})=> {
 
     return(
                 <animated.div style={animateMessage} className='messageText'>
-                    {/*<div><span>❖ </span></div>*/}
                     {message}
-                    {/*<div><span>❖</span></div>*/}
                 </animated.div>
     )
 }

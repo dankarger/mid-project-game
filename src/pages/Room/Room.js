@@ -31,8 +31,8 @@ const Room=({player,callbackGoBack})=>{
              setIsMessageContent(message)
              setIsMessageOn(true);
              setTimeout(()=>{
-                 setIsMessageContent('')
-                 setIsMessageOn(false);
+                 // setIsMessageContent('')
+                 // setIsMessageOn(false);
              },time)
         }
 
@@ -49,7 +49,7 @@ const Room=({player,callbackGoBack})=>{
                 setIsEntranceAnimation(false);
             return ()=>{
                 setIsBattleOver(false);
-                setIsEntranceAnimation(false);
+                // setIsEntranceAnimation(false);
             }
         }
         ,[currentRoomData.enemy,currentRoomData.value,isEntranceAnimation])

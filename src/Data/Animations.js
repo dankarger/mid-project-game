@@ -7,7 +7,7 @@ export function FadeAnimation({object}) {
 
 
 export const EntranceAnimation=({element,stateProps})=> {
-    // const [state, setState] = useState(Boolean);
+    const [state, setState] = useState(Boolean);
 
     const styles = useSpring({
         // loop: { reverse: true },
@@ -20,13 +20,13 @@ export const EntranceAnimation=({element,stateProps})=> {
         config:config.molasses
     })
 
-    // useEffect(()=>{
-    //     // if(stateProps!==true)toggle(!state)
-    //     // return ()=>{
-    //     //     toggle(!state)
-    //     // setState(stateProps)
-    //
-    // },[])
+    useEffect(()=>{
+        if(stateProps===true)setState(!state)
+        return ()=> {
+            setState(!state)
+            setState(stateProps)
+        }
+    },[])
 
 
 
