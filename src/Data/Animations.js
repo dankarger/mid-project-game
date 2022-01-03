@@ -26,7 +26,7 @@ export const EntranceAnimation=({element,stateProps})=> {
             setState(!state)
             setState(stateProps)
         }
-    },[])
+    },[state,stateProps])
 
 
 

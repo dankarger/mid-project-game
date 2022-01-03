@@ -21,7 +21,7 @@ export default function HealthAnimation({num}) {
     })
 
     useEffect(()=>{
-       PlaySound(SoundsList['health1'])
+       // PlaySound(SoundsList['health1'])
 
     },[num])
 
