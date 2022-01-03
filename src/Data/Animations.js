@@ -13,15 +13,18 @@ export const EntranceAnimation=({element,stateProps})=> {
         // loop: { reverse: true },
         from: { x: -1110 },
         to: { x: -50 },
+         // reset:true,
+        // reset:!!stateProps,
+        // reset:stateProps,
         config:config.molasses
     })
 
     useEffect(()=>{
-        if(stateProps!==state)toggle(!state)
-        return ()=>{
-            toggle(!state)
-        }
-    },[stateProps,state])
+        // if(stateProps!==true)toggle(!state)
+        // return ()=>{
+        //     toggle(!state)
+
+    })
 
 
 

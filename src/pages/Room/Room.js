@@ -26,7 +26,6 @@ const Room=({player,callbackGoBack})=>{
          const[isEntranceAnimation,setIsEntranceAnimation]=useState(true)
          const[isHit,setIsHit]=useState(false)
 
-
          const showMessage=(message, time)=> {
              setIsMessageContent(message)
              setIsMessageOn(true);
@@ -48,10 +47,10 @@ const Room=({player,callbackGoBack})=>{
                 setIsEntranceAnimation(false);
             return ()=>{
                 setIsBattleOver(false);
-                setIsEntranceAnimation(false);
+                // setIsEntranceAnimation(false);
             }
         }
-        ,[currentRoomData.enemy,currentRoomData.value])
+        ,[currentRoomData.enemy,currentRoomData.value,isEntranceAnimation])
 
         const enemyDeath=()=>{
                  currentEnemy.currentImage=currentEnemy.images.death
@@ -98,7 +97,6 @@ const Room=({player,callbackGoBack})=>{
                 currentPlayer.health = 0;
                 return playerDeath()
             }
-
         }
     }
 

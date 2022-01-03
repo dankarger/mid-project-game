@@ -10,7 +10,6 @@ const GameOverPage = ()=> {
         <div className='game-over' >
             <h1>GAME OVER </h1>
             <h2>You {outcome}</h2>
-
             <Link to='/' >
                 <Button name='Start Over' />
             </Link>
