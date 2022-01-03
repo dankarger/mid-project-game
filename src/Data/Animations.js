@@ -1,5 +1,6 @@
 import { useSpring, animated ,config,useTransition} from 'react-spring'
 import {useState,useEffect} from "react";
+
 export function FadeAnimation({object}) {
     const props = useSpring({ to: { opacity: 1,x:20 }, from: { opacity: 0 ,x:-300} })
     return <animated.div style={props}>{object}dsdsdsdsd    </animated.div>
@@ -7,7 +8,7 @@ export function FadeAnimation({object}) {
 
 
 export const EntranceAnimation=({element,stateProps})=> {
-    const [state, setState] = useState(Boolean);
+    // const [state, setState] = useState(Boolean);
 
     const styles = useSpring({
         // loop: { reverse: true },
