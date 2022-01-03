@@ -20,13 +20,13 @@ export const EntranceAnimation=({element,stateProps})=> {
         config:config.molasses
     })
 
-    useEffect(()=>{
-        if(stateProps===true)setState(!state)
-        return ()=> {
-            setState(!state)
-            setState(stateProps)
-        }
-    },[state,stateProps])
+    // useEffect(()=>{
+    //     if(stateProps===true)setState(!state)
+    //     return ()=> {
+    //         setState(!state)
+    //         setState(stateProps)
+    //     }
+    // },[state,stateProps])
 
 
 
