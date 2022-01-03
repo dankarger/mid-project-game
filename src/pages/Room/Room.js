@@ -25,6 +25,7 @@ const Room=({player,callbackGoBack})=>{
          const[isGameOver,setIsGameOver]=useState(false)
          const[isEntranceAnimation,setIsEntranceAnimation]=useState(true)
          const[isHit,setIsHit]=useState(false)
+        const[isStartBattle,setIsStartBattle]=useState(Boolean)
 
          const showMessage=(message, time)=> {
              setIsMessageContent(message)
@@ -37,7 +38,8 @@ const Room=({player,callbackGoBack})=>{
 
         useEffect(()=>{
             showMessage(`Level ${currentRoomData.value===0?1:currentRoomData.value}`,6000)
-            setIsEntranceAnimation(true);
+            // setIsEntranceAnimation(true);
+                setIsStartBattle(true)
             // showMessage('Your Turn',3700)
             const createNewEnemy=()=>{
                 const newEnemy = new EnemyClass(currentRoomData.enemy);
@@ -47,7 +49,7 @@ const Room=({player,callbackGoBack})=>{
                 setIsEntranceAnimation(false);
             return ()=>{
                 setIsBattleOver(false);
-                // setIsEntranceAnimation(false);
+                setIsEntranceAnimation(false);
             }
         }
         ,[currentRoomData.enemy,currentRoomData.value,isEntranceAnimation])
@@ -56,6 +58,7 @@ const Room=({player,callbackGoBack})=>{
                  currentEnemy.currentImage=currentEnemy.images.death
                  setIsWinBattle(true);
                  setIsBattleOver(true);
+
                  if(currentEnemy.name==="BOSS"){
                      console.log('wwwinnn')
                      setIsGameOver(true)
@@ -74,6 +77,7 @@ const Room=({player,callbackGoBack})=>{
 
         const handleAttack2 =(attacker,defender) => {
              // showMessage(`${attacker.name} Attack!!`,1500)
+            setIsStartBattle(false)
         const damage = attackRandomValue()
         if(defender.health > damage) {
             defender.currentImage=defender.images.hit
@@ -97,6 +101,7 @@ const Room=({player,callbackGoBack})=>{
                 currentPlayer.health = 0;
                 return playerDeath()
             }
+
         }
     }
 
@@ -117,7 +122,7 @@ const Room=({player,callbackGoBack})=>{
                     <div className="characters-div">
                         <div className="player--div">
                             {/*<Player player={player} name='chicken-rider'  />*/}
-                            <EntranceAnimation stateProps={isEntranceAnimation} element={ <Player player={player} name='chicken-rider'  />} />
+                            <EntranceAnimation stateProps={isStartBattle} element={ <Player player={player} name='chicken-rider'  />} />
                             {/*<LoopObject stateProps={isEntranceAnimation} element={<Player player={player} name='chicken-rider'  />} />*/}
                         </div>
                         <div className="filler-div">
