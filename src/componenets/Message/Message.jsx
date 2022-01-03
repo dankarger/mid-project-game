@@ -1,7 +1,7 @@
-import React, {useEffect,useState} from "react";
+import React from "react";
 import './Message.css'
 // import {isMessageOnContext,MessageContentContext} from "../../pages/Room/Room";
-import {useSpring,useSprings,animated,config} from "react-spring";
+import {useSpring,animated,config} from "react-spring";
 
 
 const Message = ({message,className})=> {
