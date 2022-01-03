@@ -102,20 +102,21 @@ const CreatePlayerPage=({callback})=>{
                 <input  className='name-input' onChange={handleOnChange} name='nameInput' type="text" placeholder='Randy Rando' value={nameInputValue}/>
             </div>
             {/*</form>*/}
-            <Link to='/game'>
-                <Button callback={()=>updateLocalStorage()} className='create'  name='Create Character' />
-            </Link>
-            <div className='loading-div'>
-                <Button callback={()=>handleDropDownLoad()} className='create'  name='Load Character' />
-                <div className={isDropDownMenu?"dropDownMenu-div show":"dropDownMenu-div hide"}>
-                    <DropDownMenu callback={handleChoosePlayer} list={playersList} />
-                    <Button callback={()=>setIsDropDownMenu(!isDropDownMenu)} className='create'  name='Cancel Load' />
+            <div className="CreateButtons-div">
+                <Link to='/game'>
+                    <Button callback={()=>updateLocalStorage()} className='create'  name='Create Character' />
+                </Link>
+                <div className='loading-div'>
+                    <Button callback={()=>handleDropDownLoad()} className='create'  name='Load Character' />
+                    <div className={isDropDownMenu?"dropDownMenu-div show":"dropDownMenu-div hide"}>
+                        <DropDownMenu isOpenAnimation={isDropDownMenu} callback={handleChoosePlayer} list={playersList} />
+                        <Button callback={()=>setIsDropDownMenu(!isDropDownMenu)} className='create'  name='Cancel Load' />
+                    </div>
                 </div>
+                <Link to='/'>
+                  <Button callback={callback} className='create'  name='Back to Menu' />
+                </Link>
             </div>
-            <Link to='/'>
-            <Button callback={callback} className='create'  name='Back to Menu' />
-            </Link>
-
         </div>
     )
 }

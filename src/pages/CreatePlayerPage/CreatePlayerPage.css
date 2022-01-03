@@ -1,14 +1,15 @@
 .create-page {
-    width: fit-content;
-    height: fit-content;
+    /*width: fit-content;*/
+    height: 80%;
+    width:80%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     /*position: absolute;*/
     /*top:30%;*/
     border:1px solid black;
-    padding:10rem;
+    padding:calc(3rem + 2vw);
     box-shadow: rgba(0, 0, 0, 0.09) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     position: fixed;
     top: 50%;
@@ -52,6 +53,8 @@
 }
 
 .avatar-img-div {
+    width:30%;
+    height: 100%;
     filter: grayscale(90%);
     transition: 200ms ease-in-out;
     opacity: 0.8;
@@ -59,7 +62,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin:1rem;
+    /*margin:1rem;*/
 }
 .avatar-img-div:hover,.avatar-img-div::selection, .active {
     filter: none;
@@ -78,15 +81,17 @@
 }
 
 .name-input {
-    margin:20rem
+    /*margin:20rem*/
 }
 .name-input-div{
+    margin:1rem;
     width:700px;
 }
 
 .avatars-div img{
     transition: 1s ease-in-out;
-    width:200px;
+    width:100%;
+    height:100%;
     border:transparent 1px solid;
 }
 .avatars-div img:hover{
@@ -95,4 +100,11 @@
 .dropDownMenu {
     width:fit-content;
     height: fit-content;
+}
+
+.CreateButtons-div {
+    width:fit-content;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
