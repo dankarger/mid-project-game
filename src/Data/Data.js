@@ -13,10 +13,11 @@ export const SoundsList={
         click5:'/assets/sounds/foto_klick_2.wav',
         swish:'/assets/sounds/Swish.wav',
         health1:'/assets/sounds/WindowShadewav',
+        message3:'/assets/sounds/message3.wav',
         whoosh1:'/assets/sounds/short_whoosh1.wav',
         whoosh2:'/assets/sounds/short_whoosh5.wav',
         low1:'/assets/sounds/bass_deny1.wav',
-       mapAnimation:'/assets/sounds/foto_klick_2.wav',
+        mapAnimation:'/assets/sounds/foto_klick_2.wav',
 
 }
 
@@ -64,7 +65,9 @@ export const Character = {
             attack:'/assets/images/characters/chicken-rider-attack.png'
         },
 
-        sounds:''
+        sounds:{
+            hit:SoundsList['low1'],
+        }
         }
 }
 
@@ -84,7 +87,9 @@ export const EnemyData = {
             death:'/assets/images/enemies/deer3-dead.png',
             attack:''
         },
-        sounds:''
+        sounds:{
+            hit:SoundsList['click2'],
+        }
     },
     deer2:{
         name:'Deer2',
@@ -94,7 +99,9 @@ export const EnemyData = {
                   hit:'/assets/images/enemies/deer3-hit3.png',
                   death:'/assets/images/enemies/deer3-dead.png'
                     },
-        sounds:''
+        sounds:{
+            hit:SoundsList['low1'],
+        }
     },cow:{
         name:'COW',
         health:90,
@@ -105,7 +112,9 @@ export const EnemyData = {
                     attack:'/assets/images/enemies/cow-att.png',
 
         },
-        sounds:''
+        sounds:{
+            hit:SoundsList['message3'],
+        }
     },
     merchant:{
         name:'SKATES',
@@ -127,7 +136,9 @@ export const EnemyData = {
                 death:'/assets/images/enemies/girafe-dead.png',
                 attack:'/assets/images/enemies/girafe-att.png'
                 },
-        sounds:''
+        sounds:{
+            hit:SoundsList['low1'],
+        }
     },
     boss:{
         name:'BOSS',
@@ -139,7 +150,9 @@ export const EnemyData = {
             death:'/assets/images/enemies/virus-dead.png',
             attack:'/assets/images/enemies/virus-att.png'
         },
-        sounds:''
+        sounds:{
+            hit:SoundsList['whoosh2'],
+        }
     },
 }
 

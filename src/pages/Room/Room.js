@@ -51,6 +51,7 @@ const Room=({player,callbackGoBack})=>{
             }
             createNewEnemy()
                 setIsEntranceAnimation(false);
+            // randomEnemyAttack();
             return ()=>{
                 setIsBattleOver(false);
                 // setIsEntranceAnimation(false);
@@ -89,8 +90,9 @@ const Room=({player,callbackGoBack})=>{
 
             PlaySound(SoundsList['whoosh1']);
             setTimeout(()=>{
-                PlaySound(SoundsList['click2'])
-                PlaySound(SoundsList['low1'])
+                // PlaySound(SoundsList['click2'])
+                // PlaySound(SoundsList['low1'])
+                PlaySound(currentEnemy.sounds.hit)
             },400)
             setTimeout(()=>{
                 // defender.currentImage=defender.images.default
@@ -116,12 +118,25 @@ const Room=({player,callbackGoBack})=>{
         }
     }
         const randomEnemyAttack=()=>{
-           let randomize = Math.random()
-            handleAttack2(currentEnemy,player)
+             if(isBattleOver){
+                 return
+             }
+            let randomize = Math.random()*10+1
+            setInterval(()=>{
+                currentEnemy.currentImage=currentEnemy.images.hit;
+
+            },randomize)
+
             currentEnemy.currentImage=currentEnemy.images.hit;
-            let damage = attackRandomValue()
-            showMessage('Hiii',damage)
-            return randomize>0.3? handleAttack2(currentEnemy,player):''
+        //     setTimeout(()=>{
+        //
+        //         handleAttack2(currentEnemy,player)},randomize)
+        //
+        //
+        //     let damage = attackRandomValue()
+        //     showMessage('Hiii',damage)
+        //      // randomize>0.3? handleAttack2(currentEnemy,player):''
+        //     // return randomEnemyAttack()
         }
 
     return(
