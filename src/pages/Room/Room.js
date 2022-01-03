@@ -117,17 +117,17 @@ const Room=({player,callbackGoBack})=>{
 
         }
     }
-        const randomEnemyAttack=()=>{
-             if(isBattleOver){
-                 return
-             }
-            let randomize = Math.random()*10+1
-            setInterval(()=>{
-                currentEnemy.currentImage=currentEnemy.images.hit;
-
-            },randomize)
-
-            currentEnemy.currentImage=currentEnemy.images.hit;
+        // const randomEnemyAttack=()=>{
+        //      if(isBattleOver){
+        //          return
+        //      }
+        //     let randomize = Math.random()*10+1
+        //     setInterval(()=>{
+        //         currentEnemy.currentImage=currentEnemy.images.hit;
+        //
+        //     },randomize)
+        //
+        //     currentEnemy.currentImage=currentEnemy.images.hit;
         //     setTimeout(()=>{
         //
         //         handleAttack2(currentEnemy,player)},randomize)
@@ -137,7 +137,7 @@ const Room=({player,callbackGoBack})=>{
         //     showMessage('Hiii',damage)
         //      // randomize>0.3? handleAttack2(currentEnemy,player):''
         //     // return randomEnemyAttack()
-        }
+        // }
 
     return(
         <>

@@ -5,7 +5,6 @@ import {useSpring, animated, config} from "react-spring";
 
 
 export default function HealthAnimation({num}) {
-    console.log('nun',num)
     // const [flip, set] = useState(false)
     // const[currentNumber,setCurrenNumber]=useState(Number)
     const [oldNumber,setOldNumber] = useState(Number)
