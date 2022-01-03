@@ -4,6 +4,9 @@ import Room from "../../pages/Room/Room";
 import './GameLogic.css'
 import {Character, PlayerClass, RoomsData} from "../../Data/Data";
 import {PlayerContext} from "../gameApp/GameApp";
+import {SoundsList} from "../../Data/Data";
+import PlaySound from "../SoundPlayer/PlaySound";
+
 
 //use Contex states
 export const GameDataContext = React.createContext();
@@ -31,6 +34,7 @@ const GameLogic = ()=> {
         setCurrentRoomData(RoomsData[room]);
         setCurrentEnemy(currentRoomData.enemy);
         setIsMap(!setIsMap);
+        PlaySound(SoundsList['click5'])
 
     }
 

@@ -5,9 +5,20 @@ export const ImagesData = {
     }
 }
 //
-// const SoundsList={
-//
-// }
+export const SoundsList={
+       click1:'/assets/sounds/simple_click.wav',
+        click2:'/assets/sounds/woody_click.wav',
+        click3:'/assets/sounds/simple_resonant_click.wav',
+        click4:'/assets/sounds/Camera.wav',
+        click5:'/assets/sounds/foto_klick_2.wav',
+        swish:'/assets/sounds/Swish.wav',
+        health1:'/assets/sounds/WindowShadewav',
+        whoosh1:'/assets/sounds/short_whoosh1.wav',
+        whoosh2:'/assets/sounds/short_whoosh5.wav',
+        low1:'/assets/sounds/bass_deny1.wav',
+       mapAnimation:'/assets/sounds/foto_klick_2.wav',
+
+}
 
 
 

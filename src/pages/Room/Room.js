@@ -10,6 +10,9 @@ import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
 import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
 import Boing, {EntranceAnimation} from "../../Data/Animations";
+import {SoundsList} from "../../Data/Data";
+import PlaySound from "../../componenets/SoundPlayer/PlaySound";
+
 // import Message2 from "../../componenets/Message/Messgae2";
 
 
@@ -37,7 +40,8 @@ const Room=({player,callbackGoBack})=>{
         }
 
         useEffect(()=>{
-            showMessage(`Level ${currentRoomData.value===0?1:currentRoomData.value}`,6000)
+            showMessage(`Level ${currentRoomData.value===0?1:currentRoomData.value}`,6000);
+            PlaySound(SoundsList['whoosh2'])
             // setIsEntranceAnimation(true);
                 setIsStartBattle(true)
             // showMessage('Your Turn',3700)
@@ -58,10 +62,11 @@ const Room=({player,callbackGoBack})=>{
                  currentEnemy.currentImage=currentEnemy.images.death
                  setIsWinBattle(true);
                  setIsBattleOver(true);
-
+                PlaySound(SoundsList['swish'])
                  if(currentEnemy.name==="BOSS"){
                      console.log('wwwinnn')
                      setIsGameOver(true)
+                     PlaySound(SoundsList['swish'])
                  }
         }
 
@@ -81,15 +86,21 @@ const Room=({player,callbackGoBack})=>{
         const damage = attackRandomValue()
         if(defender.health > damage) {
             // defender.currentImage=defender.images.hit
+
+            PlaySound(SoundsList['whoosh1']);
             setTimeout(()=>{
-                defender.currentImage=defender.images.default
+                PlaySound(SoundsList['click2'])
+                PlaySound(SoundsList['low1'])
+            },400)
+            setTimeout(()=>{
+                // defender.currentImage=defender.images.default
                 showMessage(`${defender.name} take  ${damage} damage`, 1500)
             },200)
             setisAction(!isAction)
             showMessage(`${defender.name} take  ${damage} damage`, 1500)
             if(attacker===currentPlayer){
                 setIsHit(!isHit)
-                randomEnemyAttack()
+                // randomEnemyAttack()
             }
             return defender.health -=damage
         }else{
@@ -104,10 +115,12 @@ const Room=({player,callbackGoBack})=>{
 
         }
     }
-
         const randomEnemyAttack=()=>{
            let randomize = Math.random()
             handleAttack2(currentEnemy,player)
+            currentEnemy.currentImage=currentEnemy.images.hit;
+            let damage = attackRandomValue()
+            showMessage('Hiii',damage)
             return randomize>0.3? handleAttack2(currentEnemy,player):''
         }
 

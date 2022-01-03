@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {useSpring, animated, config} from "react-spring";
+import {SoundsList} from "../../Data/Data";
+import PlaySound from "../SoundPlayer/PlaySound";
+
 
 export default function HealthAnimation({num}) {
     console.log('nun',num)
@@ -17,12 +20,10 @@ export default function HealthAnimation({num}) {
         onRest: () =>  setOldNumber(num),
     })
 
-    // useEffect(()=>{
-    //     setCurrenNumber(num)
-    //     return ()=>{
-    //         setOldNumber(num)
-    //     }
-    // },[num,oldNumber,currentNumber])
+    useEffect(()=>{
+       PlaySound(SoundsList['health1'])
+
+    },[num])
 
     return <animated.div>{number.to(n => n.toFixed(0))}</animated.div>
     // return <animated.div>{number.to(n=>n)}</animated.div>

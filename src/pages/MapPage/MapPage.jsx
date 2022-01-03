@@ -3,12 +3,15 @@ import './MapPage.css'
 import Button from "../../componenets/utility/Button/Button";
 import {GameDataContext} from "../../componenets/GameLogic/GameLogic";
 import {useSpring, animated, config} from "react-spring";
+import PlaySound from "../../componenets/SoundPlayer/PlaySound";
+import {SoundsList} from "../../Data/Data";
 
 const MapPage =({callback})=> {
     const currentRoomData = useContext(GameDataContext);
     const[activeRoom,setActiveRoom] = useState()
 
     useEffect(()=>{
+        // PlaySound(SoundsList["mapAnimation"])
         setActiveRoom(currentRoomData.value===0 ? 1 : currentRoomData.value + 1 )
     },[currentRoomData.value])
 
@@ -18,7 +21,8 @@ const MapPage =({callback})=> {
 
         config:{config:config.molasses,duration:1000},
         to:{scale:0.8},
-        from:{scale:1.1}
+        from:{scale:1.1},
+        // onRest:()=>{PlaySound(SoundsList["click1"])}
     })
 
     return (
