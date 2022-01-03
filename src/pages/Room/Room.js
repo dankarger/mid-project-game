@@ -25,7 +25,7 @@ const Room=({player,callbackGoBack})=>{
          const[isGameOver,setIsGameOver]=useState(false)
          const[isEntranceAnimation,setIsEntranceAnimation]=useState(true)
          const[isHit,setIsHit]=useState(false)
-        const[isStartBattle,setIsStartBattle]=useState(Boolean)
+         const[isStartBattle,setIsStartBattle]=useState(Boolean)
 
          const showMessage=(message, time)=> {
              setIsMessageContent(message)

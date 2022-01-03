@@ -7,7 +7,7 @@ export default function HealthAnimation({num}) {
     // const[currentNumber,setCurrenNumber]=useState(Number)
     const [oldNumber,setOldNumber] = useState(Number)
     const { number } = useSpring({
-        reset: true,
+        // reset: true,
         // reverse: flip,
         from: { number: oldNumber },
         to:{number:num},
