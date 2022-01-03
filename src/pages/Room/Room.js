@@ -10,7 +10,7 @@ import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
 import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
 import Boing, {EntranceAnimation} from "../../Data/Animations";
-import Message2 from "../../componenets/Message/Messgae2";
+// import Message2 from "../../componenets/Message/Messgae2";
 
 
 const Room=({player,callbackGoBack})=>{
