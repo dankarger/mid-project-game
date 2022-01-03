@@ -9,7 +9,6 @@ const MapPage =({callback})=> {
     const[activeRoom,setActiveRoom] = useState()
 
     useEffect(()=>{
-        // PlaySound(SoundsList["mapAnimation"])
         setActiveRoom(currentRoomData.value===0 ? 1 : currentRoomData.value + 1 )
     },[currentRoomData.value])
 

@@ -17,7 +17,7 @@ const DropDownMenu = ({ list, callback, isOpenAnimation })=>{
     const showList=()=>{
        return list.map(player=>{
            return (
-                <div className={isAnimation?'show':'hide'}>
+                <div key={player.id} className={isAnimation?'show':'hide'}>
                    <div onClick={()=>callback(player)} className='drop-down-player' key={player.id + Date.now()}>
                        <Link to='/game'>
                            <div className='drop-down-item'>
