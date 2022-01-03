@@ -33,7 +33,10 @@
     color: #ea3a3a;
     text-shadow: #282c34 1px 1px 1px ;
     font-weight: 600;
-    margin-left: 10px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .player-info {

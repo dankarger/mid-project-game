@@ -12,8 +12,8 @@ export default function HealthAnimation({num}) {
         from: { number: oldNumber },
         to:{number:num},
         number: 100,
-        delay: 200,
-        config: config.molasses,
+        delay: 600,
+        config: config.slow,
         onRest: () =>  setOldNumber(num),
     })
 

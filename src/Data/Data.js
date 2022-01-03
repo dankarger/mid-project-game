@@ -17,6 +17,7 @@ export class PlayerClass  {
         this.name=playerName
         this.score=0
         this.health=health
+        this.totalHealth=health
         this.power=power
         this.images = images
         this.currentImage = images.default
@@ -28,6 +29,7 @@ export class EnemyClass  {
     constructor({name,health,power,images,sounds}){
         this.name=name
         this.health=health
+        this.totalHealth=health
         this.power=power
         this.images = images
         this.currentImage = images.default
@@ -43,6 +45,7 @@ export const Character = {
         // playerName:'playerName',
         avatar:'ALONZO',
         health:100,
+        totalHealth:100,
         power:'',
         images:{default:'/assets/images/characters/chicken-rider.png',
             hit:'/assets/images/characters/chicken-rider-attack.png',
@@ -51,7 +54,7 @@ export const Character = {
         },
 
         sounds:''
-    }
+        }
 }
 
 export const AVATARS={

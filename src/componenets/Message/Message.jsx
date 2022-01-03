@@ -24,9 +24,10 @@ const Message = ({message,className})=> {
            opacity:1,
            scale:1.1
        },
+       delay:400,
 
        reset:true,
-       config:config.stiff,
+       config:config.molasses,
        cancel:false
    })
     // useEffect(()=>{
