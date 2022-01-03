@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import './DropDownMenu.css'
 import {Link} from "react-router-dom";
 import {useSpring,animated} from "react-spring";
@@ -13,7 +13,6 @@ const DropDownMenu = ({ list, callback, isOpenAnimation })=>{
     useEffect(()=>{
         setIAnimation(isOpenAnimation)
     },[list,isOpenAnimation])
-
 
     const showList=()=>{
        return list.map(player=>{
@@ -33,13 +32,13 @@ const DropDownMenu = ({ list, callback, isOpenAnimation })=>{
        })
     }
 
-
-
     return(
-        (<animated.div style={fade} className='drop-down-menu' draggable={true}>
-                {showList()}
-            </animated.div>)
-
+        (
+            <animated.div style={fade} className='drop-down-menu' draggable={true} >
+                <p>Characters:</p>
+                { showList() }
+            </animated.div>
+        )
     )
 }
 
