@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useSpring, animated, config} from "react-spring";
-import {SoundsList} from "../../Data/Data";
-import PlaySound from "../SoundPlayer/PlaySound";
+// import {SoundsList} from "../../Data/Data";
+// import PlaySound from "../SoundPlayer/PlaySound";
 
 
 export default function HealthAnimation({num}) {
