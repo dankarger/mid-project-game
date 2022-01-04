@@ -27,6 +27,9 @@ export const SoundsList={
         trumpet2:'/assets/sounds/trumpet2.wav',
         trumpet3:'/assets/sounds/trumpet3.wav',
          trumpet4:'/assets/sounds/trumpet4.wav',
+        mouseOver1:'/assets/sounds/mouse_over3.wav',
+        mouseOver2:'/assets/sounds/mouse_over4.wav',
+         mouseOver3:'/assets/sounds/sub_bass_mouseover.wav'
 
 }
 

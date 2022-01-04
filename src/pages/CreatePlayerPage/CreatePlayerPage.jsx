@@ -101,20 +101,20 @@ const CreatePlayerPage=({callback})=>{
             {/*</form>*/}
             <div className="CreateButtons-div">
                 <Link to='/game'>
-                    <Button callback={()=>updateLocalStorage()} className='create'  name='Create Character' />
+                    <Button callback={()=>updateLocalStorage()} className='create'  name='Create Character'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}/>
                 </Link>
                 <div className='loading-div'>
-                    <Button callback={()=>handleDropDownLoad()} className='create load'  name='Load Character' />
+                    <Button callback={()=>handleDropDownLoad()} className='create load'  name='Load Character' onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}/>
                     <div className={isDropDownMenu?"dropDownMenu-div show":"dropDownMenu-div hide"}>
                         <DropDownMenu isOpenAnimation={isDropDownMenu} callback={handleChoosePlayer} list={playersList} />
                         <Button callback={()=>{
                             setIsDropDownMenu(!isDropDownMenu)
                             PlaySound(SoundsList['click3'],0.2)
-                        }} className='create cancel'  name='Cancel Load' />
+                        }} className='create cancel'  name='Cancel Load'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)} />
                     </div>
                 </div>
                 <Link to='/'>
-                  <Button  callback={callback} className='create'  name='Back to Menu' />
+                  <Button  callback={callback} className='create'  name='Back to Menu'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}/>
                 </Link>
             </div>
         </div>

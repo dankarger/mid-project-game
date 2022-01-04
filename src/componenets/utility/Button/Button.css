@@ -102,6 +102,7 @@ button, h1, h2 {
 }
 .settings:hover {
     color:limegreen;
+    transform: translateY(4px)  rotate(80deg) ;
 }
 
 .create {
