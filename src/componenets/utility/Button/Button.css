@@ -90,12 +90,13 @@ button, h1, h2 {
     /*right: 0;*/
     /*background: rgba(197, 197, 97, 0.56);*/
     text-align: center;
+    transform: translateY(2px);
     width: fit-content;
     background: transparent;
-    color:#3452a5;
+    color: #678eec;
     text-shadow: 1px 1px 1px black;
     border:none;
-    font-size: calc(12px + 1vw);
+    font-size: calc(16px + 1.9vw);
     transition: 300ms ease-in-out;
 }
 .settings:hover {

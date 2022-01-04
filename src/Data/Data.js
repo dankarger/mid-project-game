@@ -6,7 +6,7 @@ export const ImagesData = {
 }
 //
 export const SoundsList={
-       click1:'/assets/sounds/simple_click.wav',
+        click1:'/assets/sounds/simple_click.wav',
         click2:'/assets/sounds/woody_click.wav',
         click3:'/assets/sounds/simple_resonant_click.wav',
         click4:'/assets/sounds/Camera.wav',
@@ -14,6 +14,7 @@ export const SoundsList={
         boing1:'/assets/sounds/BoingBox01.wav',
         swish:'/assets/sounds/Swish.wav',
         health1:'/assets/sounds/WindowShadewav',
+        message2:'/assets/sounds/message2.wav',
         message3:'/assets/sounds/message3.wav',
         whoosh1:'/assets/sounds/short_whoosh1.wav',
         whoosh2:'/assets/sounds/short_whoosh5.wav',
@@ -127,7 +128,7 @@ export const EnemyData = {
                    death:'/assets/images/enemies/skates-dead.png',
                     attack:'/assets/images/enemies/skates-att.png'
                 },
-        sounds:''
+        sounds:{hit:SoundsList['boing1']}
     },
     girafe:{
         name:'GIRAFE',
@@ -139,7 +140,7 @@ export const EnemyData = {
                 attack:'/assets/images/enemies/girafe-att.png'
                 },
         sounds:{
-            hit:SoundsList['low1'],
+            hit:SoundsList['message2'],
         }
     },
     boss:{
