@@ -15,22 +15,29 @@
     outline:none;
 }
 
-
-.volume::before {
-    content:'';
-    height:11px;
-    width:var(--seek-before-width);
-    background-color: var(--seek-before-color);
-    border-top-left-radius:10px ;
-    border-top-right-radius:10px ;
-    position: absolute;
-    top:0;
-    left:0;
-    z-index: 2;
-    cursor: pointer;
+label {
+    color: whitesmoke;
 }
+/*.volume::before {*/
+/*    content:'';*/
+/*    height:11px;*/
+/*    width:var(--seek-before-width);*/
+/*    background-color: var(--seek-before-color);*/
+/*    border-top-left-radius:10px ;*/
+/*    border-top-right-radius:10px ;*/
+/*    position: absolute;*/
+/*    top:0;*/
+/*    left:0;*/
+/*    z-index: 2;*/
+/*    cursor: pointer;*/
+/*}*/
 
 .volume::-webkit-slider-thumb {
     transform: scale(1.2);
     background: var(--selectedKnobby);
+}
+
+
+.full-control {
+    background: white;
 }

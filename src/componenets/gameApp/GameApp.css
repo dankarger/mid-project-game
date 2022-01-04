@@ -23,3 +23,10 @@ a{
     color:#ea3a3a;
     border:red 1px solid
 }
+
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}

@@ -6,7 +6,8 @@ import {Character, PlayerClass, RoomsData} from "../../Data/Data";
 import {PlayerContext} from "../gameApp/GameApp";
 import {SoundsList} from "../../Data/Data";
 import PlaySound from "../SoundPlayer/PlaySound";
-
+import PlayMusic from "../SoundPlayer/PlayMusic";
+import SettingsPage from "../../pages/SettingsPage/SettingsPage";
 
 //use Contex states
 export const GameDataContext = React.createContext();
@@ -28,6 +29,10 @@ const GameLogic = ()=> {
     const[currentRoomData,setCurrentRoomData]=useState(RoomsData['room0']);
     const[currentPlayer,setCurrentPlayer]=useState(player);
     const[currentEnemy,setCurrentEnemy]=useState({});
+    const[isPlayMusic,setIsPlayMusic] = useState(false)
+    const[isSettingPage,setIsSettingPage]=useState(false)
+    const[volumeController,setVolumeController]=useState(1)
+
 
     const handleMapButton=(room)=>{
         if(currentRoomData[room]==='boss')console.log('boss')
@@ -35,7 +40,7 @@ const GameLogic = ()=> {
         setCurrentEnemy(currentRoomData.enemy);
         setIsMap(!setIsMap);
         PlaySound(SoundsList['click5'],0.2)
-
+        setIsPlayMusic(true)
     }
 
     useEffect(()=>{
@@ -61,9 +66,16 @@ const GameLogic = ()=> {
                     <div className={ !isMap ? 'show' : 'hide' }>
                         <Room callbackGoBack={handleGoBackButton} player={currentPlayer} roomData={currentRoomData}/>
                     </div>
+                       <PlayMusic isPlay={isPlayMusic} volume={0.5} />
                    </EnemyContext.Provider>
                 {/*</PlayerContext.Provider>*/}
+                {/*<div className={isSettingPage?'show':'hide'}>*/}
+                {/*    <SettingsPage isPlay={isPlayMusic} volumeController={volumeController} />*/}
+                {/*</div>*/}
+
         </GameDataContext.Provider>
+
+            {/*<FullControl isPlay={isPlayMusic}/>*/}
         </div>
     )
 }
