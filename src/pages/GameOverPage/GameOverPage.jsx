@@ -25,12 +25,15 @@ const GameOverPage = ()=> {
         <div className='game-over' >
             <h1>GAME OVER </h1>
             <h2>You {outcome}</h2>
-            <Link to='/' >
-                <Button name='Start Over' />
-            </Link>
-            <Link to='/' >
-                <Button name='Settings' />
-            </Link>
+            <div>
+                <Link to='/' >
+                    <Button className='game-overButton' name='Start Over' />
+                </Link>
+                <Link to='/' >
+                    <Button className='game-overButton' name='Settings' />
+                </Link>
+            </div>
+
         </div>
     )
 }

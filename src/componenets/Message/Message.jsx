@@ -5,13 +5,7 @@ import {useSpring,animated,config} from "react-spring";
 
 
 const Message = ({message,className})=> {
-    // const[messages,setMessages]=useState([message])
-//     const [springs, api] = useSprings(['test','tstst'], index => ({ opacity: 1 }))
-//
-// // Update springs with new props
-//     api.start(index => ({ opacity: 0 }))
-// // Stop all springs
-//     api.stop()
+
    const animateMessage= useSpring({
    //  const animateMessage= useTransition(message,{
        from: {y:100,

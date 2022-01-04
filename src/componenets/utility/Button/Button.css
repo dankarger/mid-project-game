@@ -91,6 +91,7 @@ button, h1, h2 {
     font-size: calc(16px + 1.9vw);
     transition: 300ms ease-in-out;
     margin-right: 10px;
+
 }
 .settings:hover {
     color:limegreen;
@@ -151,6 +152,11 @@ button, h1, h2 {
     color:#c5c561;
 }
 
+
+.game-overButton {
+    margin:15px;
+    padding:10px 20px;
+}
 .hidden {
     /*background: transparent;*/
     /*color:transparent;*/

@@ -12,6 +12,7 @@ import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
 import BoingAnimation, {EntranceAnimation} from "../../Data/Animations";
 import {SoundsList} from "../../Data/Data";
 import PlaySound from "../../componenets/SoundPlayer/PlaySound";
+import MessagePlayer from "../../componenets/Message/Message2";
 
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext);
@@ -30,16 +31,28 @@ const Room=({player,callbackGoBack})=>{
          const[isStartBattle,setIsStartBattle]=useState(Boolean);
          const[isEnemyAttacking,setIsEnemyAttacking]=useState(false);
          const numberOfEnemyAttack=useRef(null)
+         const isPlayerMessageOn = useRef(false);
+          const PlayerMessageContent = useRef('')
 
-         const showMessage=(message, time)=> {
+    const showMessage=(message, time)=> {
              setIsMessageContent(message)
              setIsMessageOn(true);
              setTimeout(()=>{
-                 // setIsMessageContent('')
-                 // setIsMessageOn(false);
+                 setIsMessageContent('')
+                 setIsMessageOn(false);
              },time)
         }
 
+        const showMessagePlayer = (message)=>{
+             isPlayerMessageOn.current = true
+             PlayerMessageContent.current = message
+            setTimeout(()=>{
+                isPlayerMessageOn.current = false
+                PlayerMessageContent.current = ''
+
+            },2000)
+
+        }
         useEffect(()=>{
             setCurrentPlayer(player)
         },[player])
@@ -81,20 +94,31 @@ const Room=({player,callbackGoBack})=>{
             setIsBattleOver(true);
             setIsGameOver(true);
             PlaySound(SoundsList['trumpet3'])
+            showMessagePlayer('Dead')
         }
 
         const attackRandomValue =(number)=>{
              return Math.floor(Math.random()*number)
         }
 
+        const handleDeffendButton=()=>{
+             if(isEnemyAttacking){
+                 handleAttack2(currentPlayer, currentEnemy)
+                 showMessagePlayer('Deffend')
+
+             }else{
+                 handleAttack2(currentEnemy, currentPlayer)
+             }
+
+        }
         const attackManager=()=>{
              let randomNumber = attackRandomValue(10);
              if(randomNumber>5)return generateEnemyAttack()
             if(isEnemyAttacking) {
-                showMessage('noooo',1000)
+              showMessagePlayer('You need to defend')
                 return  handleAttack2(currentEnemy,currentPlayer)
             }else{
-                showMessage('yeeeeaa',1000);
+                // showMessage('yeeeeaa',1000);
                 return  handleAttack2(currentPlayer, currentEnemy)
             }
     }
@@ -108,10 +132,11 @@ const Room=({player,callbackGoBack})=>{
                 PlaySound(defender.sounds.hit)
             },400)
             setTimeout(()=>{
+
                 showMessage(`${defender.name} take  ${damage} damage`, 1500)
             },200)
             setisAction(!isAction)
-            showMessage(`${defender.name} take  ${damage} damage`, 1500)
+            // showMessage(`${defender.name} take  ${damage} damage`, 1500)
             if(attacker===currentPlayer){
                 setIsHit(!isHit)
             }
@@ -137,7 +162,7 @@ const Room=({player,callbackGoBack})=>{
                  if (randomizeNumber === 1) {
                      changeEnemyImage(randomizeNumber)
                      setTimeout(() => {
-                         showMessage('hhhhhh', 3000)
+                         // showMessage('hhhhhh', 3000)
                          // currentEnemy.currentImage = currentEnemy.images.default;
                          setTimeout(()=>{
                              currentEnemy.currentImage = currentEnemy.images.default;
@@ -150,7 +175,7 @@ const Room=({player,callbackGoBack})=>{
     const changeEnemyImage=(imageNumber)=> {
         if (imageNumber) {
             currentEnemy.currentImage = currentEnemy.images.hit;
-            showMessage('EnemyAttacking', 3000);
+            // showMessage('EnemyAttacking', 3000);
         }
     }
 
@@ -173,9 +198,12 @@ const Room=({player,callbackGoBack})=>{
                             <BoingAnimation  stateProps={isHit} character={ <Enemy enemy={currentEnemy} /> }/>
                         </div>
                     </div>
-                    <ActionMenu disabled={isBattleOver} handleAttack1={()=>attackManager()} handleDeffend1={generateEnemyAttack} />
+                    <ActionMenu disabled={isBattleOver} handleAttack1={()=>attackManager()} handleDeffend1={handleDeffendButton} />
                     <div className={isMessageOn?'message-div showMessage':' message-div hideMessage'}>
                       <Message  message={messageContent} />
+                    </div>
+                    <div className={isPlayerMessageOn.current?'message-div showMessage':' message-div hideMessage'}>
+                        <MessagePlayer  message={PlayerMessageContent.current} />
                     </div>
                     <div className={isBattleOver?'show':'hide'}>
                         <EndBattleWindow isWin={isWinBattle} continueCallback={callbackGoBack} isGameOver={isGameOver}/>

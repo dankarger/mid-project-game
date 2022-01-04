@@ -36,7 +36,7 @@ const DropDownMenu = ({ list, callback, isOpenAnimation })=>{
         (
             <animated.div style={fade} className='drop-down-menu' draggable={true} >
               <div className='drop-heading'>
-                  <p>Characters</p>       <p>Score:</p>
+                  <p>Characters ({list.length})</p>       <p>Score:</p>
               </div>
                 { showList() }
             </animated.div>
