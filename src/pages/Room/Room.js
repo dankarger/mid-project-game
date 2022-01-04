@@ -29,7 +29,7 @@ const Room=({player,callbackGoBack})=>{
          const[isHit,setIsHit]=useState(false);
          const[isStartBattle,setIsStartBattle]=useState(Boolean);
          const[isEnemyAttacking,setIsEnemyAttacking]=useState(false);
-         const numberOfEnemyAttack=useRef(null)
+         // const numberOfEnemyAttack=useRef(null)
          const isPlayerMessageOn = useRef(false);
           const PlayerMessageContent = useRef('')
 
