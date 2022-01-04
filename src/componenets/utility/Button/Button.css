@@ -98,6 +98,7 @@ button, h1, h2 {
     border:none;
     font-size: calc(16px + 1.9vw);
     transition: 300ms ease-in-out;
+    margin-right: 10px;
 }
 .settings:hover {
     color:limegreen;

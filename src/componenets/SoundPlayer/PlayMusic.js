@@ -35,7 +35,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
             console.log('muted',isMute)
 
         }
-    },[isPlay])
+    },[currentVolume,prevVolume,isMute])
     const handleChangeVolume=(e)=>{
         setCurrentVolume(e.target.value)
         musicPlayer.current.volume=currentVolume
