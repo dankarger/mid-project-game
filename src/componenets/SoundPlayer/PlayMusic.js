@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect, useContext} from "react";
 import {SoundsList} from "../../Data/Data";
 import './PlayMusic.css'
 import Button from "../utility/Button/Button";
-import {SettingContext} from "../gameApp/GameApp";
+// import {SettingContext} from "../gameApp/GameApp";
 import {SettingsPageContext} from "../GameLogic/GameLogic";
 
 const PlayMusic=({isPlay,volume=.5})=>{
