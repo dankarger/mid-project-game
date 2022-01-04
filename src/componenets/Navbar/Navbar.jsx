@@ -2,8 +2,11 @@ import React from "react";
 import './Navbar.css'
 import Button from "../utility/Button/Button";
 import HealthAnimation from "./HealthAnimation";
+// import {GoSettings} from "react-icons/Go";
+// import {IoLogoIonic} from "react-icons/all"
 
-const Navbar =({ roomNumber, currentPlayer, currentEnemy })=>{
+
+const Navbar =({ roomNumber, currentPlayer, currentEnemy, callback })=>{
 
     return (
         <div className='navbar'>
@@ -12,8 +15,10 @@ const Navbar =({ roomNumber, currentPlayer, currentEnemy })=>{
               {/*<div> <HealthAnimation num={currentPlayer.health}/></div>*/}
               <div className='navbar-item navbar-room'>Level: {roomNumber}</div>
               <div className='navbar-item'>{currentEnemy.name} <span><i className="fas fa-heart"> </i><HealthAnimation num={currentEnemy.health}/>/{currentEnemy.totalHealth}</span></div>
-            <div className='navbar-item'><Button className='settings' name='Settings' /></div>
+            <div  ><Button  callback={callback} className='settings' icon={<i className="fas fa-cog"> </i>} /></div>
         </div>
     )
 }
 export default Navbar
+
+

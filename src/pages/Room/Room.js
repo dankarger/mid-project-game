@@ -145,13 +145,13 @@ const Room=({player,callbackGoBack})=>{
     return(
         <>
                 <div className='Room' style={{background:`${currentRoomData.image}`}}>
-                    <Button name='Settings' callback={()=>setIsSettings(setting=>!setting)} />
+                    {/*<Button name='Settings' callback={()=>setIsSettings(setting=>!setting)} />*/}
                     {/*<Button name={"settings"} callback={}*/}
                     <Navbar currentPlayer={player} currentEnemy={currentEnemy} roomNumber={currentRoomData.value} callback={()=>setIsSettings(setting=>!setting)}/>
                     <div className="Room-img-div">
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
                     </div>
-                    <button onClick={callbackGoBack}>go back </button>
+                    {/*<button onClick={callbackGoBack}>go back </button>*/}
                     <div className="characters-div">
                         <div className="player--div">
                             {/*<Player player={player} name='chicken-rider'  />*/}

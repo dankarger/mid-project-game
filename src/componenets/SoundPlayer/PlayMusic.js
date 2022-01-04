@@ -61,6 +61,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
                     <audio ref={musicPlayer} src={SoundsList['music1']}> </audio>
                     {/*<button>play {FaPlay()}</button>*/}
                     {/*<Button callback={()=>handlePlayMusic()} name='play/pause' className='audio' />*/}
+                    <h2>Settings</h2>
                     <h4>Music Level</h4>
                     <input name='mute' type="checkbox" checked={isMute} onChange={handleMuteMusic2}/>
                     <label htmlFor="mute"> Mute</label>

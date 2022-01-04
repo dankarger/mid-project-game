@@ -88,7 +88,18 @@ button, h1, h2 {
 .settings {
     /*position: absolute;*/
     /*right: 0;*/
-    background: rgba(197, 197, 97, 0.56);
+    /*background: rgba(197, 197, 97, 0.56);*/
+    text-align: center;
+    width: fit-content;
+    background: transparent;
+    color:#3452a5;
+    text-shadow: 1px 1px 1px black;
+    border:none;
+    font-size: calc(12px + 1vw);
+    transition: 300ms ease-in-out;
+}
+.settings:hover {
+    color:limegreen;
 }
 
 .create {
