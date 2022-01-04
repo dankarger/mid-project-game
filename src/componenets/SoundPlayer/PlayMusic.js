@@ -48,7 +48,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
         // setIsMute(false)
         // setIsPlaying(isPlaying)
         handlePlayMusic()
-        return    ()=> handlePlayMusic()
+        // return    ()=> handlePlayMusic()
     },[isPlay,handlePlayMusic,currentVolume])
 
     return(
