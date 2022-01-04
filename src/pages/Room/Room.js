@@ -214,7 +214,7 @@ const Room=({player,callbackGoBack})=>{
                             {/*<Enemy   enemy={currentEnemy} />*/}
                         </div>
                     </div>
-                    <ActionMenu handleAttack1={()=>attackManager()} handleDeffend1={generateEnemyAttack} />
+                    <ActionMenu disabled={isBattleOver} handleAttack1={()=>attackManager()} handleDeffend1={generateEnemyAttack} />
                     <div className={isMessageOn?'message-div showMessage':' message-div hideMessage'}>
                       <Message  message={messageContent} />
                     </div>
