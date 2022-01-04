@@ -84,6 +84,7 @@ const Room=({player,callbackGoBack})=>{
             currentPlayer.currentImage=currentPlayer.images.death
             setIsWinBattle(false);
             setIsBattleOver(true);
+            setIsGameOver(true);
         }
 
         const attackRandomValue =(number)=>{
