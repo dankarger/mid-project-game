@@ -1,12 +1,11 @@
-import React, {useState,useContext} from "react";
+import React, {useState} from "react";
 import './HomePage.css'
 import Button from "../../componenets/utility/Button/Button";
 import CreatePlayerPage from "../CreatePlayerPage/CreatePlayerPage";
-import {Link} from "react-router-dom";
 import PlaySound from "../../componenets/SoundPlayer/PlaySound";
 import {SoundsList} from "../../Data/Data";
 import SettingsPage from "../SettingsPage/SettingsPage";
-import {SettingsPageContext} from "../../componenets/GameLogic/GameLogic";
+// import {SettingsPageContext} from "../../componenets/GameLogic/GameLogic";
 
 
 

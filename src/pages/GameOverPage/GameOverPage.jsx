@@ -12,12 +12,13 @@ const GameOverPage = ()=> {
 
 
     useEffect(()=>{
-
         if(outcome==='win'){
-
+            PlaySound(SoundsList['win'])
         }
-
-    },[])
+        else{
+            PlaySound(SoundsList['lose'])
+        }
+    },[outcome])
 
 
     return(

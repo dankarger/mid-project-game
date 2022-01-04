@@ -72,11 +72,11 @@ const Room=({player,callbackGoBack})=>{
                  // currentEnemy.currentImage=currentEnemy.images.death
                  // setIsWinBattle(true);
                  // setIsBattleOver(true);
-                PlaySound(SoundsList['swish'])
+                PlaySound(SoundsList['trumpet2.wav'])
                  if(currentEnemy.name==="BOSS"){
                      console.log('wwwinnn')
                      setIsGameOver(true)
-                     PlaySound(SoundsList['swish'])
+                     PlaySound(SoundsList['trumpet4.wav'])
                  }
         }
 
@@ -85,6 +85,7 @@ const Room=({player,callbackGoBack})=>{
             setIsWinBattle(false);
             setIsBattleOver(true);
             setIsGameOver(true);
+            PlaySound(SoundsList['trumpet3'])
         }
 
         const attackRandomValue =(number)=>{

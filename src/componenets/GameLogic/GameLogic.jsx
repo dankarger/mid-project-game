@@ -52,7 +52,7 @@ const GameLogic = ()=> {
     return (
         <div>
             <GameDataContext.Provider value={currentRoomData}>
-                <SettingsPageContext.Provider value={{isSettings:isSettingPage, setIsSettings:setIsSettingPage}} >
+                <SettingsPageContext.Provider value={{isSettings:isSettingPage, setIsSettings:setIsSettingPage,isPlayMusic:isPlayMusic}} >
                    <EnemyContext.Provider value={currentEnemy}>
                     <div className={ isMap ? 'show' : 'hide' }>
                         <MapPage currentRoom={currentRoomData} callback={handleMapButton} />

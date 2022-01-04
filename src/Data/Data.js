@@ -23,7 +23,11 @@ export const SoundsList={
         alert1:'/assets/sounds/electric_alert.wav',
         music1:'/assets/music/383_full_awkward-dillema_0151_preview.mp3',
         win:'/assets/sounds/GlissArpeggios01.wav',
-        lose:'/assets/sounds/'
+        lose:'/assets/sounds/trumpet1.wav',
+        trumpet2:'/assets/sounds/trumpet2.wav',
+        trumpet3:'/assets/sounds/trumpet3.wav',
+         trumpet4:'/assets/sounds/trumpet4.wav',
+
 }
 
 
