@@ -1,8 +1,7 @@
-import React, {useState, useRef, useEffect, createRef} from "react";
+import React, {useState, useRef, useEffect } from "react";
 import {SoundsList} from "../../Data/Data";
 import './PlayMusic.css'
-import Button from "../utility/Button/Button";
-// import SettingsPage from "../../pages/SettingsPage/SettingsPage";
+// import Button from "../utility/Button/Button";
 
 
 const PlayMusic=({isPlay,volume=.5})=>{
@@ -15,7 +14,6 @@ const PlayMusic=({isPlay,volume=.5})=>{
 
 
     const handlePlayMusic=()=>{
-        // setIsPlaying(prevValue =>!!prevValue)
         if(isPlaying) {
             musicPlayer.current.volume=currentVolume
             musicPlayer.current.play()
@@ -30,7 +28,8 @@ const PlayMusic=({isPlay,volume=.5})=>{
             setCurrentVolume(0)
             setIsMute(true)
             console.log('muted',isMute)
-        }else {
+        }
+        else {
             setIsMute(false)
             setCurrentVolume(prevVolume)
             console.log('muted',isMute)

@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import SettingsPage from "../../pages/SettingsPage/SettingsPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import CreatePlayerPage from "../../pages/CreatePlayerPage/CreatePlayerPage";
 import './GameApp.css'
@@ -13,15 +12,13 @@ export const SettingContext = React.createContext();
 const GameApp=()=>{
        const[currentPlayer,setCurrentPlayer]=useState( new PlayerClass(Character['chickenRider']))
        const[isSettingPage,setIsSettingPage]=useState(false)
-
-      function createNewPlayer({newPlayer}){
+       function createNewPlayer({newPlayer}){
         setCurrentPlayer(newPlayer)
     }
 
     const showSettingsPage = ()=>{
            setIsSettingPage(!isSettingPage)
     }
-
     return (
         <div className='GameApp'>
             <SettingContext.Provider value={showSettingsPage}>

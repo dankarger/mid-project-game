@@ -12,16 +12,13 @@ import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
 import Boing, {EntranceAnimation} from "../../Data/Animations";
 import {SoundsList} from "../../Data/Data";
 import PlaySound from "../../componenets/SoundPlayer/PlaySound";
-import Button from "../../componenets/utility/Button/Button";
 
-// import SettingsPage from "../SettingsPage/SettingsPage";
-// import Message2 from "../../componenets/Message/Messgae2";
 
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
          const currentPlayer = useContext(PlayerContext)
          // const [isSettings,setIsSettings ]= useState(SettingsPageContext)
-         const {isSettings,setIsSettings} =useContext(SettingsPageContext)
+         const {setIsSettings} =useContext(SettingsPageContext)
 
         const [currentEnemy,setCurrentEnemy] = useState({})
          const[isMessageOn,setIsMessageOn]=useState(false)

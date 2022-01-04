@@ -7,11 +7,9 @@ import {PlayerContext} from "../gameApp/GameApp";
 import {SoundsList} from "../../Data/Data";
 import PlaySound from "../SoundPlayer/PlaySound";
 import PlayMusic from "../SoundPlayer/PlayMusic";
-import SettingsPage from "../../pages/SettingsPage/SettingsPage";
 
 //use Contex states
 export const GameDataContext = React.createContext();
-// export const PlayerContext = React.createContext();
 export const EnemyContext = React.createContext();
 export const SettingsPageContext = React.createContext()
 
