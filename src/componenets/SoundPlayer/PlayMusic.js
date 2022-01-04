@@ -1,9 +1,9 @@
-import React, {useState, createRef, useRef, useEffect} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import {SoundsList} from "../../Data/Data";
 import './PlayMusic.css'
 import {FaPlay} from "react-icons/fa";
 import Button from "../utility/Button/Button";
-import SettingsPage from "../../pages/SettingsPage/SettingsPage";
+// import SettingsPage from "../../pages/SettingsPage/SettingsPage";
 
 
 const PlayMusic=({isPlay})=>{
