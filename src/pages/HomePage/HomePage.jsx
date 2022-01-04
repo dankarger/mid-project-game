@@ -10,7 +10,7 @@ import SettingsPage from "../SettingsPage/SettingsPage";
 const HomePage = ({callbackSetting}) => {
     const[isCreatePlayer,setIsCreatePlayer]=useState(false);
     // const[isPlayMusic,setIsPlayMusic] = useState(false)
-    const[isSettingPage,setIsSettingPage]=useState(false)
+    const[isSettingPage]=useState(false)
 
 
     const handleNewGameButton = ()=> {

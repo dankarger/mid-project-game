@@ -153,7 +153,7 @@ export const EnemyData = {
             attack:'/assets/images/enemies/virus-att.png'
         },
         sounds:{
-            hit:SoundsList['whoosh2'],
+            hit:SoundsList['low1'],
         }
     },
 }
