@@ -84,14 +84,12 @@ const Room=({player,callbackGoBack})=>{
         const handleAttack2 =(attacker,defender) => {
              // showMessage(`${attacker.name} Attack!!`,1500)
             setIsStartBattle(false)
+            PlaySound(SoundsList['click1'],0.9)
         const damage = attackRandomValue()
         if(defender.health > damage) {
             // defender.currentImage=defender.images.hit
-
             PlaySound(SoundsList['whoosh1']);
             setTimeout(()=>{
-                // PlaySound(SoundsList['click2'])
-                // PlaySound(SoundsList['low1'])
                 PlaySound(currentEnemy.sounds.hit)
             },400)
             setTimeout(()=>{

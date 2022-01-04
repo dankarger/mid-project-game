@@ -6,7 +6,8 @@ import {PlayerClass,Character} from "../../Data/Data";
 import {AVATARS} from "../../Data/Data";
 import getPlayersDataFromApi,{AddPlayer} from "../../Api/Api";
 import DropDownMenu from "../../componenets/utility/DropDownMenu/DropDownMenu";
-
+import PlaySound from "../../componenets/SoundPlayer/PlaySound";
+import {SoundsList} from "../../Data/Data";
 
 const CreatePlayerPage=({callback})=>{
     const[nameInputValue,setNameInputValue] = useState('Random Randy');
@@ -30,17 +31,19 @@ const CreatePlayerPage=({callback})=>{
 
     const handleOnChange =(e)=>{
          setNameInputValue(e.target.value);
+         PlaySound(SoundsList['click1'],0.2)
     }
 
 
     const handleCreateNewPlayer =()=> {
-        let newPlayer = new PlayerClass(Character['chickenRider']);
-        // TODO:change id to unique id
+         let newPlayer = new PlayerClass(Character['chickenRider']);
+         // TODO:change id to unique id
          newPlayer.id=new Date()
          newPlayer.name=nameInputValue.substr(0,18).toUpperCase()
          newPlayer.avatar = AVATARS[avatarInputValue]
         console.log(AVATARS[avatarInputValue])
         AddPlayer(newPlayer)
+        PlaySound(SoundsList['click3'],0.2)
        return  newPlayer
     }
 
@@ -51,7 +54,7 @@ const CreatePlayerPage=({callback})=>{
     const handleDropDownLoad=()=>{
         setIsDropDownMenu(!isDropDownMenu)
         const list=playersList
-        console.log('list',list)
+        PlaySound(SoundsList['click3'],0.2)
         return list
 
     }
@@ -60,12 +63,14 @@ const CreatePlayerPage=({callback})=>{
         setNameInputValue(player.name)
         setAvatarInputValue(player.avatar)
         setIsDropDownMenu(false)
+        PlaySound(SoundsList['click3'],0.2)
         return callback(player)
     }
     const handleSelectedAvatarDiv=(name)=>{
         setSelectedAvatar(name)
         setNameInputValue(name);
         setAvatarInputValue(name)
+        PlaySound(SoundsList['click3'],0.2)
     }
     return (
         <div className='create-page'>
@@ -102,11 +107,14 @@ const CreatePlayerPage=({callback})=>{
                     <Button callback={()=>handleDropDownLoad()} className='create load'  name='Load Character' />
                     <div className={isDropDownMenu?"dropDownMenu-div show":"dropDownMenu-div hide"}>
                         <DropDownMenu isOpenAnimation={isDropDownMenu} callback={handleChoosePlayer} list={playersList} />
-                        <Button callback={()=>setIsDropDownMenu(!isDropDownMenu)} className='create cancel'  name='Cancel Load' />
+                        <Button callback={()=>{
+                            setIsDropDownMenu(!isDropDownMenu)
+                            PlaySound(SoundsList['click3'],0.2)
+                        }} className='create cancel'  name='Cancel Load' />
                     </div>
                 </div>
                 <Link to='/'>
-                  <Button callback={callback} className='create'  name='Back to Menu' />
+                  <Button  callback={callback} className='create'  name='Back to Menu' />
                 </Link>
             </div>
         </div>

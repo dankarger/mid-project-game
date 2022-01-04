@@ -34,7 +34,7 @@ const GameLogic = ()=> {
         setCurrentRoomData(RoomsData[room]);
         setCurrentEnemy(currentRoomData.enemy);
         setIsMap(!setIsMap);
-        PlaySound(SoundsList['click5'])
+        PlaySound(SoundsList['click5'],0.2)
 
     }
 

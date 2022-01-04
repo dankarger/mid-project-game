@@ -65,9 +65,16 @@
     flex-direction: column;
     margin:.5rem;
 }
+
+/*.avatar-img-div label:checked {*/
+/*    transition: 1s ease-in-out;*/
+/*}*/
 .avatar-img-div:hover,.avatar-img-div::selection, .active {
+    text-decoration: underline;
+
     filter: none;
     opacity: 1;
+
 }
 
 .loading-div {

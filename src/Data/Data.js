@@ -11,6 +11,8 @@ export const SoundsList={
         click3:'/assets/sounds/simple_resonant_click.wav',
         click4:'/assets/sounds/Camera.wav',
         click5:'/assets/sounds/foto_klick_2.wav',
+        boing1:'/assets/sounds/BoingBox01.wav',
+
         swish:'/assets/sounds/Swish.wav',
         health1:'/assets/sounds/WindowShadewav',
         message3:'/assets/sounds/message3.wav',

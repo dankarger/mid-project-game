@@ -3,12 +3,15 @@ import './HomePage.css'
 import Button from "../../componenets/utility/Button/Button";
 import CreatePlayerPage from "../CreatePlayerPage/CreatePlayerPage";
 import {Link} from "react-router-dom";
+import PlaySound from "../../componenets/SoundPlayer/PlaySound";
+import {SoundsList} from "../../Data/Data";
 
 const HomePage = () => {
     const[isCreatePlayer,setIsCreatePlayer]=useState(false);
 
     const handleNewGameButton = ()=> {
         setIsCreatePlayer(true);
+        PlaySound(SoundsList['click1'],0.2)
     }
 
 
