@@ -13,7 +13,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
     const musicPlayer = useRef()
 
 
-    const handlePlayMusic=()=>{
+    const handlePlayMusic=React.useCallback(()=>{
         if(isPlaying) {
             musicPlayer.current.volume=currentVolume
             musicPlayer.current.play()
@@ -21,7 +21,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
         }else {
             // musicPlayer.current.pause()
         }
-    }
+    },[currentVolume,prevVolume,isMute])
     const handleMuteMusic2 =React.useCallback(()=>{
         if(!isMute) {
             setPrevVolume(currentVolume)
@@ -36,6 +36,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
 
         }
     },[currentVolume,prevVolume,isMute])
+
     const handleChangeVolume=(e)=>{
         setCurrentVolume(e.target.value)
         musicPlayer.current.volume=currentVolume
@@ -58,6 +59,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
                     <audio ref={musicPlayer} src={SoundsList['music1']}> </audio>
                     {/*<button>play {FaPlay()}</button>*/}
                     {/*<Button callback={()=>handlePlayMusic()} name='play/pause' className='audio' />*/}
+
                     <h2>Settings</h2>
                     <h4>Music Level</h4>
                     <input name='mute' type="checkbox" checked={isMute} onChange={handleMuteMusic2}/>
