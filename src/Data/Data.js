@@ -69,7 +69,7 @@ export const Character = {
         },
 
         sounds:{
-            hit:SoundsList['low1'],
+            hit:SoundsList['message3'],
         }
         }
 }
