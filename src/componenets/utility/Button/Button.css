@@ -2,15 +2,7 @@ button, h1, h2 {
     font-family: Kreon,sans-serif;
 }
 
-.action {
-    box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
-    height:50%;
-    width:calc(2.5rem + 4vw);
-    background: rgba(227, 174, 128, 0.29);
-    color: #c5c561;
-    text-shadow: 1px 1px 1px black;
-    font-size: calc(10pt + 0.8vw);
-}
+
 
 .home-page {
     width:fit-content;
@@ -169,13 +161,23 @@ button, h1, h2 {
     cursor: inherit;
 }
 
+.action {
+    height:50%;
+    width:calc(2.5rem + 4vw);
+    background: rgba(227, 174, 128, 0.29);
+    color: #c5c561;
+    text-shadow: 1px 1px 1px black;
+    font-size: calc(10pt + 0.8vw);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
 
+}
 
 .defendButton {
     width: 30%;
     animation: defend-button 2s ease-in-out alternate-reverse ;
     transform: translateX(0);
     transition: 500ms ease-in-out ;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
 }
 
 

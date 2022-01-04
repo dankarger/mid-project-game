@@ -26,7 +26,7 @@ const ActionMenu =({handleAttack1,handleDeffend1,disabled}) => {
                 loop: { reverse: true },
                 delay:Math.floor(Math.random()*1400),
             })
-        }, [api])
+        }, [api,api2])
 
     return (
         <div className='action-menu'>
@@ -37,7 +37,7 @@ const ActionMenu =({handleAttack1,handleDeffend1,disabled}) => {
                             <Button disabled={disabled}
                                     callback={handleAttack1}
                                     className='action'
-                                    icon={<i className="fas fa-meteor"></i>}
+                                    icon={<i className="fas fa-meteor"> </i>}
                                     name='Attack'/>
                         </div>
                     </animated.div>
@@ -48,7 +48,7 @@ const ActionMenu =({handleAttack1,handleDeffend1,disabled}) => {
                             <Button disabled={disabled}
                                     callback={handleDeffend1}
                                     className='action defendButton'
-                                    icon={<i className="fas fa-shield-alt"></i>}
+                                    icon={<i className="fas fa-shield-alt"> </i>}
                                     name='Deffend'/>
                         </div>
                     </animated.div>
