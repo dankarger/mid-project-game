@@ -47,12 +47,9 @@ const PlayMusic=({isPlay,volume=.5})=>{
         // setPrevVolume(currentVolume)
         // setIsMute(false)
         // setIsPlaying(isPlaying)
-        handlePlayMusic()
+        return    ()=> handlePlayMusic()
     },[isPlay,handlePlayMusic,currentVolume])
 
-    // const handleMuteMusic=()=> {
-    //     musicPlayer.current.mute=true
-    // }
     return(
         <div>
             {/*<SettingsPage>*/}
