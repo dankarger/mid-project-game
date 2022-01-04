@@ -1,0 +1,36 @@
+.volume {
+    --bar-bg:#ffff;
+    --seek-before-width:100px;
+    --seek-before-color:#ffc2a1;
+    --knobby: #3452a5;
+    --selectedKnobby: #26c9c3;
+
+
+    appearance: none;
+    background: var(--bar-bg);
+    border-radius:10px;
+    position: relative;
+    width: 50%;
+    height:11px;
+    outline:none;
+}
+
+
+.volume::before {
+    content:'';
+    height:11px;
+    width:var(--seek-before-width);
+    background-color: var(--seek-before-color);
+    border-top-left-radius:10px ;
+    border-top-right-radius:10px ;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.volume::-webkit-slider-thumb {
+    transform: scale(1.2);
+    background: var(--selectedKnobby);
+}

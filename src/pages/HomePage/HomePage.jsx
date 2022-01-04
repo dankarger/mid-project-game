@@ -5,12 +5,15 @@ import CreatePlayerPage from "../CreatePlayerPage/CreatePlayerPage";
 import {Link} from "react-router-dom";
 import PlaySound from "../../componenets/SoundPlayer/PlaySound";
 import {SoundsList} from "../../Data/Data";
+import PlayMusic from "../../componenets/SoundPlayer/PlayMusic";
 
 const HomePage = () => {
     const[isCreatePlayer,setIsCreatePlayer]=useState(false);
+    const[isPlayMusic,setIsPlayMusic] = useState(false)
 
     const handleNewGameButton = ()=> {
         setIsCreatePlayer(true);
+        setIsPlayMusic(true)
         PlaySound(SoundsList['click1'],0.2)
     }
 
@@ -26,6 +29,8 @@ const HomePage = () => {
             <div className={isCreatePlayer?'show':'hide'}>
                 <CreatePlayerPage callback={()=>setIsCreatePlayer(!setIsCreatePlayer)}/>
             </div>
+
+            <PlayMusic isPlay={isPlayMusic}/>
         </div>
     )
 }

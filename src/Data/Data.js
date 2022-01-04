@@ -12,7 +12,6 @@ export const SoundsList={
         click4:'/assets/sounds/Camera.wav',
         click5:'/assets/sounds/foto_klick_2.wav',
         boing1:'/assets/sounds/BoingBox01.wav',
-
         swish:'/assets/sounds/Swish.wav',
         health1:'/assets/sounds/WindowShadewav',
         message3:'/assets/sounds/message3.wav',
@@ -20,7 +19,8 @@ export const SoundsList={
         whoosh2:'/assets/sounds/short_whoosh5.wav',
         low1:'/assets/sounds/bass_deny1.wav',
         mapAnimation:'/assets/sounds/foto_klick_2.wav',
-
+        alert1:'/assets/sounds/electric_alert.wav',
+        music1:'/assets/music/383_full_awkward-dillema_0151_preview.mp3',
 }
 
 
