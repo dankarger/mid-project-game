@@ -64,19 +64,21 @@ const Room=({player,callbackGoBack})=>{
         ,[currentRoomData.enemy,currentRoomData.value,isEntranceAnimation])
 
         const enemyDeath=()=>{
+
              setTimeout(()=>{
                  currentEnemy.currentImage=currentEnemy.images.death
                  setIsWinBattle(true);
                  setIsBattleOver(true);
+                 PlaySound(SoundsList['trumpet2'])
              },1000)
                  // currentEnemy.currentImage=currentEnemy.images.death
                  // setIsWinBattle(true);
                  // setIsBattleOver(true);
-                PlaySound(SoundsList['trumpet2.wav'])
+
                  if(currentEnemy.name==="BOSS"){
                      console.log('wwwinnn')
                      setIsGameOver(true)
-                     PlaySound(SoundsList['trumpet4.wav'])
+                     PlaySound(SoundsList['trumpet4'])
                  }
         }
 
