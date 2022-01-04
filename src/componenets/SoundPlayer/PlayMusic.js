@@ -14,7 +14,6 @@ const PlayMusic=({isPlay,volume=.5})=>{
     const musicPlayer = useRef()
     const {setIsSettings} =useContext(SettingsPageContext);
 
-
     const handlePlayMusic=React.useCallback(()=>{
         if(isPlaying) {
             musicPlayer.current.volume=currentVolume

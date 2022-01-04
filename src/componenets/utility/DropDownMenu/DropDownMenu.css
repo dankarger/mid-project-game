@@ -24,6 +24,12 @@ a{
     border-radius: 10px;
 }
 
+.drop-heading {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .drop-down-menu p {
     width:50%;
     font-size: calc(8px + 1vw);
