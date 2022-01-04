@@ -1,8 +1,9 @@
-import React, {useState, useRef, useEffect } from "react";
+import React, {useState, useRef, useEffect, useContext} from "react";
 import {SoundsList} from "../../Data/Data";
 import './PlayMusic.css'
-// import Button from "../utility/Button/Button";
-
+import Button from "../utility/Button/Button";
+import {SettingContext} from "../gameApp/GameApp";
+import {SettingsPageContext} from "../GameLogic/GameLogic";
 
 const PlayMusic=({isPlay,volume=.5})=>{
     const[isPlaying, setIsPlaying]=useState(isPlay)
@@ -11,6 +12,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
     // const[isMute,setIsMute]=createRef(false)
     const[prevVolume,setPrevVolume]=useState(currentVolume)
     const musicPlayer = useRef()
+    const {setIsSettings} =useContext(SettingsPageContext);
 
 
     const handlePlayMusic=React.useCallback(()=>{
@@ -70,6 +72,8 @@ const PlayMusic=({isPlay,volume=.5})=>{
                             step='.05' className='volume' type="range" onChange={handleChangeVolume} value={currentVolume}/>
                     {/*<label htmlFor="mute">Mute</label>*/}
                     {/*<input onChange={handleMuteMusic} name='mute' type="checkbox"/>*/}
+
+                    <Button name='Close' callback={()=>setIsSettings(setting=>!setting)} />
                 </div>
 
             {/*</SettingsPage>*/}

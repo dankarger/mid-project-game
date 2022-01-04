@@ -14,7 +14,7 @@ const EndBattleWindow= ({isWin,continueCallback,isGameOver})=> {
         }else if(isGameOver&&!isWin) {
             PlaySound(SoundsList['trumpet3'])
         }
-    },[isWin])
+    },[isWin,isGameOver])
 
     return (
         <div className='end-battle'>
