@@ -22,7 +22,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
             // musicPlayer.current.pause()
         }
     }
-    const handleMuteMusic2 =()=>{
+    const handleMuteMusic2 =React.useCallback(()=>{
         if(!isMute) {
             setPrevVolume(currentVolume)
             setCurrentVolume(0)
@@ -35,7 +35,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
             console.log('muted',isMute)
 
         }
-    }
+    })
     const handleChangeVolume=(e)=>{
         setCurrentVolume(e.target.value)
         musicPlayer.current.volume=currentVolume
