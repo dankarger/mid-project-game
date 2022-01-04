@@ -133,7 +133,6 @@ const Room=({player,callbackGoBack})=>{
                 currentPlayer.health = 0;
                 return playerDeath()
             }
-
         }
     }
         const generateEnemyAttack=()=>{

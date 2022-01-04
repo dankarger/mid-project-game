@@ -22,6 +22,8 @@ export const SoundsList={
         mapAnimation:'/assets/sounds/foto_klick_2.wav',
         alert1:'/assets/sounds/electric_alert.wav',
         music1:'/assets/music/383_full_awkward-dillema_0151_preview.mp3',
+        win:'/assets/sounds/GlissArpeggios01.wav',
+        lose:'/assets/sounds/'
 }
 
 
