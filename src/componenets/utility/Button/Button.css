@@ -105,7 +105,7 @@ button, h1, h2 {
     /*border: 2px solid grey;*/
     transition: 400ms ease-in-out;
     color: whitesmoke;
-
+    white-space: nowrap;
     text-shadow: 1px 1px 3px #090909;
     font-size: calc(10px + 1vw);
     margin:1rem;
@@ -122,10 +122,11 @@ button, h1, h2 {
     /*box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;*/
     /*box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;*/
     box-shadow: rgba(0, 0, 0, 0.56) 0 22px 30px 4px;
-
-
 }
 
+.load, .cancel {
+    transform: translateY(20px);
+}
 
 .endBattle-window {
     padding:.5rem 1rem;

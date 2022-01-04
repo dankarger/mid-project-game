@@ -23,22 +23,15 @@ const CreatePlayerPage=({callback})=>{
             return data.data
         }
         const playersList = getData().then(res=>{
-            console.log('playerlist',res)
             setPlayersList(res)
         })
-        console.log('playerlist',playersList)
-
     },[])
 
 
     const handleOnChange =(e)=>{
          setNameInputValue(e.target.value);
     }
-    // const handleRadioInputOnChange =(e)=>{
-    //     console.log('dd',e.target.value)
-    //     setNameInputValue(e.target.value);
-    //     setAvatarInputValue(e.target.value)
-    // }
+
 
     const handleCreateNewPlayer =()=> {
         let newPlayer = new PlayerClass(Character['chickenRider']);
@@ -107,10 +100,10 @@ const CreatePlayerPage=({callback})=>{
                     <Button callback={()=>updateLocalStorage()} className='create'  name='Create Character' />
                 </Link>
                 <div className='loading-div'>
-                    <Button callback={()=>handleDropDownLoad()} className='create'  name='Load Character' />
+                    <Button callback={()=>handleDropDownLoad()} className='create load'  name='Load Character' />
                     <div className={isDropDownMenu?"dropDownMenu-div show":"dropDownMenu-div hide"}>
                         <DropDownMenu isOpenAnimation={isDropDownMenu} callback={handleChoosePlayer} list={playersList} />
-                        <Button callback={()=>setIsDropDownMenu(!isDropDownMenu)} className='create'  name='Cancel Load' />
+                        <Button callback={()=>setIsDropDownMenu(!isDropDownMenu)} className='create cancel'  name='Cancel Load' />
                     </div>
                 </div>
                 <Link to='/'>

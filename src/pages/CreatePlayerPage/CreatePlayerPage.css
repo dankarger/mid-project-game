@@ -50,6 +50,7 @@
     justify-content: center;
     align-items: center;
 
+
 }
 
 .avatar-img-div {
@@ -62,7 +63,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /*margin:1rem;*/
+    margin:.5rem;
 }
 .avatar-img-div:hover,.avatar-img-div::selection, .active {
     filter: none;
@@ -73,6 +74,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /*transform: translateY(20px);*/
+    white-space: nowrap;
 }
 
 . input:checked {
@@ -84,7 +87,7 @@
     /*margin:20rem*/
 }
 .name-input-div{
-    margin:1rem;
+    margin-top:2.5rem;
     width:700px;
 }
 
@@ -93,6 +96,7 @@
     width:100%;
     height:100%;
     border:transparent 1px solid;
+
 }
 .avatars-div img:hover{
 

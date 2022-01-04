@@ -9,7 +9,6 @@ const HomePage = () => {
 
     const handleNewGameButton = ()=> {
         setIsCreatePlayer(true);
-
     }
 
 
@@ -24,7 +23,6 @@ const HomePage = () => {
             <div className={isCreatePlayer?'show':'hide'}>
                 <CreatePlayerPage callback={()=>setIsCreatePlayer(!setIsCreatePlayer)}/>
             </div>
-
         </div>
     )
 }

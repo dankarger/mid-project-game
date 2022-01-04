@@ -12,9 +12,8 @@ export const PlayerContext = React.createContext();
 const GameApp=()=>{
        const[currentPlayer,setCurrentPlayer]=useState( new PlayerClass(Character['chickenRider']))
 
-    function createNewPlayer({newPlayer}){
+      function createNewPlayer({newPlayer}){
         setCurrentPlayer(newPlayer)
-       return console.log('player',newPlayer)
     }
 
     return (
