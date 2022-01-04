@@ -22,7 +22,7 @@ const CreatePlayerPage=({callback})=>{
             const data= await getPlayersDataFromApi();
             return data.data
         }
-        const playersList = getData().then(res=>{
+         getData().then(res=>{
             setPlayersList(res)
         })
     },[])
@@ -47,7 +47,6 @@ const CreatePlayerPage=({callback})=>{
    const updateLocalStorage=()=>{
         const player = handleCreateNewPlayer()
         localStorage.setItem('chicken', JSON.stringify(player));
-        console.log(localStorage)
     }
     const handleDropDownLoad=()=>{
         setIsDropDownMenu(!isDropDownMenu)
