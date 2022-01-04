@@ -5,7 +5,6 @@ import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
 import Enemy from "../../componenets/Enemy/Enemy";
 import Player from "../../componenets/Player/Player";
 import {GameDataContext, SettingsPageContext} from "../../componenets/GameLogic/GameLogic";
-// import {PlayerContext} from "../../componenets/gameApp/GameApp";
 import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
 import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
@@ -56,9 +55,9 @@ const Room=({player,callbackGoBack})=>{
         useEffect(()=>{
             setCurrentPlayer(player)
         },[player])
-
         useEffect(()=>{
             showMessage(`Level ${currentRoomData.value===0?1:currentRoomData.value}`,6000);
+            showMessagePlayer(`Level ${currentRoomData.value===0?1:currentRoomData.value}`);
             PlaySound(SoundsList['whoosh2'])
                 setIsStartBattle(true)
             const createNewEnemy=()=>{
@@ -67,7 +66,6 @@ const Room=({player,callbackGoBack})=>{
             }
             createNewEnemy()
                 setIsEntranceAnimation(false);
-            // randomEnemyAttack();
             return ()=>{
                 setIsBattleOver(false);
             }
@@ -82,7 +80,6 @@ const Room=({player,callbackGoBack})=>{
                  PlaySound(SoundsList['trumpet2'])
              },1000)
                  if(currentEnemy.name==="BOSS"){
-                     console.log('wwwinnn')
                      setIsGameOver(true)
                      PlaySound(SoundsList['trumpet4'])
                  }
@@ -104,13 +101,12 @@ const Room=({player,callbackGoBack})=>{
         const handleDeffendButton=()=>{
              if(isEnemyAttacking){
                  handleAttack2(currentPlayer, currentEnemy)
-                 showMessagePlayer('Deffend')
-
              }else{
-                 handleAttack2(currentEnemy, currentPlayer)
+                 showMessagePlayer('You need to attack')
+                 return handleAttack2(currentEnemy, currentPlayer)
              }
-
         }
+
         const attackManager=()=>{
              let randomNumber = attackRandomValue(10);
              if(randomNumber>5)return generateEnemyAttack()
@@ -119,9 +115,11 @@ const Room=({player,callbackGoBack})=>{
                 return  handleAttack2(currentEnemy,currentPlayer)
             }else{
                 // showMessage('yeeeeaa',1000);
+
                 return  handleAttack2(currentPlayer, currentEnemy)
+
             }
-    }
+          }
 
         const handleAttack2 =(attacker,defender) => {
             setIsStartBattle(false)
@@ -132,11 +130,9 @@ const Room=({player,callbackGoBack})=>{
                 PlaySound(defender.sounds.hit)
             },400)
             setTimeout(()=>{
-
                 showMessage(`${defender.name} take  ${damage} damage`, 1500)
             },200)
             setisAction(!isAction)
-            // showMessage(`${defender.name} take  ${damage} damage`, 1500)
             if(attacker===currentPlayer){
                 setIsHit(!isHit)
             }
@@ -153,31 +149,15 @@ const Room=({player,callbackGoBack})=>{
         }
     }
         const generateEnemyAttack=()=>{
-             let randomizeNumber = Math.random()*4+1;
-             randomizeNumber=1
-             numberOfEnemyAttack.current=randomizeNumber;
              if(!isEnemyAttacking) {
-                 changeEnemyImage(randomizeNumber)
+                 currentEnemy.currentImage = currentEnemy.images.hit;
                  setIsEnemyAttacking(true)
-                 if (randomizeNumber === 1) {
-                     changeEnemyImage(randomizeNumber)
-                     setTimeout(() => {
-                         // showMessage('hhhhhh', 3000)
-                         // currentEnemy.currentImage = currentEnemy.images.default;
+                     showMessagePlayer('You need to Deffend')
                          setTimeout(()=>{
                              currentEnemy.currentImage = currentEnemy.images.default;
                              setIsEnemyAttacking(false)
                          },3000)
-                     })
-                 }
              }}
-
-    const changeEnemyImage=(imageNumber)=> {
-        if (imageNumber) {
-            currentEnemy.currentImage = currentEnemy.images.hit;
-            // showMessage('EnemyAttacking', 3000);
-        }
-    }
 
     return(
         <>
