@@ -13,7 +13,7 @@ import SettingsPage from "../../pages/SettingsPage/SettingsPage";
 export const GameDataContext = React.createContext();
 // export const PlayerContext = React.createContext();
 export const EnemyContext = React.createContext();
-
+export const SettingsPageContext = React.createContext()
 
 export const getPlayerFromLocalStorage =  ()=>{
     const localPlayer =  localStorage.getItem('chicken') ;
@@ -31,9 +31,8 @@ const GameLogic = ()=> {
     const[currentEnemy,setCurrentEnemy]=useState({});
     const[isPlayMusic,setIsPlayMusic] = useState(false)
     const[isSettingPage,setIsSettingPage]=useState(false)
-    const[volumeController,setVolumeController]=useState(1)
 
-
+    // const[volumeController,setVolumeController]=useState(1)
     const handleMapButton=(room)=>{
         if(currentRoomData[room]==='boss')console.log('boss')
         setCurrentRoomData(RoomsData[room]);
@@ -49,16 +48,13 @@ const GameLogic = ()=> {
 
     const handleGoBackButton = ()=>{
         setIsMap(true)
-
     }
-
-
 
 
     return (
         <div>
             <GameDataContext.Provider value={currentRoomData}>
-                {/*<PlayerContext.Provider value={currentPlayer}>*/}
+                <SettingsPageContext.Provider value={{isSettings:isSettingPage, setIsSettings:setIsSettingPage}} >
                    <EnemyContext.Provider value={currentEnemy}>
                     <div className={ isMap ? 'show' : 'hide' }>
                         <MapPage currentRoom={currentRoomData} callback={handleMapButton} />
@@ -66,16 +62,12 @@ const GameLogic = ()=> {
                     <div className={ !isMap ? 'show' : 'hide' }>
                         <Room callbackGoBack={handleGoBackButton} player={currentPlayer} roomData={currentRoomData}/>
                     </div>
-                       <PlayMusic isPlay={isPlayMusic} volume={0.5} />
+                       <div className={isSettingPage?'show':'hide'}>
+                           <PlayMusic isPlay={isPlayMusic} volume={0.5} />
+                       </div>
                    </EnemyContext.Provider>
-                {/*</PlayerContext.Provider>*/}
-                {/*<div className={isSettingPage?'show':'hide'}>*/}
-                {/*    <SettingsPage isPlay={isPlayMusic} volumeController={volumeController} />*/}
-                {/*</div>*/}
-
+                </SettingsPageContext.Provider>
         </GameDataContext.Provider>
-
-            {/*<FullControl isPlay={isPlayMusic}/>*/}
         </div>
     )
 }

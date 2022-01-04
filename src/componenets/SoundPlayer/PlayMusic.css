@@ -1,3 +1,11 @@
+.play-music {
+    color:whitesmoke;
+    position: absolute;
+    top:10%;
+    width:80%;
+    background: rgba(197, 197, 97, 0.47);
+}
+
 .volume {
     --bar-bg:#ffff;
     --seek-before-width:100px;

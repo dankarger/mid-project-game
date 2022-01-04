@@ -4,7 +4,7 @@ import Navbar from "../../componenets/Navbar/Navbar";
 import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
 import Enemy from "../../componenets/Enemy/Enemy";
 import Player from "../../componenets/Player/Player";
-import {GameDataContext} from "../../componenets/GameLogic/GameLogic";
+import {GameDataContext, SettingsPageContext} from "../../componenets/GameLogic/GameLogic";
 import {PlayerContext} from "../../componenets/gameApp/GameApp";
 import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
@@ -12,14 +12,18 @@ import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
 import Boing, {EntranceAnimation} from "../../Data/Animations";
 import {SoundsList} from "../../Data/Data";
 import PlaySound from "../../componenets/SoundPlayer/PlaySound";
+import Button from "../../componenets/utility/Button/Button";
 
+// import SettingsPage from "../SettingsPage/SettingsPage";
 // import Message2 from "../../componenets/Message/Messgae2";
-
 
 const Room=({player,callbackGoBack})=>{
          const currentRoomData = useContext(GameDataContext)
          const currentPlayer = useContext(PlayerContext)
-         const [currentEnemy,setCurrentEnemy] = useState({})
+         // const [isSettings,setIsSettings ]= useState(SettingsPageContext)
+         const {isSettings,setIsSettings} =useContext(SettingsPageContext)
+
+        const [currentEnemy,setCurrentEnemy] = useState({})
          const[isMessageOn,setIsMessageOn]=useState(false)
          const[messageContent,setIsMessageContent]=useState('')
          const[isAction,setisAction]=useState(false);
@@ -29,6 +33,7 @@ const Room=({player,callbackGoBack})=>{
          const[isEntranceAnimation,setIsEntranceAnimation]=useState(true)
          const[isHit,setIsHit]=useState(false)
          const[isStartBattle,setIsStartBattle]=useState(Boolean)
+
 
          const showMessage=(message, time)=> {
              setIsMessageContent(message)
@@ -140,7 +145,9 @@ const Room=({player,callbackGoBack})=>{
     return(
         <>
                 <div className='Room' style={{background:`${currentRoomData.image}`}}>
-                    <Navbar currentPlayer={player} currentEnemy={currentEnemy} roomNumber={currentRoomData.value}/>
+                    <Button name='Settings' callback={()=>setIsSettings(setting=>!setting)} />
+                    {/*<Button name={"settings"} callback={}*/}
+                    <Navbar currentPlayer={player} currentEnemy={currentEnemy} roomNumber={currentRoomData.value} callback={()=>setIsSettings(setting=>!setting)}/>
                     <div className="Room-img-div">
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
                     </div>

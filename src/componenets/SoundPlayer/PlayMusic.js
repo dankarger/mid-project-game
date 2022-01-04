@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from "react";
+import React, {useState, useRef, useEffect, createRef} from "react";
 import {SoundsList} from "../../Data/Data";
 import './PlayMusic.css'
 import Button from "../utility/Button/Button";
@@ -9,8 +9,10 @@ const PlayMusic=({isPlay,volume=.5})=>{
     const[isPlaying, setIsPlaying]=useState(isPlay)
     const[currentVolume,setCurrentVolume]=useState(0.5)
     const[isMute,setIsMute]=useState(false)
+    // const[isMute,setIsMute]=createRef(false)
     const[prevVolume,setPrevVolume]=useState(currentVolume)
     const musicPlayer = useRef()
+
 
     const handlePlayMusic=()=>{
         // setIsPlaying(prevValue =>!!prevValue)
@@ -43,6 +45,7 @@ const PlayMusic=({isPlay,volume=.5})=>{
     useEffect(()=>{
         musicPlayer.current.volume=currentVolume
         setIsPlaying(isPlay)
+        // setPrevVolume(currentVolume)
         // setIsMute(false)
         // setIsPlaying(isPlaying)
         handlePlayMusic()
@@ -57,7 +60,8 @@ const PlayMusic=({isPlay,volume=.5})=>{
                 <div className='play-music'>
                     <audio ref={musicPlayer} src={SoundsList['music1']}> </audio>
                     {/*<button>play {FaPlay()}</button>*/}
-                    <Button callback={()=>handlePlayMusic()} name='play/pause' className='audio' />
+                    {/*<Button callback={()=>handlePlayMusic()} name='play/pause' className='audio' />*/}
+                    <h4>Music Level</h4>
                     <input name='mute' type="checkbox" checked={isMute} onChange={handleMuteMusic2}/>
                     <label htmlFor="mute"> Mute</label>
                     {/*<Button callback={()=>handlePlayMusic()} name='play' className='audio' />*/}
