@@ -29,7 +29,10 @@ const HomePage = ({callbackSetting}) => {
         <div className='home-content'>
             <h1 className='title'><p>The</p> Chicken Rider</h1>
            <div className='home-menu-divs'>
-              <Button callback={handleNewGameButton} className='home-page'   name='New Game'/>
+               <div onClick={()=>PlaySound(SoundsList['music2'],0.7)}>
+                   <Button  callback={handleNewGameButton} className='home-page'   name='New Game'/>
+
+               </div>
                {/*<Link to='/settings' > <Button className='home-page'   name='Settings'/> </Link>*/}
                {/* <Button callback={()=>setIsSettings(setting=>!setting)} className='home-page'   name='Settings'/>*/}
            </div>
