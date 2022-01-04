@@ -5,7 +5,7 @@ import ActionMenu from "../../componenets/ActionMenu/ActionMenu";
 import Enemy from "../../componenets/Enemy/Enemy";
 import Player from "../../componenets/Player/Player";
 import {GameDataContext, SettingsPageContext} from "../../componenets/GameLogic/GameLogic";
-import {PlayerContext} from "../../componenets/gameApp/GameApp";
+// import {PlayerContext} from "../../componenets/gameApp/GameApp";
 import Message from "../../componenets/Message/Message";
 import {EnemyClass} from "../../Data/Data";
 import EndBattleWindow from "../../componenets/EndBattleWindow/EndBattleWindow";
