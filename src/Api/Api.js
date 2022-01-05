@@ -17,8 +17,6 @@ const getPlayersDataFromApi = async() => {
 
 export default getPlayersDataFromApi
 
-
-
 export const findPlayer= async (id)=>{
     // const DATA= getDataBase();
     // return DATA.find(shoe=>shoe.id===id);
@@ -37,10 +35,9 @@ export const deletePlayer= async (id)=>{
     return selectedPlayer
 }
 
-export const UpdatePlayer= async (id,player)=>{
+export const updatePlayer= async (id,player)=>{
     console.log('updateplayer',player)
     await axiosApi.put(`/${id}`,player)
-
 }
 
 

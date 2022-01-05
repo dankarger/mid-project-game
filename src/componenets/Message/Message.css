@@ -24,8 +24,9 @@
 .messagePlayerText{
     width:fit-content;
     height:fit-content;
-    background: rgba(93, 211, 183, 0.5);
-    color:whitesmoke;
+    /*background: rgba(93, 211, 183, 0.5);*/
+    /*color:whitesmoke;*/
+    color: #f3f363;
     position: fixed;
     top: 30%;
     left: 20%;

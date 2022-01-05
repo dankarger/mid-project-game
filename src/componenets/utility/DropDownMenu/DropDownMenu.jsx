@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import './DropDownMenu.css'
 import {Link} from "react-router-dom";
 import {useSpring, animated, config} from "react-spring";
+import Button from "../Button/Button";
 
-const DropDownMenu = ({ list, callback, isOpenAnimation })=>{
+
+const DropDownMenu = ({ list, callback, isOpenAnimation,callbackEdit })=>{
     const[isAnimation,setIAnimation]=useState(true)
     const fade = useSpring({
         from:{x:-300,scale:0,opacity:0},
@@ -20,13 +22,16 @@ const DropDownMenu = ({ list, callback, isOpenAnimation })=>{
            return (
                 <div key={player.id} className={isAnimation?'show':'hide'}>
                    <div onClick={()=>callback(player)} className='drop-down-player' key={player.id + Date.now()}>
-                       <Link to='/game'>
+
                            <div className='drop-down-item'>
-                               <img className='thumbnail' src={player.avatar} alt="thumbnail"/>
-                               <p> {player.name} </p>
-                               <p>{player.score}</p>
+                               <Link to='/game'>
+                                   <img className='thumbnail' src={player.avatar} alt="thumbnail"/>
+                                   <p> {player.name} </p>
+                                   <p>{player.score}</p>
+                               </Link>
+                               <Button name='Edit' callback={callbackEdit} />
                            </div>
-                       </Link>
+
                    </div>
                 </div>
            )

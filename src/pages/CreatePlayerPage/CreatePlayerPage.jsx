@@ -8,18 +8,21 @@ import getPlayersDataFromApi,{AddPlayer} from "../../Api/Api";
 import DropDownMenu from "../../componenets/utility/DropDownMenu/DropDownMenu";
 import PlaySound from "../../componenets/SoundPlayer/PlaySound";
 import {SoundsList} from "../../Data/Data";
+import {deletePlayer} from "../../Api/Api";
+import {updatePlayer} from "../../Api/Api";
+
 
 const CreatePlayerPage=({callback})=>{
-    const[nameInputValue,setNameInputValue] = useState('Random Randy');
-    const[avatarInputValue,setAvatarInputValue] = useState('ALONZO');
-    const[playersList,setPlayersList] = useState([]);
-    const[isDropDownMenu,setIsDropDownMenu] = useState(false)
-    const[selectedAvatar,setSelectedAvatar]=useState('ALONZO')
+    const[nameInputValue, setNameInputValue] = useState('Random Randy');
+    const[avatarInputValue, setAvatarInputValue] = useState('ALONZO');
+    const[playersList, setPlayersList] = useState([]);
+    const[isDropDownMenu, setIsDropDownMenu] = useState(false);
+    const[selectedAvatar, setSelectedAvatar]=useState('ALONZO');
+    const[isEditPlayer, setIsEditPlayer] = useState(false)
 
 
 
     useEffect(()=>{
-
         const getData = async ()=>{
             const data= await getPlayersDataFromApi();
             return data.data
@@ -35,7 +38,6 @@ const CreatePlayerPage=({callback})=>{
          PlaySound(SoundsList['click1'],0.2)
     }
 
-
     const handleCreateNewPlayer =()=> {
          let newPlayer = new PlayerClass(Character['chickenRider']);
          // TODO:change id to unique id
@@ -46,6 +48,22 @@ const CreatePlayerPage=({callback})=>{
         AddPlayer(newPlayer)
         PlaySound(SoundsList['click3'],0.2)
        return  newPlayer
+    }
+    const handleEditPlayer=(player)=>{
+        setIsEditPlayer(!isEditPlayer);
+        if(isEditPlayer){
+
+            return(
+                <div className='edit'>
+                    <div className=''>
+                        {/*<img className='thumbnail' src={player.avatar} alt="thumbnail"/>*/}
+                        {/*<p> {player.name} </p>*/}
+                        {/*<p>{player.score}</p>*/}
+                        <button>Edit</button>
+                    </div>
+                </div>
+            )
+        }
     }
 
    const updateLocalStorage=()=>{
@@ -60,7 +78,6 @@ const CreatePlayerPage=({callback})=>{
 
     }
     const handleChoosePlayer=(player)=>{
-        console.log('ddd',player)
         setNameInputValue(player.name)
         setAvatarInputValue(player.avatar)
         setIsDropDownMenu(false)
@@ -114,11 +131,12 @@ const CreatePlayerPage=({callback})=>{
                 <div className='loading-div'>
                     <Button callback={()=>handleDropDownLoad()} className='create load'  name='Load Character' onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}/>
                     <div className={isDropDownMenu?"dropDownMenu-div show":"dropDownMenu-div hide"}>
-                        <DropDownMenu isOpenAnimation={isDropDownMenu} callback={handleChoosePlayer} list={playersList} />
+                        <DropDownMenu isOpenAnimation={isDropDownMenu} callback={handleChoosePlayer} callbackEdit={handleEditPlayer} list={playersList} />
                         <Button callback={()=>{
                             setIsDropDownMenu(!isDropDownMenu)
                             PlaySound(SoundsList['click3'],0.2)
                         }} className='create cancel'  name='Cancel Load'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)} />
+                        {isEditPlayer && handleEditPlayer()}
                     </div>
                 </div>
                 <Link to='/'>

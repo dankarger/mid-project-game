@@ -18,7 +18,7 @@ const MessagePlayer = ({message,className})=> {
         },
         delay:200,
         reset:true,
-        config:{config:config.slow,friction:10,duration:2000},
+        config:{config:config.slow,friction:10,duration:2500},
         cancel:false
     })
     // useEffect(()=>{
