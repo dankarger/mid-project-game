@@ -21,6 +21,7 @@ a{
     border: 8px solid rgba(46, 115, 129, 0.56);
     border-radius: 10px;
     z-index: -100;
+
 }
 
 .drop-heading {
@@ -60,6 +61,8 @@ a{
     border: #c5c561 1px solid;
     width:100%;
     /*height: 20%;*/
+    display: flex;
+    justify-content: center;
 }
 .drop-down-player:hover {
     cursor: pointer;

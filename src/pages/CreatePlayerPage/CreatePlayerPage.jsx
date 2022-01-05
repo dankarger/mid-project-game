@@ -8,8 +8,8 @@ import getPlayersDataFromApi,{AddPlayer} from "../../Api/Api";
 import DropDownMenu from "../../componenets/utility/DropDownMenu/DropDownMenu";
 import PlaySound from "../../componenets/SoundPlayer/PlaySound";
 import {SoundsList} from "../../Data/Data";
-import {deletePlayer} from "../../Api/Api";
-import {updatePlayer} from "../../Api/Api";
+// import {deletePlayer} from "../../Api/Api";
+// import {updatePlayer} from "../../Api/Api";
 
 
 const CreatePlayerPage=({callback})=>{

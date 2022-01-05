@@ -22,7 +22,7 @@ const ActionMenu =({handleAttack1,handleDeffend1,disabled}) => {
             api2({
                 x: -75,
                 opacity: 1,
-                config:{friction:2,duration:1500},
+                config:{friction:1,duration:1500},
                 loop: { reverse: true },
                 delay:Math.floor(Math.random()*1400),
             })

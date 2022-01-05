@@ -22,15 +22,17 @@ const DropDownMenu = ({ list, callback, isOpenAnimation,callbackEdit })=>{
            return (
                 <div key={player.id} className={isAnimation?'show':'hide'}>
                    <div onClick={()=>callback(player)} className='drop-down-player' key={player.id + Date.now()}>
-
+                       <Link to='/game'>
                            <div className='drop-down-item'>
-                               <Link to='/game'>
+
                                    <img className='thumbnail' src={player.avatar} alt="thumbnail"/>
+
                                    <p> {player.name} </p>
                                    <p>{player.score}</p>
-                               </Link>
-                               <Button name='Edit' callback={callbackEdit} />
+
                            </div>
+                       </Link>
+                       <Button name='Edit' callback={()=>callbackEdit(player)} />
 
                    </div>
                 </div>

@@ -151,8 +151,8 @@ button, h1, h2 {
 }
 
 .edit {
-    position: relative;
-    z-index: 2000;
+    /*position: relative;*/
+    /*z-index: 2000;*/
 }
 
 @keyframes fade-in {

@@ -18,7 +18,7 @@ const EndBattleWindow= ({isWin,continueCallback,isGameOver})=> {
 
     return (
         <div className='end-battle'>
-           <h2>End of Battle</h2>
+           {/*<h2>End of Battle</h2>*/}
             <h1>{isWin?'You Win':'You Lose'}</h1>
 
             {isGameOver
