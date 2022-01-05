@@ -21,25 +21,14 @@ const DropDownMenu = ({ list, callback, isOpenAnimation,callbackEdit })=>{
         setIAnimation(isOpenAnimation)
     },[list,isOpenAnimation])
 
-    const handleEditPlayer=(player)=>{
-        // setChosenPlayer(player)
-        setIsEditPlayer(true);
-        // if(isEditPlayer){
-        //     editWindow.current.scrollIntoView({behavior: "smooth", inline: "center"})
-        // }
-
-
-        console.log(player)
-    }
 
     const showList=()=>{
        return list.map(player=>{
            return (
-               <>
-                <div key={player.id+ Date.now()+Math.random()} className={isAnimation?'player-link show':'hide'}>
+
+                <div key={player.id+ Date.now()+Math.random()*1000} className={isAnimation?'player-link show':'hide'}>
                     <Link to='/game'>
                    <div onClick={()=>{
-                            // setChosenPlayer(player)
                             callback(player)}
                    }
                         className='drop-down-player' >
@@ -52,7 +41,7 @@ const DropDownMenu = ({ list, callback, isOpenAnimation,callbackEdit })=>{
                 </Link>
                     <Button name='Edit' callback={()=>callbackEdit(player)} />
             </div>
-               </>
+
            )
        })
     }

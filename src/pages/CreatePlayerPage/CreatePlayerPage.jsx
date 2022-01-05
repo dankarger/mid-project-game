@@ -87,7 +87,9 @@ const CreatePlayerPage=({callback})=>{
         setAvatarInputValue(player.avatar)
         setIsDropDownMenu(false)
         PlaySound(SoundsList['click3'],0.2)
-        return callback(player)
+        // return callback(player)
+        localStorage.setItem('chicken', JSON.stringify(player));
+        callback(player)
     }
     const handleSelectedAvatarDiv=(name)=>{
         setSelectedAvatar(name)
@@ -138,9 +140,7 @@ const CreatePlayerPage=({callback})=>{
                             PlaySound(SoundsList['click3'],0.2)
                         }} className='create cancel'  name='Cancel Load'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)} />
                     </div>
-
                 </div>
-
                 <div className={isEditPlayer?'edit show':'hide'}>
                     <div>
                         <label htmlFor="updatedName">Change Name:</label>
@@ -162,7 +162,6 @@ const CreatePlayerPage=({callback})=>{
                     <Button name='Delete' callback={()=>{
                         handleDelete()
                         setIsEditPlayer(!isEditPlayer)}}/>
-
                 </div>
                 <Link to='/'>
                   <Button  callback={callback} className='create'  name='Back to Menu'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}/>
