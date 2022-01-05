@@ -155,6 +155,18 @@ button, h1, h2 {
     /*z-index: 2000;*/
 }
 
+.tutorial {
+    padding:5px 15px;
+    border-radius: 10px;
+    color:#61dafb;
+    border:3px solid #c5c561;
+    background: transparent;
+    transition: 300ms ease-in-out;
+}
+.tutorial:hover {
+    background: rgba(197, 197, 97, 0.31);
+    transform: scale(1.1);
+}
 @keyframes fade-in {
     to{
         opacity: 1;
@@ -177,6 +189,4 @@ button, h1, h2 {
         margin:calc(10px + 1vmin);
         font-size: calc(10px + 1vmin);
     }
-
-
 }

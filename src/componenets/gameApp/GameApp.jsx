@@ -6,6 +6,8 @@ import './GameApp.css'
 import GameLogic from "../GameLogic/GameLogic";
 import {Character, PlayerClass} from "../../Data/Data";
 import GameOverPage from "../../pages/GameOverPage/GameOverPage";
+import TutorialPage from "../../pages/Tutorial/TutorialPage";
+
 export const PlayerContext = React.createContext();
 export const SettingContext = React.createContext();
 
@@ -19,6 +21,7 @@ const GameApp=()=>{
     const showSettingsPage = ()=>{
            setIsSettingPage(!isSettingPage)
     }
+
     return (
         <div className='GameApp'>
             <SettingContext.Provider value={showSettingsPage}>
@@ -29,7 +32,7 @@ const GameApp=()=>{
                         <Route path='/create' element={<CreatePlayerPage createNewPlayer={()=>createNewPlayer()} />} />
                         <Route path='/game'  element={<GameLogic />} />
                         <Route path='/game-over/:outcome'  element={<GameOverPage />} />
-                        {/*<Route path='/settings'  element={<SettingsPage />} />*/}
+                        <Route path='/tutorial'  element={<TutorialPage />} />
                     </Routes>
                 </BrowserRouter>
                 {/*<div className={isSettingPage?'show':'hide'}>*/}

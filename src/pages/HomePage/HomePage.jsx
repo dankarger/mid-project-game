@@ -5,6 +5,8 @@ import CreatePlayerPage from "../CreatePlayerPage/CreatePlayerPage";
 import PlaySound from "../../componenets/SoundPlayer/PlaySound";
 import {SoundsList} from "../../Data/Data";
 import SettingsPage from "../SettingsPage/SettingsPage";
+import {Link} from "react-router-dom";
+
 // import {SettingsPageContext} from "../../componenets/GameLogic/GameLogic";
 
 
@@ -32,8 +34,7 @@ const HomePage = ({callbackSetting}) => {
                <div>
                    <Button  callback={handleNewGameButton} className='home-page'   name='New Game'/>
                </div>
-               {/*<Link to='/settings' > <Button className='home-page'   name='Settings'/> </Link>*/}
-               {/* <Button callback={()=>setIsSettings(setting=>!setting)} className='home-page'   name='Settings'/>*/}
+               <Link to='/tutorial' > <Button className='home-page'   name='Tutorial'/> </Link>
            </div>
             <div className={isCreatePlayer?'show':'hide'}>
                 <CreatePlayerPage callback={()=>setIsCreatePlayer(!setIsCreatePlayer)}/>

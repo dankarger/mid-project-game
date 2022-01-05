@@ -17,7 +17,7 @@
 ![alt text](./public/assets/images/readme/scrrenshot1.png)
 
 - This project was a week assigment- part of  the **AppleSeed- BootCamp -2021**
-- I wanted to learn to use animations with react, so I decided to make a game.
+- I wanted to learn how to use animations in react, I used react-spring.
 - There is an API (MockApi) that can store and Load Player.
 - The current player is stored in the local storage
 - I used art and drawings from the artist: [Alon-Gaash](https://alon-site.herokuapp.com//)
@@ -38,7 +38,7 @@
 
 
 
-# Links:
+### Links:
 
 -  <a href="https://github.com/dankarger/mid-project-game"><strong> Dan Karger- GitHub </strong></a>
 -  <a href="https://alon-site.herokuapp.com/"><strong> Alon Gaash- Artist </strong></a>
