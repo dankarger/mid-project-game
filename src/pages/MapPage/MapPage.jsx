@@ -11,7 +11,9 @@ const MapPage =({callback})=> {
     useEffect(()=>{
         setActiveRoom(currentRoomData.value===0 ? 1 : currentRoomData.value + 1 )
     },[currentRoomData.value])
+    useEffect(()=>{
 
+    })
 
     const styles = useSpring({
         loop:true,

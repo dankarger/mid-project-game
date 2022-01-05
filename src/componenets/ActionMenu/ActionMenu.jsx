@@ -41,7 +41,6 @@ const ActionMenu =({handleAttack1,handleDeffend1,disabled}) => {
                                     name='Attack'/>
                         </div>
                     </animated.div>
-
                     <animated.div
                         style={styles}>
                         <div className="defendButtonDiv">
@@ -52,9 +51,6 @@ const ActionMenu =({handleAttack1,handleDeffend1,disabled}) => {
                                     name='Deffend'/>
                         </div>
                     </animated.div>
-
-                     {/*<Button disabled={disabled} className='action' icon='p' name='Power'/>*/}
-                     {/*<Button disabled={disabled} className='action' icon='i' name='Item' />*/}
                 </div>
             </div>
         </div>
