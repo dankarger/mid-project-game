@@ -1,12 +1,12 @@
 .create-page {
-    height: 100%;
+    height:100%;
     width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border:1px solid black;
-    padding:calc(3rem + 2vw);
+    /*padding:calc(3rem + 2vw);*/
     box-shadow: rgba(0, 0, 0, 0.09) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     position: fixed;
     top: 50%;
@@ -16,7 +16,7 @@
     border-radius: 20px;
     color: #fffdfd;
     text-shadow: 1px 2px 3px black;
-    font-size: calc(10px + 2vw);
+    font-size: calc(15px + 2vmin);
 }
 
 .create-page form {
@@ -36,12 +36,13 @@
 
 .create-page input {
     height:fit-content;
-    font-size: calc(10px + 1vw);
+    font-size: calc(20px + 1vmin);
     color:#655f5f;
 }
 
 .avatars-div {
     width:80%;
+    height:50%;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -72,10 +73,6 @@
 }
 
 .loading-div {
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*transform: translateY(20px);*/
     white-space: nowrap;
 }
 
@@ -84,9 +81,6 @@
     color:red;
 }
 
-.name-input {
-    /*margin:20rem*/
-}
 .name-input-div {
     margin-top:2.5rem;
     width:100%;
@@ -98,11 +92,8 @@
     height:100%;
     object-fit: cover;
     border:transparent 1px solid;
-
 }
-.avatars-div img:hover{
 
-}
 .dropDownMenu {
     width:fit-content;
     height: fit-content;

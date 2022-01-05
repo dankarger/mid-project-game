@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import './DropDownMenu.css'
 import {Link} from "react-router-dom";
-import {useSpring,animated} from "react-spring";
+import {useSpring, animated, config} from "react-spring";
 
 const DropDownMenu = ({ list, callback, isOpenAnimation })=>{
     const[isAnimation,setIAnimation]=useState(true)
     const fade = useSpring({
-        from:{scale:0,opacity:0},
-        to:{scale:1,opacity:1}
+        from:{x:-300,scale:0,opacity:0},
+        to:{x:20, scale:1,opacity:1},
+        config:{duration:500,config:config.slow}
     })
 
     useEffect(()=>{
@@ -34,7 +35,7 @@ const DropDownMenu = ({ list, callback, isOpenAnimation })=>{
 
     return(
         (
-            <animated.div style={fade} className='drop-down-menu' draggable={true} >
+            <animated.div style={fade} className='drop-down-menu' >
               <div className='drop-heading'>
                   <p>Characters ({list.length})</p>       <p>Score:</p>
               </div>
