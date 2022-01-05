@@ -104,7 +104,7 @@ button, h1, h2 {
 }
 
 .load, .cancel {
-    /*transform: translateY(20px);*/
+    transform: translateY(8px);
 }
 
 .endBattle-window {

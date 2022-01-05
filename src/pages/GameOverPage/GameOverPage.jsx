@@ -8,15 +8,13 @@ import {SoundsList} from "../../Data/Data";
 
 
 const GameOverPage = ()=> {
-    const {outcome} = useParams()
-
-
+    const {outcome} = useParams();
     useEffect(()=>{
         if(outcome==='win'){
-            PlaySound(SoundsList['win'])
+            PlaySound(SoundsList['win'],0.2)
         }
         else{
-            PlaySound(SoundsList['lose'])
+            PlaySound(SoundsList['lose'],0.2)
         }
     },[outcome])
 

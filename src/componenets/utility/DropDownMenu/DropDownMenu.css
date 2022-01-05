@@ -1,7 +1,7 @@
 a{
     color:#c5c561;
     text-shadow: 1px 1px 1px black;
-    font-size: 35px;
+    font-size: calc(10px + 1vmin);
     white-space: nowrap;
     height:50%;
 }
@@ -13,12 +13,10 @@ a{
     width: 50%;
     max-height:500px;
     max-width:700px;
-    /*width: fit-content;*/
     position: fixed;
     top: 10%;
     left: 30%;
     transform: translate(-50%, -50%);
-    /*transform: translateY(-900px);*/
     background: rgba(0, 0, 0, 0.91);
     border: 8px solid rgba(46, 115, 129, 0.56);
     border-radius: 10px;
@@ -30,6 +28,7 @@ a{
     justify-content: center;
     align-items: center;
 }
+
 .drop-down-menu p {
     width:50%;
     font-size: calc(8px + 1vw);
@@ -46,18 +45,17 @@ a{
     transition: 200ms ease-in-out;
     padding-left:10px
 }
+
 .drop-down-item img {
     border: #adadad 1px solid;
 }
+
 .drop-down-item:hover{
     cursor: pointer;
     background: rgba(197, 197, 97, 0.37);
 }
 
 .drop-down-player {
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
     border: #c5c561 1px solid;
     width:100%;
     /*height: 20%;*/
@@ -72,4 +70,40 @@ a{
     height: calc(10px + 5%);
     /*width:1/0%;*/
     object-fit: cover;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .drop-down-menu {
+        height:80%;
+        width: 40%;
+        /*max-height:500px;*/
+        max-width:300px;
+        position: fixed;
+        top: 10%;
+        left: 2%;
+        transform: translate(-15%, -50%);
+    }
+    .drop-heading {
+        width:100%;
+        display: flex;
+        justify-content: space-around ;
+        align-items: center;
+    }
+    .drop-down-menu p{
+        width:fit-content;
+        font-size: calc(5px + 1vw);
+    }
+    .drop-down-item {
+        width: fit-content;
+        height:100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding-left:15px
+    }
+    .drop-down-item img {
+        border: #adadad 1px solid;
+    }
+
 }
