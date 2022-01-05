@@ -2,6 +2,8 @@ import React from "react";
 import './TutorialPage.css'
 import Button from "../../componenets/utility/Button/Button";
 import {Link} from "react-router-dom";
+import PlaySound from "../../componenets/SoundPlayer/PlaySound";
+import {SoundsList} from "../../Data/Data";
 
 const TutorialPage = () =>{
 
@@ -11,7 +13,11 @@ const TutorialPage = () =>{
             <h1>Tutorial</h1>
             <div className="go-back">
 
-                <Link to='/'><Button className='tutorial' name='Back to main menu' /> </Link>
+                <Link to='/'>
+                    <Button className='tutorial'
+                                     name='Back to main menu'
+                                     callback={()=>PlaySound(SoundsList['click1'],0.2)}/>
+                </Link>
             </div>
 
 
@@ -39,7 +45,11 @@ const TutorialPage = () =>{
                     </div>
 
             </div>
-            <Link to='/'><Button className='tutorial' name='Got it!' /> </Link>
+            <Link to='/'>
+                <Button className='tutorial'
+                        name='Got it!'
+                        callback={()=>PlaySound(SoundsList['click1'],0.2)}/>
+            </Link>
         </div>
     )
 }

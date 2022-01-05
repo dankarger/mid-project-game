@@ -23,7 +23,7 @@ const HomePage = ({callbackSetting}) => {
     const handleNewGameButton = ()=> {
         setIsCreatePlayer(true);
         // setIsPlayMusic(true)
-        PlaySound(SoundsList['click1'],0.2)
+        PlaySound(SoundsList['click1'],0.1)
     }
 
 
@@ -34,7 +34,7 @@ const HomePage = ({callbackSetting}) => {
                <div>
                    <Button  callback={handleNewGameButton} className='home-page'   name='New Game'/>
                </div>
-               <Link to='/tutorial' > <Button className='home-page'   name='Tutorial'/> </Link>
+               <Link to='/tutorial' > <Button callback={()=>PlaySound(SoundsList['click1'],0.2)} className='home-page'   name='Tutorial'/> </Link>
            </div>
             <div className={isCreatePlayer?'show':'hide'}>
                 <CreatePlayerPage callback={()=>setIsCreatePlayer(!setIsCreatePlayer)}/>
