@@ -10,9 +10,9 @@ const EndBattleWindow= ({isWin,continueCallback,isGameOver})=> {
 
     useEffect(()=>{
         if(isGameOver&&isWin){
-            PlaySound(SoundsList['trumpet2'])
+            PlaySound(SoundsList['trumpet2'],0.1)
         }else if(isGameOver&&!isWin) {
-            PlaySound(SoundsList['trumpet3'])
+            PlaySound(SoundsList['trumpet3'],0.1)
         }
     },[isWin,isGameOver])
 

@@ -106,7 +106,7 @@ button, h1, h2 {
 }
 
 .load, .cancel {
-    transform: translateY(8px);
+    /*transform: translateY(8px);*/
 }
 
 .endBattle-window {
@@ -133,8 +133,6 @@ button, h1, h2 {
 }
 
 .hidden {
-    /*background: transparent;*/
-    /*color:transparent;*/
     opacity: 0;
 }
 
@@ -150,23 +148,7 @@ button, h1, h2 {
     text-shadow: 1px 1px 1px black;
     font-size: calc(10pt + 0.8vw);
     box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
 }
-
-.defendButton {
-    /*width: 30%;*/
-    /*height:50%;*/
-    /*animation: defend-button 2s ease-in-out alternate-reverse ;*/
-    /*transform: translateX(0);*/
-    /*transition: 500ms ease-in-out ;*/
-    /*box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;*/
-
-}
-
-
 
 @keyframes fade-in {
     to{

@@ -6,21 +6,21 @@ import {useSpring,animated} from "react-spring";
 
 const ActionMenu =({handleAttack1,handleDeffend1,disabled}) => {
         const [styles, api] = useSpring(() => ({
-            from: { x: -70, opacity: 1 },
+            from: { x: -75, opacity: 1 },
         }))
     const [styles2, api2] = useSpring(() => ({
-        from: { x: 70, opacity: 1 },
+        from: { x: 75, opacity: 1 },
     }))
         useEffect(() => {
             api({
-                x: 70,
+                x: 75,
                 opacity: 1,
                 config:{friction:10,duration:1000},
                 loop: { reverse: true },
                 delay:Math.floor(Math.random()*2400),
             })
             api2({
-                x: -70,
+                x: -75,
                 opacity: 1,
                 config:{friction:10,duration:1500},
                 loop: { reverse: true },
