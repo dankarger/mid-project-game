@@ -6,6 +6,10 @@ a{
     height:50%;
 }
 
+.player-link {
+    display: flex;
+    justify-content: center;
+}
 .drop-down-menu {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -110,4 +114,12 @@ a{
         border: #adadad 1px solid;
     }
 
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
 }

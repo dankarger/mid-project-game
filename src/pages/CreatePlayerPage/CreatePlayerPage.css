@@ -62,9 +62,6 @@
     justify-content: space-evenly;
 }
 
-/*.avatar-img-div label:checked {*/
-/*    transition: 1s ease-in-out;*/
-/*}*/
 .avatar-img-div:hover,.avatar-img-div::selection, .active {
     text-decoration: underline;
 
@@ -112,16 +109,21 @@
 .edit {
     /*height:80%;*/
     /*width: 50%;*/
-    max-height:500px;
-    max-width:700px;
+    height:20%;
+    width:calc(500px + 4vh);
     position: fixed;
-    top: 10%;
+    top: 50%;
     left: 30%;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.91);
     border: 8px solid rgba(46, 115, 129, 0.56);
     border-radius: 10px;
-    z-index: -100;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }
 
 @media only screen and (max-width: 1000px) {

@@ -16,9 +16,9 @@
 }
 
 .player-name {
-    color: #c5c561;
+    color: #eaead2;
     text-shadow: 1px 1px 1px black;
-    font-size: calc(1.5rem + 1vmin);
+    font-size: calc(1rem + 1vmin);
     background:transparent;
 }
 

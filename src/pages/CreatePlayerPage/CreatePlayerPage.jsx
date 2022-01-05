@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import './CreatePlayerPage.css'
 import Button from "../../componenets/utility/Button/Button";
 import {Link} from "react-router-dom";
 import {PlayerClass,Character} from "../../Data/Data";
 import {AVATARS} from "../../Data/Data";
-import getPlayersDataFromApi,{AddPlayer} from "../../Api/Api";
+import getPlayersDataFromApi, {AddPlayer, deletePlayer} from "../../Api/Api";
 import DropDownMenu from "../../componenets/utility/DropDownMenu/DropDownMenu";
 import PlaySound from "../../componenets/SoundPlayer/PlaySound";
 import {SoundsList} from "../../Data/Data";
 // import {deletePlayer} from "../../Api/Api";
-// import {updatePlayer} from "../../Api/Api";
+import {updatePlayer} from "../../Api/Api";
 
 
 const CreatePlayerPage=({callback})=>{
@@ -19,6 +19,8 @@ const CreatePlayerPage=({callback})=>{
     const[isDropDownMenu, setIsDropDownMenu] = useState(false);
     const[selectedAvatar, setSelectedAvatar]=useState('ALONZO');
     const[isEditPlayer, setIsEditPlayer] = useState(false)
+    const[chosenPlayer2,setChosePlayer2] = useState({})
+    const  chosenPlayer =useRef({})
 
 
 
@@ -30,12 +32,24 @@ const CreatePlayerPage=({callback})=>{
          getData().then(res=>{
             setPlayersList(res)
         })
-    },[])
+         return ()=>{
+            getData()
+        }
+    },[chosenPlayer2])
 
 
     const handleOnChange =(e)=>{
          setNameInputValue(e.target.value);
          PlaySound(SoundsList['click1'],0.2)
+    }
+    const handleOnChangeEdit=(e)=>{
+        chosenPlayer.current.name = e.target.value;
+        PlaySound(SoundsList['click1'],0.2)
+    }
+
+    const handleDelete=()=>{
+        setChosePlayer2(chosenPlayer.current)
+        deletePlayer(chosenPlayer.current.id)
     }
 
     const handleCreateNewPlayer =()=> {
@@ -49,21 +63,12 @@ const CreatePlayerPage=({callback})=>{
         PlaySound(SoundsList['click3'],0.2)
        return  newPlayer
     }
-    const handleEditPlayer=(player)=>{
+    const handleEditPlayer2=(player)=>{
         setIsEditPlayer(!isEditPlayer);
-        if(isEditPlayer){
+        // setChosePlayer2(player)
+        chosenPlayer.current=player
+        console.log('p',chosenPlayer)
 
-            return(
-                <div className='edit'>
-                    <div className=''>
-                        {/*<img className='thumbnail' src={player.avatar} alt="thumbnail"/>*/}
-                        {/*<p> {player.name} </p>*/}
-                        {/*<p>{player.score}</p>*/}
-                        <button>Edit</button>
-                    </div>
-                </div>
-            )
-        }
     }
 
    const updateLocalStorage=()=>{
@@ -100,21 +105,18 @@ const CreatePlayerPage=({callback})=>{
                       onClick={()=>handleSelectedAvatarDiv('ALONZO')}
                       id='div1'
                       onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}>
-                     {/*<input type="radio" id="avatar1" name="drone" value="ALONZO" onChange={handleRadioInputOnChange} defaultChecked={true}/>*/}
                          <label htmlFor="huey">ALONZO</label>
                          <img src={AVATARS['ALONZO']} alt="avatar1"/>
                  </div>
                  <div className={selectedAvatar==='The_KING'?'avatar-img-div active':'avatar-img-div '}
                       onClick={()=>handleSelectedAvatarDiv('The_KING')}
                       onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}>
-                     {/*<input type="radio" id="avatar2" name="drone" value="The_KING" onChange={handleRadioInputOnChange}/>*/}
                          <label htmlFor="The KING">The KING</label>
                      <img src={AVATARS['The_KING']} alt="avatar2"/>
                  </div>
                  <div className={selectedAvatar==='LOUIE'?'avatar-img-div active':'avatar-img-div '}
                       onClick={()=>handleSelectedAvatarDiv('LOUIE')}
                       onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}>
-                     {/*<input type="radio" id="avatar3" name="drone" value="LOUIE" onChange={handleRadioInputOnChange}/>*/}
                          <label htmlFor="LOUIE">LOUIE</label>
                      <img src={AVATARS['LOUIE']} alt="avatar3"/>
                  </div>
@@ -123,7 +125,6 @@ const CreatePlayerPage=({callback})=>{
                 <label htmlFor="nameInput">Enter Name  </label>
                 <input  className='name-input' onChange={handleOnChange} name='nameInput' type="text" placeholder='Randy Rando' value={nameInputValue}/>
             </div>
-            {/*</form>*/}
             <div className="CreateButtons-div">
                 <Link to='/game'>
                     <Button callback={()=>updateLocalStorage()} className='create'  name='Create Character'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}/>
@@ -131,13 +132,37 @@ const CreatePlayerPage=({callback})=>{
                 <div className='loading-div'>
                     <Button callback={()=>handleDropDownLoad()} className='create load'  name='Load Character' onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}/>
                     <div className={isDropDownMenu?"dropDownMenu-div show":"dropDownMenu-div hide"}>
-                        <DropDownMenu isOpenAnimation={isDropDownMenu} callback={handleChoosePlayer} callbackEdit={handleEditPlayer} list={playersList} />
+                        <DropDownMenu isOpenAnimation={isDropDownMenu} callback={handleChoosePlayer} callbackEdit={handleEditPlayer2} list={playersList} />
                         <Button callback={()=>{
                             setIsDropDownMenu(!isDropDownMenu)
                             PlaySound(SoundsList['click3'],0.2)
                         }} className='create cancel'  name='Cancel Load'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)} />
-                        {isEditPlayer && handleEditPlayer()}
                     </div>
+
+                </div>
+
+                <div className={isEditPlayer?'edit show':'hide'}>
+                    <div>
+                        <label htmlFor="updatedName">Change Name:</label>
+                        <input name='updatedName' type="text" placeholder={chosenPlayer?chosenPlayer.current.name:null} onChange={handleOnChangeEdit} />
+                    </div>
+                    <div>
+                        <label htmlFor="updatedAvatar">Choose an Avatar :</label>
+                        <select id="updatedAvatar">
+                            <option value="ALONZO">ALONZO</option>
+                            <option value="The_KING">The_KING</option>
+                            <option value="LOUIE">LOUIE</option>
+                        </select>
+                    </div>
+                    <Button name='Update' callback={()=>{
+                        updatePlayer(chosenPlayer.current.id,chosenPlayer.current);
+                        setIsEditPlayer(!isEditPlayer)
+                        chosenPlayer.current = {}
+                    }} />
+                    <Button name='Delete' callback={()=>{
+                        handleDelete()
+                        setIsEditPlayer(!isEditPlayer)}}/>
+
                 </div>
                 <Link to='/'>
                   <Button  callback={callback} className='create'  name='Back to Menu'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}/>
