@@ -50,6 +50,8 @@ i{
 }
 
 @media only screen and (max-width: 1000px) {
-
+    .enemy-name {
+        font-size: calc(8px + 1vmin);
+    }
 
 }

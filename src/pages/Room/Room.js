@@ -162,8 +162,6 @@ const Room=({player,callbackGoBack})=>{
     return(
         <>
                 <div className='Room' style={{background:`${currentRoomData.image}`}}>
-                    {/*<Button name='Settings' callback={()=>setIsSettings(setting=>!setting)} />*/}
-                    {/*<Button name={"settings"} callback={}*/}
                     <Navbar currentPlayer={player} currentEnemy={currentEnemy} roomNumber={currentRoomData.value} callback={()=>setIsSettings(setting=>!setting)}/>
                     <div className="Room-img-div">
                         <img className='Room-img' src={currentRoomData.image} alt="room-img"/>
@@ -172,8 +170,7 @@ const Room=({player,callbackGoBack})=>{
                         <div className="player--div">
                             <EntranceAnimation stateProps={isStartBattle} element={ <Player player={player} name='chicken-rider'  />} />
                         </div>
-                        <div className="filler-div">
-                        </div>
+                        <div className="filler-div">   </div>
                         <div className="enemy-div">
                             <BoingAnimation  stateProps={isHit} character={ <Enemy enemy={currentEnemy} /> }/>
                         </div>
