@@ -1,23 +1,17 @@
 .create-page {
-    /*width: fit-content;*/
-    height: 80%;
-    width:80%;
+    height: 100%;
+    width:100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    /*position: absolute;*/
-    /*top:30%;*/
     border:1px solid black;
     padding:calc(3rem + 2vw);
     box-shadow: rgba(0, 0, 0, 0.09) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     position: fixed;
     top: 50%;
     left: 50%;
-    /* bring your own prefixes */
     transform: translate(-50%, -50%);
-    background: rgba(248, 248, 248, 0.81);
-    /*background: rgba(66, 93, 98, 0.83);*/
     background: rgba(40, 55, 56, 0.87);
     border-radius: 20px;
     color: #fffdfd;
@@ -26,6 +20,8 @@
 }
 
 .create-page form {
+    width:80%;
+    height:80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,18 +35,16 @@
 }
 
 .create-page input {
-
     height:fit-content;
     font-size: calc(10px + 1vw);
     color:#655f5f;
 }
 
 .avatars-div {
+    width:80%;
     display:flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .avatar-img-div {
@@ -93,15 +87,16 @@
 .name-input {
     /*margin:20rem*/
 }
-.name-input-div{
+.name-input-div {
     margin-top:2.5rem;
-    width:700px;
+    width:100%;
 }
 
 .avatars-div img{
     transition: 1s ease-in-out;
     width:100%;
     height:100%;
+    object-fit: cover;
     border:transparent 1px solid;
 
 }
@@ -117,5 +112,36 @@
     width:fit-content;
     display:flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
+}
+
+@media only screen and (max-width: 1000px) {
+    .name-input-div {
+        margin:10px;
+    }
+    .create-page h2 {
+        font-size: calc(14px + 1vmin);
+    }
+    .create-page label {
+        font-size: calc(10px + 1vmin);
+    }
+
+    .create-page form{
+        padding:0;
+        font-size: calc(8px + 1vw);
+    }
+    .avatar-img-div{
+        margin:2px;
+        width:150px;
+        height:150px;
+
+    }
+    .avatars-div img {
+
+    }
+    .CreateButtons-div {
+        width:100%;
+        height: 100%;
+
+    }
 }

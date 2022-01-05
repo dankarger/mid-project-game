@@ -31,7 +31,6 @@ const HomePage = ({callbackSetting}) => {
            <div className='home-menu-divs'>
                <div>
                    <Button  callback={handleNewGameButton} className='home-page'   name='New Game'/>
-
                </div>
                {/*<Link to='/settings' > <Button className='home-page'   name='Settings'/> </Link>*/}
                {/* <Button callback={()=>setIsSettings(setting=>!setting)} className='home-page'   name='Settings'/>*/}

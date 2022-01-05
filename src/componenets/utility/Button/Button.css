@@ -2,8 +2,6 @@ button, h1, h2 {
     font-family: Kreon,sans-serif;
 }
 
-
-
 .home-page {
     width:fit-content;
     height:fit-content;
@@ -14,13 +12,11 @@ button, h1, h2 {
     font-size: calc(12pt + 0.7vw);
     text-align: left;
     box-shadow: 2px 3px 4px black;
-
     border-radius: 5px;
     margin-bottom:1rem;
     opacity: 0;
     animation: fade-in 1s forwards ease-in-out;
     padding:0.5rem;
-
 }
 
 .home-page:hover{
@@ -29,12 +25,8 @@ button, h1, h2 {
     filter:brightness(120%) ;
     text-shadow:1px 1px 1px #282c34;
     color:#c5c561;
-    /*padding:0.6rem;*/
     transform: scale(1.1);
-
-
 }
-
 
 .map-button {
     width:10%;
@@ -48,11 +40,6 @@ button, h1, h2 {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     font-size: calc(10px + 1vw);
     white-space: nowrap;
-    /*animation: map-button  800ms infinite alternate ease-in-out;*/
-    /*transition: 1s ease-in-out;*/
-    /*background: url('../../../../public/assets/images/backgrounds/map10.jpg')no-repeat center center/cover;*/
-    /*background: url('../../../../public/assets/images/ui/button1.png')no-repeat center center/cover;*/
-
 }
 
 .map-button:hover {
@@ -61,7 +48,6 @@ button, h1, h2 {
     filter:brightness(120%) ;
     background: rgb(98, 98, 69);
     color:#c5c561;
-    /*transform: scale(1.2);*/
     animation: none;
 }
 
@@ -69,18 +55,12 @@ button, h1, h2 {
     text-shadow:1px 1px 1px #3b3535;
     filter:grayscale(100%) brightness(100%);
     cursor:initial;
-    /*background: initial;*/
     animation: none;
     transform: scale(1);
-    /*background: #655f5f;*/
     color:#282c34;
-    /*visibility: hidden;*/
 }
 
 .settings {
-    /*position: absolute;*/
-    /*right: 0;*/
-    /*background: rgba(197, 197, 97, 0.56);*/
     text-align: center;
     transform: translateY(2px);
     width: fit-content;
@@ -91,7 +71,6 @@ button, h1, h2 {
     font-size: calc(16px + 1.9vw);
     transition: 300ms ease-in-out;
     margin-right: 10px;
-
 }
 .settings:hover {
     color:limegreen;
@@ -106,10 +85,7 @@ button, h1, h2 {
     background: rgba(197, 197, 97, 0.65);
     border-radius: 15px;
     background: rgb(109,172,177);
-    /*background: linear-gradient(95deg, rgba(109,172,177,1) 16%, transparent 89%, transparent  95%);*/
-    /*background: linear-gradient(95deg, rgb(77, 133, 133) 16%, rgba(42, 82, 75, 0.73) 89%, rgb(77, 133, 133)  95%);*/
     background: url('../../../../public/assets/images/ui/button3.png') no-repeat center center/cover;
-    /*border: 2px solid grey;*/
     transition: 400ms ease-in-out;
     color: whitesmoke;
     white-space: nowrap;
@@ -117,7 +93,6 @@ button, h1, h2 {
     font-size: calc(10px + 1vw);
     margin:1rem;
     font-weight: 500;
-    /*box-shadow: rgba(35, 35, 37, 0.25) 0px 30px 60px -12px inset, rgba(16, 15, 15, 0.3) 0px 18px 36px -18px inset;*/
     box-shadow: rgba(0, 0, 0, 0.56) 0 22px 30px 4px;
 }
 .create:hover {
@@ -125,14 +100,11 @@ button, h1, h2 {
     transform: scale(1.1);
     opacity: 0.8;
     color:#c5c561;
-    /*box-shadow: rgba(0, 0, 0, 0.56) 0 22px 70px 4px;*/
-    /*box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;*/
-    /*box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;*/
     box-shadow: rgba(0, 0, 0, 0.56) 0 22px 30px 4px;
 }
 
 .load, .cancel {
-    transform: translateY(20px);
+    /*transform: translateY(20px);*/
 }
 
 .endBattle-window {
@@ -194,3 +166,12 @@ button, h1, h2 {
     }
 }
 
+/*Responsive*/
+
+@media only screen and (max-width: 1000px) {
+    .create {
+        margin:5px;
+        padding:5px 8px;
+    }
+
+}
