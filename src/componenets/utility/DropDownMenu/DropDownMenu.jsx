@@ -1,16 +1,12 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 import './DropDownMenu.css'
 import {Link} from "react-router-dom";
 import {useSpring, animated, config} from "react-spring";
 import Button from "../Button/Button";
 
 
-
 const DropDownMenu = ({ list, callback, isOpenAnimation,callbackEdit })=>{
     const[isAnimation,setIAnimation]=useState(true)
-    // const[chosenPlayer, setChosenPlayer ]=useState({})
-    const[isEditPlayer, setIsEditPlayer] = useState(false)
-    const editWindow= useRef()
     const fade = useSpring({
         from:{x:-300,scale:0,opacity:0},
         to:{x:20, scale:1,opacity:1},
@@ -21,11 +17,9 @@ const DropDownMenu = ({ list, callback, isOpenAnimation,callbackEdit })=>{
         setIAnimation(isOpenAnimation)
     },[list,isOpenAnimation])
 
-
     const showList=()=>{
        return list.map(player=>{
            return (
-
                 <div key={player.id+ Date.now()+Math.random()*1000} className={isAnimation?'player-link show':'hide'}>
                     <Link to='/game'>
                    <div onClick={()=>{
@@ -41,7 +35,6 @@ const DropDownMenu = ({ list, callback, isOpenAnimation,callbackEdit })=>{
                 </Link>
                     <Button name='Edit' callback={()=>callbackEdit(player)} />
             </div>
-
            )
        })
     }
