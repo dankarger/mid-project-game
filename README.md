@@ -29,8 +29,19 @@
 
 ![alt text](./public/assets/images/readme/layou4.png)
 
+# Features:
+- 5 levels with different enemy in each level
+- Crud - create,load,update,delete players in the Mock Api  
+- Local storage that store the current player
+- Animations with react-spring
+- Music and sounds
+- Responsive for mobile
+
 
 ## Built with  :
+- JavaScript
+- CSS
+- Html
 - * [React.js](https://reactjs.org/)
 - * [React-Spring](https://react-spring.io/)
 - * [MockAPi](https://mockapi.io/)
