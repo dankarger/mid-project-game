@@ -20,7 +20,7 @@ const DropDownMenu = ({ list, callback, isOpenAnimation,callbackEdit })=>{
     const showList=()=>{
        return list.map(player=>{
            return (
-                <div key={player.id+ Date.now()+Math.random()*1000} className={isAnimation?'player-link show':'hide'}>
+                <div key={player.id+ Date.now()+Math.random()*1000} className={isAnimation?'player-link showEdit':'hide'}>
                     <Link to='/game'>
                    <div onClick={()=>{
                             callback(player)}
@@ -32,8 +32,9 @@ const DropDownMenu = ({ list, callback, isOpenAnimation,callbackEdit })=>{
                                    <p>{player.score}</p>
                            </div>
                    </div>
+
                 </Link>
-                    <Button name='Edit' callback={()=>callbackEdit(player)} />
+                    <Button className='editButton' name='Edit' callback={()=>callbackEdit(player)} />
             </div>
            )
        })

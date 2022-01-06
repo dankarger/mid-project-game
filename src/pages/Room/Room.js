@@ -78,12 +78,13 @@ const Room=({player,callbackGoBack})=>{
                  setIsWinBattle(true);
                  setIsBattleOver(true);
                  PlaySound(SoundsList['trumpet2'])
-                 currentEnemy.currentImage=currentEnemy.images.death
+
              },1000)
                  if(currentEnemy.name==="BOSS"){
                      setIsGameOver(true)
                      PlaySound(SoundsList['trumpet4'])
                  }
+            currentEnemy.currentImage=currentEnemy.images.death
         }
 
         const playerDeath=() =>{
