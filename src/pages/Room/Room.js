@@ -55,6 +55,7 @@ const Room=({player,callbackGoBack})=>{
         useEffect(()=>{
             setCurrentPlayer(player)
         },[player])
+
         useEffect(()=>{
             showMessage(`Level ${currentRoomData.value===0?1:currentRoomData.value}`,6000);
             showMessagePlayer(`Level ${currentRoomData.value===0?1:currentRoomData.value}`);
