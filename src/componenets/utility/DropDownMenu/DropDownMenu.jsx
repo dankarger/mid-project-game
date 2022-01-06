@@ -35,6 +35,7 @@ const DropDownMenu = ({ list, callback, isOpenAnimation,callbackEdit })=>{
 
                 </Link>
                     <Button className='editButton' name='Edit' callback={()=>callbackEdit(player)} />
+
             </div>
            )
        })

@@ -137,11 +137,12 @@ const CreatePlayerPage=({callback})=>{
                         <DropDownMenu isOpenAnimation={isDropDownMenu} callback={handleChoosePlayer} callbackEdit={handleEditPlayer2} list={playersList} />
                         <Button callback={()=>{
                             setIsDropDownMenu(!isDropDownMenu)
+                            setIsEditPlayer(false)
                             PlaySound(SoundsList['click3'],0.2)
                         }} className='create cancel'  name='Cancel Load'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)} />
                     </div>
                 </div>
-                <div className={isEditPlayer?'edit show':'hide'}>
+                <div className={isEditPlayer?'edit showEdit':'hide'}>
                     <div>
                         <label htmlFor="updatedName">Change Name:</label>
                         <input name='updatedName' type="text" placeholder={chosenPlayer?chosenPlayer.current.name:null} onChange={handleOnChangeEdit} />
@@ -154,17 +155,25 @@ const CreatePlayerPage=({callback})=>{
                             <option value="LOUIE">LOUIE</option>
                         </select>
                     </div>
-                    <Button name='Update' callback={()=>{
-                        updatePlayer(chosenPlayer.current.id,chosenPlayer.current);
-                        setIsEditPlayer(!isEditPlayer)
-                        chosenPlayer.current = {}
-                    }} />
-                    <Button name='Delete' callback={()=>{
-                        handleDelete()
-                        setIsEditPlayer(!isEditPlayer)}}/>
+                    <div className='updateEditDiv'>
+                        <Button name='Update' callback={()=>{
+                            updatePlayer(chosenPlayer.current.id,chosenPlayer.current);
+                            setIsEditPlayer(!isEditPlayer)
+                            chosenPlayer.current = {}
+                        }} />
+                        <Button name='Delete' callback={()=>{
+                            handleDelete()
+                            setIsEditPlayer(!isEditPlayer)}}/>
+                    </div>
                 </div>
                 <Link to='/'>
-                  <Button  callback={callback} className='create'  name='Back to Menu'  onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}/>
+                  <Button  callback={()=>{
+                            setIsEditPlayer(false);
+                            setIsDropDownMenu(false)
+                            callback()}}
+                           className='create'
+                           name='Back to Menu'
+                           onMouseOver={()=>PlaySound(SoundsList['mouseOver3'],0.2)}/>
                 </Link>
             </div>
         </div>

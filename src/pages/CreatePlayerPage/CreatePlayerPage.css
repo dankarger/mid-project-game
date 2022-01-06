@@ -109,7 +109,7 @@
 .edit {
     /*height:80%;*/
     /*width: 50%;*/
-    height:20%;
+    height:30%;
     width:calc(500px + 4vh);
     position: fixed;
     top: 50%;
@@ -121,9 +121,18 @@
     z-index: 1000;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-
+}
+.edit label {
+    margin-right:15px;
+}
+.updateEditDiv {
+    margin-top:10px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media only screen and (max-width: 1000px) {
