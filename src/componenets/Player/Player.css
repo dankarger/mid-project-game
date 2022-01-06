@@ -35,4 +35,7 @@
 
 @media only screen and (max-width: 1000px) {
 
+    .player img {
+       max-height: 270px;
+    }
 }
